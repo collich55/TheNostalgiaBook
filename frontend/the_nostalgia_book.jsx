@@ -1,7 +1,7 @@
 // import React from "react";
 // import ReactDOM from "react-dom";
 // import configureStore from "./store/store";
-//import {login, signup, logout} from "./actions/session_actions.js";
+import {login, signup, logout} from "./actions/session_actions.js";
 
 // document.addEventListener("DOMContentLoaded", () => {
 
@@ -18,11 +18,11 @@ import Root from "./components/root";
 document.addEventListener("DOMContentLoaded", () => {
     const store = configureStore();
 
-    // window.user1 = { email: "random@gmail.com", password: "random", full_name: "christoph", birth_date: "12/3/45", gender: "male" };
-    // window.login = login;
-    // // TESTING START
-    // window.getState = store.getState;
-    // window.dispatch = store.dispatch;
+    window.user1 = { email: "random@gmail.com", password: "random", full_name: "christoph", birth_date: "12/3/45", gender: "male" };
+    window.login = login;
+    // TESTING START
+    window.getState = store.getState;
+    window.dispatch = store.dispatch;
     // TESTING END
 
     const root = document.getElementById("root");
