@@ -11,6 +11,7 @@ class SignUpForm extends React.Component {
             full_name: ""
         };
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handleDemo = this.handleDemo.bind(this);
     }
 
     update(field) {
@@ -35,6 +36,13 @@ class SignUpForm extends React.Component {
             </div>
 
         );
+    }
+
+
+    handleDemo(e) {
+        e.preventDefault();
+        const demoUser = Object.assign({}, { email: 'random@gmail.com', password: 'random' })
+        this.props.processDemo(demoUser);
     }
 
     render() {
@@ -88,6 +96,7 @@ class SignUpForm extends React.Component {
                         <input className="session-submit" type="submit" value={this.props.formType} />
                     </div>
                 </form>
+                <button onClick={this.handleDemo}   >Demo User</button>
             </div>
         );
     }
