@@ -8,7 +8,7 @@ const mapStateToProps = ({ errors }) => {
     return {
         errors: errors.session,
         formType: 'login',
-        navLink: <Link to="/signup">sign up</Link>,
+        navLink: < a href = "#/signup" class="button" > Create Account </a >
     };
 };
 
@@ -19,3 +19,5 @@ const mapDispatchToProps = dispatch => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SessionForm);
+
+//< a href="#/signup" class="button" > Create Account </a >

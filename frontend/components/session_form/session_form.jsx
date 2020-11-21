@@ -45,32 +45,48 @@ class SessionForm extends React.Component {
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
-                    Enter the TheNostalgiaBook
-          <br />
-          Please {this.props.formType} or {this.props.navLink}
+                    
                     {this.renderErrors()}
                     <div className="login-form">
                         <br />
-                        <label>Username:
+                        
                             <input type="text"
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="login-input"
+                                id="log_username"
+                                placeholder="Email"
                             />
-                        </label>
+                        
                         <br />
-                        <label>Password:
+                        
               <input type="password"
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="login-input"
+                                id="log_password"
+                                placeholder="Password"
                             />
-                        </label>
                         <br />
                         <input className="session-submit" type="submit" value={this.props.formType} />
+                        
                     </div>
                 </form>
-                <button  onClick={this.handleDemo}   >Demo User</button>
+                
+                    
+                <br />
+                <br />
+                <br />
+                <br />
+                
+                <div id="signB">
+                    <button onClick={this.handleDemo} id="Demo-b"  >Demo User</button>
+                </div>
+                
+               
+                
+                <br />
+          {this.props.navLink}
             </div>
         );
     }

@@ -47,8 +47,8 @@ class SignUpForm extends React.Component {
 
     render() {
         return (
-            <div className="login-form-container">
-                <form onSubmit={this.handleSubmit} className="login-form-box">
+            <div className="signup-form-container">
+                <form onSubmit={this.handleSubmit} className="signup-form-box">
                     Create Your TheNostalgiaBook
           <br />
           Please {this.props.formType} or {this.props.navLink}
@@ -60,6 +60,7 @@ class SignUpForm extends React.Component {
                                 value={this.state.email}
                                 onChange={this.update('email')}
                                 className="login-input"
+                                id="sign_email"
                             />
                         </label>
                         <br />
@@ -68,6 +69,7 @@ class SignUpForm extends React.Component {
                                 value={this.state.password}
                                 onChange={this.update('password')}
                                 className="login-input"
+                                id="sign_password"
                             />
                         </label>
                         <br />
@@ -76,6 +78,7 @@ class SignUpForm extends React.Component {
                             value={this.state.gender}
                             onChange={this.update('gender')}
                             className="login-input"
+                            id="gender"
                         />
                         </label>
                         <label>Birth Date:
@@ -83,6 +86,7 @@ class SignUpForm extends React.Component {
                                 value={this.state.birth_date}
                                 onChange={this.update('birth_date')}
                                 className="login-input"
+                                id="birthdate"
                             />
                         </label>
                         <label>Full Name:
@@ -90,6 +94,7 @@ class SignUpForm extends React.Component {
                                 value={this.state.full_name}
                                 onChange={this.update('full_name')}
                                 className="login-input"
+                                id="fullname"
                             />
                         </label>
                     <br />

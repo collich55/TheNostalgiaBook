@@ -6,8 +6,8 @@ import {Route} from "react-router-dom";
 import { AuthRoute } from '../util/route_util';
 
 const App = () => (
-    <div>
-        <header>
+    <div id="all">
+        <header id="head">
             <h1>The Nostalgia Book</h1>
             <GreetingContainer />
             
