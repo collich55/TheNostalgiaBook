@@ -89,28 +89,28 @@ h1     {
 }
 
 .session-submit {
-  background-color: #2936e9; /* Green */
+  background-color: blue;
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border-radius: 10px;
+  height: 40px;
 }
 
 #Demo-b {
-  background-color: #4CAF50; /* Green */
+  background-color: green;
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
   border-radius: 10px;
   flex: 1;
+  height: 40px;
 }
 
 #demoB {
@@ -121,23 +121,20 @@ h1     {
   display: flex;
 }
 
-a.button {
+a.button  {
   -webkit-appearance: button;
   -moz-appearance: button;
   appearance: button;
-
   text-decoration: none;
-  color: initial;
-
-  background-color: #4CAF50; /* Green */
-  border: none;
+  background-color: green;
   color: white;
-  padding: 15px 32px;
-  text-align: center;
-  text-decoration: none;
   display: inline-block;
-  font-size: 16px;
   border-radius: 10px;
-  flex: 1;
+  font-size: 18px;
+  height: 23px;
+  text-align: center;
+  padding: 10px;
 }
+
+
 
