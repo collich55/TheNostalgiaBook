@@ -5,20 +5,28 @@ import React from 'react';
 
 class PostIndex extends React.Component {
 
+    
+
     componentDidMount() {
         this.props.fetchPosts();
     }
 
+    
     render() {
-        const {posts, deletePost, test} = this.props;
+
+        debugger
         
         return (
             <div>
                 <ul>
+
+
+                    {
+                        Object.values(this.props.posts).map(post =>  <p>{post["body"]}</p> )
+                    }
                     
                         
-                        <p>{test.body}</p>
-                        <p>This might be working lol</p>
+                        
                     
                 </ul>
             </div>

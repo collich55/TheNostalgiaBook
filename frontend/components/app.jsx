@@ -6,6 +6,8 @@ import {Route} from "react-router-dom";
 import { AuthRoute } from '../util/route_util';
 import PostIndexContainer from "./post_index_container";
 
+
+
 class App extends React.Component {
 
     constructor(props) {

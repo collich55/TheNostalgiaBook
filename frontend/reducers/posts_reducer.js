@@ -6,8 +6,7 @@ const postsReducer = (state = {}, action) => {
     
     switch (action.type) {
         case RECEIVE_POSTS:
-            const {posts} = action;
-            return newState = Object.assign({}, newState, {posts});
+            return action.posts
         case RECEIVE_POST:
             if (newState[action.post.id]) {
                 newState[action.post.id] = action.post;

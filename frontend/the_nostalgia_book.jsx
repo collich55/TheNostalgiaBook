@@ -2,6 +2,7 @@
 // import ReactDOM from "react-dom";
 // import configureStore from "./store/store";
 import { createPost, fetchPosts} from "./util/post_api_util";
+import {logout} from "./actions/session_actions.js"
 
 // document.addEventListener("DOMContentLoaded", () => {
 
@@ -20,6 +21,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let store;
     window.post = createPost;
     window.posts = fetchPosts;
+    window.logout = logout;
     if (window.currentUser) {
         const preloadedState = {
             session: { id: window.currentUser.id },
@@ -32,6 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
         store = configureStore();
     }
+    window.state = store.getState();
     const root = document.getElementById('root');
     ReactDOM.render(<Root store={store} />, root);
 });
