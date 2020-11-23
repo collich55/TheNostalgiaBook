@@ -59,7 +59,7 @@ class App extends React.Component {
             </header>
             <AuthRoute path="/" component={LogInFormContainer} />
             {this.handleModal()}
-            {this.checkSignIn()}
+            {/* {this.checkSignIn()} */}
             <button onClick={this.handleModalButton}  > Modal </button>
 
 
