@@ -21,7 +21,7 @@ const Greeting = ({ currentUser, logout, users }) => {
     if (currentUser) {
         return personalGreeting();
     } else {
-        return sessionLinks();
+        return null
     }
 
 };

@@ -9,6 +9,7 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
+        this.checkErrors = this.checkErrors.bind(this);
     }
 
     update(field) {
@@ -29,13 +30,21 @@ class SessionForm extends React.Component {
         this.props.processForm(demoUser)
     }
 
+    checkErrors() {
+        if (this.props.errors.base) {
+            return (this.props.errors.base.map(error => {
+                return { error }
+            }))
+        }
+    }
+
     renderErrors() {
         return (
             
             <div>
-                {this.props.errors.map((error) => (
-                    { error }
-                ))}
+                {
+                    this.checkErrors()
+                }
             </div>
             
         );

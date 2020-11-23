@@ -9,4 +9,4 @@
 User.destroy_all
 Post.destroy_all
 User.create!({ email: "random@gmail.com", password: "random", full_name: "Christopher Johnson", birth_date: "12/3/45", gender: "male" });
-Post.create!({ body: "This is a post!!!"})
+Post.create!({ body: "This is a post!!!", author_id: User.find_by(email: "random@gmail.com").id})

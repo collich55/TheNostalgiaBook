@@ -13,6 +13,7 @@ class SignUpForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
     }
+    
 
     update(field) {
         return e => this.setState({
