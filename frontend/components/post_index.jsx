@@ -10,14 +10,16 @@ class PostIndex extends React.Component {
     }
 
     render() {
-        const {posts, deletePost} = this.props;
+        const {posts, deletePost, test} = this.props;
+        
         return (
             <div>
                 <ul>
-                    {
+                    
                         
-                        posts.map( post => <p>{post.body}</p>  )
-                    }
+                        <p>{test.body}</p>
+                        <p>This might be working lol</p>
+                    
                 </ul>
             </div>
         )

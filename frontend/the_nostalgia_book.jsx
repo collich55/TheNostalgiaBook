@@ -1,7 +1,7 @@
 // import React from "react";
 // import ReactDOM from "react-dom";
 // import configureStore from "./store/store";
-import { Post } from "./util/post_api_util";
+import { createPost, fetchPosts} from "./util/post_api_util";
 
 // document.addEventListener("DOMContentLoaded", () => {
 
@@ -18,7 +18,8 @@ import Root from "./components/root";
 
 document.addEventListener('DOMContentLoaded', () => {
     let store;
-    window.post = Post;
+    window.post = createPost;
+    window.posts = fetchPosts;
     if (window.currentUser) {
         const preloadedState = {
             session: { id: window.currentUser.id },
