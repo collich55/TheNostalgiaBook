@@ -1,40 +1,40 @@
-import React from 'react';
+// import React from 'react';
 
 
 
 
-class PostIndex extends React.Component {
-
-    
-
-    componentDidMount() {
-        this.props.fetchPosts();
-    }
+// class PostIndex extends React.Component {
 
     
-    render() {
 
-        debugger
+//     componentDidMount() {
+//         // this.props.fetchPosts();
+//     }
+
+    
+//     render() {
+
+//         debugger
         
-        return (
-            <div>
-                <ul>
+//         return (
+//             <div>
+//                 <ul>
 
 
-                    {
-                        Object.values(this.props.posts).map(post =>  <p>{post["body"]}</p> )
-                    }
+//                     {
+//                         Object.values(this.props.posts).map(post =>  <p>{post["body"]}</p> )
+//                     }
                     
                         
                         
                     
-                </ul>
-            </div>
-        )
-    }
-}
+//                 </ul>
+//             </div>
+//         )
+//     }
+// }
 
-export default PostIndex
+// export default PostIndex
 
 
-//<button onClick={() => deletePost(post.id)}></button>
+// //<button onClick={() => deletePost(post.id)}></button>
