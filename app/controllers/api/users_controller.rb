@@ -15,7 +15,7 @@ class Api::UsersController < ApplicationController
     if @user 
       render :show
     else 
-      redirect_to "/"
+      render "/"
     end
 
   end

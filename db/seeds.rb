@@ -11,3 +11,4 @@ Post.destroy_all
 User.create!({ email: "random@gmail.com", password: "random", full_name: "Christopher Johnson", birth_date: "12/3/45", gender: "male" });
 User.create!({ email: "random2@gmail.com", password: "random2", full_name: "Christopher Johnson 2", birth_date: "12/3/45", gender: "male" });
 Post.create!({ body: "This is a post!!!", author_id: User.find_by(email: "random@gmail.com").id})
+Friendship.create!({requester_id: User.find_by(email: "random@gmail.com").id, requestee_id: User.find_by(email: "random2@gmail.com").id, accepted: false})
