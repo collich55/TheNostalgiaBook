@@ -24,7 +24,7 @@ class SignUpForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     renderErrors() {
@@ -43,12 +43,13 @@ class SignUpForm extends React.Component {
     handleDemo(e) {
         e.preventDefault();
         const demoUser = Object.assign({}, { email: 'random@gmail.com', password: 'random' })
-        this.props.processDemo(demoUser);
+        this.props.processDemo(demoUser).then(this.props.closeModal);
     }
 
     render() {
         return (
             <div className="signup-form-container">
+                <div onClick={this.props.closeModal} className="close-x">X</div>
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <p>Sign Up</p>
                     {this.renderErrors()}

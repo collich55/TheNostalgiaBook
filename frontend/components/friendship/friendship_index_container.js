@@ -5,7 +5,7 @@ import FriendshipIndex from './friendship_index';
 
 const mapStateToProps = ({ session, entities: { users, friendships } }) => {
 
-    console.log(friendships)
+    debugger
 
     return {
         currentUser: users[session.id],

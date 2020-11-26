@@ -21,13 +21,13 @@ class SessionForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         const user = Object.assign({}, this.state);
-        this.props.processForm(user);
+        this.props.processForm(user).then(this.props.closeModal);
     }
 
     handleDemo(e) {
         e.preventDefault();
         const demoUser = Object.assign({}, {email: 'random@gmail.com', password: 'random'})
-        this.props.processForm(demoUser)
+        this.props.processForm(demoUser).then(this.props.closeModal);
     }
 
     checkErrors() {
@@ -95,7 +95,7 @@ class SessionForm extends React.Component {
                
                 
                 <br />
-          {this.props.navLink}
+          {this.props.otherForm}
             </div>
         );
     }

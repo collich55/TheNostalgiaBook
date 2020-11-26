@@ -150,6 +150,18 @@ a.button  {
   padding: 10px;
 }
 
+#signup_button {
+  background-color: green;
+  border: none;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  border-radius: 10px;
+  height: 40px;
+}
+
 input {
   border-radius: 10px;
   padding: 10px;
