@@ -11,7 +11,7 @@ class FriendshipIndex extends React.Component {
 
 
     render() {
-        debugger
+        
         return (
             <div>
                     {

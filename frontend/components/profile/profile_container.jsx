@@ -9,7 +9,7 @@ import { showUser } from "../../actions/user_actions.js";
 const mapStateToProps = (state, ownProps) => {
 
     // if (Object.values(state.entities.users) > 0) {
-        debugger
+
         return ({
             email: state.entities.users[ownProps.match.params.userId].email,
             fullName: state.entities.users[ownProps.match.params.userId].full_name,

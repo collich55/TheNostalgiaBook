@@ -8,7 +8,7 @@ import FriendshipIndexContainer from '../friendship/friendship_index_container'
 class ProfileShow extends React.Component {
 
     componentDidMount() {
-        debugger
+       
         this.props.showUser(this.props.match.params.userId);
     }
 

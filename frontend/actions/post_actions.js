@@ -43,7 +43,7 @@ export const deletePost = postId => dispatch => (
 );
 
 export const fetchPosts = () => dispatch => {
-    debugger
+    
     return (APIUtil.fetchPosts()
         .then(posts => (dispatch(receivePosts(posts))), err => (
             dispatch(receiveErrors(err.responseJSON))

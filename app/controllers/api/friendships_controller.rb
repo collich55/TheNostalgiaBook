@@ -20,7 +20,7 @@ class Api::FriendshipsController < ApplicationController
         if @user 
             render :index
         else 
-            render "/"
+            render json: @friendship.errors.full_messages, status: 422
         end
 
     end

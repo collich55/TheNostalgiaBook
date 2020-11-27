@@ -31,6 +31,8 @@ class App extends React.Component {
             </header>
             
                 <AuthRoute path="/" component={Modal} />
+                <AuthRoute path="/" component={LogInFormContainer} />
+                {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
                 <Route path="/" component={GreetingContainer}/>
                 {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
                 <ProtectedRoute path="/users/:userId" component={ProfileContainer} />

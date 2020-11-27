@@ -3,6 +3,7 @@ import { RECEIVE_USER } from '../actions/user_actions';
 
 const usersReducer = (oldState = {}, action) => {
     Object.freeze(oldState);
+    
 
     let newState = Object.assign({}, oldState)
 
