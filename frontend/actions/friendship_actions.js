@@ -23,11 +23,14 @@ const receiveRequest = request => ({
 // });
 
 
-export const createRequest = request => dispatch => (
-    APIUtil.createRequest(request)
+export const createRequest = friendship => dispatch => {
+
+    debugger
+
+    return APIUtil.createRequest(friendship)
     .then(request => (dispatch(receiveRequest(request)))
     )
-);
+};
 
 // export const deleteRequest = requestId => dispatch => (
 //     APIUtil.deleteRequest(requestId)

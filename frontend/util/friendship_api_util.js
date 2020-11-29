@@ -1,10 +1,13 @@
-export const createRequest = request => (
-    $.ajax({
+export const createRequest = friendship => {
+
+    debugger
+
+    return $.ajax({
         method: 'POST',
         url: '/api/friendships',
-        data: { request }
+        data: { friendship }
     })
-);
+};
 
 export const acceptRequest = request_id => {
     return $.ajax({

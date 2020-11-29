@@ -4,7 +4,7 @@ class Api::FriendshipsController < ApplicationController
     def create
         @friendship = Friendship.new(friendship_params)
         if @friendship.save
-            render :index
+            render :show
         else
             render json: @friendship.errors.full_messages, status: 422
         end
@@ -24,6 +24,11 @@ class Api::FriendshipsController < ApplicationController
         end
 
     end
+
+
+    # def destroy
+    # end
+
 
 
 

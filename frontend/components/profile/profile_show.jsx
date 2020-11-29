@@ -10,6 +10,7 @@ class ProfileShow extends React.Component {
     constructor(props) {
         super(props)
         this.handleFriendRequest = this.handleFriendRequest.bind(this)
+        this.handleFriendAcceptance = this.handleFriendAcceptance.bind(this)
     }
 
     componentDidMount() {
@@ -45,8 +46,9 @@ class ProfileShow extends React.Component {
         this.props.createRequest({ requester_id: this.props.currentUserId, requestee_id: parseInt(this.props.userId), accepted: false})
     }
 
-    handleFriendAcceptace() {
-
+    handleFriendAcceptance() {
+        // this.props.destroyRequest(oneOrNonerequest[oneOrNonerequest.length - 1].id)
+        this.props.createRequest({ requester_id: this.props.currentUserId, requestee_id: parseInt(this.props.userId), accepted: true })
     }
 
     checkIfFriend() {
@@ -59,14 +61,14 @@ class ProfileShow extends React.Component {
             return <button  onClick={this.handleFriendRequest} >add friend</button>
         }
 
-        if (oneOrNonerequest[0].accepted == true) {
+        if (oneOrNonerequest[oneOrNonerequest.length - 1].accepted == true) {
             return <h2>you are friends</h2>
         } 
 
-        if ((oneOrNonerequest[0].accepted == false) && (oneOrNonerequest[0].requester_id == this.props.currentUserId)) {
+        if ((oneOrNonerequest[oneOrNonerequest.length - 1].accepted == false) && (oneOrNonerequest[oneOrNonerequest.length - 1].requester_id == this.props.currentUserId)) {
             return <h2>request is pending</h2>
         } else {
-            return <button onClick={this.handleFriendAcceptace}  >accept request</button>
+            return <button onClick={() => this.handleFriendAcceptance(oneOrNonerequest[oneOrNonerequest.length - 1])}  >accept request</button>
         }
 
         
