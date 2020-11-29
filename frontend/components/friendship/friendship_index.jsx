@@ -30,7 +30,30 @@ class FriendshipIndex extends React.Component {
 
     requestPending() {
         debugger
-        return Object.values(this.props.friendships).filter(request => (request.accepted === false) && (this.props.userId == request.requestee_id || this.props.userId == request.requester_id))
+        return Object.values(this.props.friendships).filter(request => (request.accepted === false) && (this.props.userId == request.requestee_id))
+    }
+
+    pendingShow() {
+        const pending = this.requestPending();
+        if (this.props.currentUser.id == this.props.userId){
+            return(
+
+                <ul id={"pending-box"}>
+                    <h1>Friend Requests:</h1>
+                    {
+                        pending.map(
+                            request => <PendingFriendshipItemContainer userId={this.props.userId} requester_id={request.requester_id} requestee_id={request.requestee_id} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
+                        )
+                    }
+                </ul>
+
+            )
+        } else {
+            return null
+        }
+
+            
+        
     }
 
 
@@ -38,7 +61,7 @@ class FriendshipIndex extends React.Component {
 
     render() {
         const friended = this.actuallyFriended();
-        const pending = this.requestPending();
+        
         return (
             <div id={"friend-box"}>
                 <ul id={"current-friend"}>
@@ -54,15 +77,8 @@ class FriendshipIndex extends React.Component {
 
                 <br/>
 
-                <ul id={"pending-box"}>
-                    <h1>Pending Requests:</h1>
-                    {
-                        pending.map(
-                            request => <PendingFriendshipItemContainer userId={this.props.userId} requester_id={request.requester_id} requestee_id={request.requestee_id} />
-                        )
-                    }
-                </ul>
-
+                
+                {this.pendingShow()}
                     
                        
 

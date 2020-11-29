@@ -11,6 +11,7 @@ class ProfileShow extends React.Component {
         super(props)
         this.handleFriendRequest = this.handleFriendRequest.bind(this)
         this.handleFriendAcceptance = this.handleFriendAcceptance.bind(this)
+        this.handleUnfriend = this.handleUnfriend.bind(this)
     }
 
     componentDidMount() {
@@ -51,6 +52,10 @@ class ProfileShow extends React.Component {
         this.props.createRequest({ requester_id: this.props.currentUserId, requestee_id: parseInt(this.props.userId), accepted: true })
     }
 
+    handleUnfriend(requestId) {
+        this.props.deleteRequest(requestId)
+    }
+
     checkIfFriend() {
         if (this.props.userId == this.props.currentUserId) {
             return null
@@ -62,7 +67,13 @@ class ProfileShow extends React.Component {
         }
 
         if (oneOrNonerequest[oneOrNonerequest.length - 1].accepted == true) {
-            return <h2>you are friends</h2>
+            return ( 
+                <div id={"unfriend"}>
+                    <h2>you are friends</h2>
+                    <button onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Unfriend</button> 
+                </div>
+            )
+
         } 
 
         if ((oneOrNonerequest[oneOrNonerequest.length - 1].accepted == false) && (oneOrNonerequest[oneOrNonerequest.length - 1].requester_id == this.props.currentUserId)) {
@@ -103,6 +114,9 @@ class ProfileShow extends React.Component {
     //    }
         return(
         <div id={"pro-page"}>
+
+            <img src="https://jetswire.usatoday.com/wp-content/uploads/sites/66/2019/01/usatsi_11997884.jpg?w=1000&h=600&crop=1" alt="Pro Pic"/>
+
             <div id={"name"}   >
                 <h1>{full_name}</h1>
                 {b}
@@ -128,7 +142,7 @@ class ProfileShow extends React.Component {
             <div id={"friend-box-all"}  >
                 <h1>Friends:</h1>
 
-                <FriendshipIndexContainer userId={this.props.userId} />
+                    <FriendshipIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
             </div>
             {/* <div id={"request-box"}>
 

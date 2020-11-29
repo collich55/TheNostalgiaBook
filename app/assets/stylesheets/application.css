@@ -155,7 +155,7 @@ h1     {
   display: flex;
   justify-content: space-between;
   width: 1000px;
-  margin-top: 200px;
+  margin-top: 125px;
   margin-left: 230px;
 }
 
@@ -387,6 +387,33 @@ input {
 
 ul > h1 {
   font-size: 25px;
+}
+
+#name {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#unfriend {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid white;
+    height: 200px;
+    width: 200px;
+}
+
+#all {
+  margin-bottom: 100px;
 }
   
 

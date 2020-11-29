@@ -15,7 +15,7 @@ const Bar = ({ currentUser, logout, users }) => {
             </div>
             <h2 className="bar-name">TheNostalgiaBook</h2>
             <div  id={"navright"}  >
-                <Link to={`users/${currentUser.id}`} replace  id={"proB"} >{currentUser.full_name}</Link>
+                <a href={`#/users/${currentUser.id}`} replace  id={"proB"} >{currentUser.full_name}</a>
                 <button className="bar-logout-button" onClick={logout}>Sign Out</button>
             </div>
             

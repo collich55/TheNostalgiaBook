@@ -53,6 +53,7 @@ class PendingFriendshipItem extends React.Component {
     render() {
         debugger
         let friend = this.nameDisplay();
+
         debugger
         // if (this.props.users.friend_id.email !== undefined) {
         //     debugger
@@ -62,11 +63,16 @@ class PendingFriendshipItem extends React.Component {
         // this.setState({email: friend.email})
         return (
             <div id={"friend-item-box"}>
-                {
+                <div>
+                    {
 
-                    <Link key={friend.id} replace to={`${friend.id}`} >{friend.full_name}</Link>
+                        <Link key={friend.id} replace to={`${friend.id}`} >{friend.full_name}</Link>
 
-                }
+                    }
+                </div>
+
+                {/* <button onClick={this.props.deleteRequest(friend.id)} >Reject</button> */}
+
             </div>
         )
     }
