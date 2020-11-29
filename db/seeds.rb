@@ -19,8 +19,9 @@ User.create!({ email: "random8@gmail.com", password: "random", full_name: "Maris
 User.create!({ email: "random9@gmail.com", password: "random", full_name: "James Dean", birth_date: "10/20/1998", gender: "male" });
 Post.create!({ body: "This is a post!!!", author_id: User.find_by(email: "random@gmail.com").id})
 Friendship.create!({requester_id: User.find_by(email: "random@gmail.com").id, requestee_id: User.find_by(email: "random2@gmail.com").id, accepted: false})
+Friendship.create!({requester_id: User.find_by(email: "random@gmail.com").id, requestee_id: User.find_by(email: "random3@gmail.com").id, accepted: true})
+Friendship.create!({requester_id: User.find_by(email: "random@gmail.com").id, requestee_id: User.find_by(email: "random4@gmail.com").id, accepted: true})
 Friendship.create!({requester_id: User.find_by(email: "random2@gmail.com").id, requestee_id: User.find_by(email: "random3@gmail.com").id, accepted: false})
-Friendship.create!({requester_id: User.find_by(email: "random2@gmail.com").id, requestee_id: User.find_by(email: "random4@gmail.com").id, accepted: false})
 Friendship.create!({requester_id: User.find_by(email: "random2@gmail.com").id, requestee_id: User.find_by(email: "random5@gmail.com").id, accepted: false})
 Friendship.create!({requester_id: User.find_by(email: "random2@gmail.com").id, requestee_id: User.find_by(email: "random6@gmail.com").id, accepted: false})
 Friendship.create!({requester_id: User.find_by(email: "random2@gmail.com").id, requestee_id: User.find_by(email: "random7@gmail.com").id, accepted: false})

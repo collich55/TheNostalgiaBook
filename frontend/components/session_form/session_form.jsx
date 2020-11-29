@@ -50,6 +50,10 @@ class SessionForm extends React.Component {
         );
     }
 
+    componentDidMount() {
+        this.props.fetchUsers();
+    }
+
     render() {
         return (
             <div className="login-form-container">

@@ -6,3 +6,9 @@ export const showUser = userId => (
         url: `/api/users/${userId}`
     })
 );
+
+export const fetchUsers = () => (
+    $.ajax({
+        url: '/api/users'
+    })
+);

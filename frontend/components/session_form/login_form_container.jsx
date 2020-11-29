@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { login } from '../../actions/session_actions';
 import SessionForm from './session_form';
 import { openModal, closeModal } from '../../actions/modal_actions';
+import { showUser, fetchUsers } from "../../actions/user_actions.js";
 
 const mapStateToProps = ({ errors }) => {
     return {
@@ -21,7 +22,8 @@ const mapDispatchToProps = dispatch => {
                 Create Account
             </button>
         ),
-        closeModal: () => dispatch(closeModal())
+        closeModal: () => dispatch(closeModal()),
+        fetchUsers: () => dispatch(fetchUsers())
     };
 };
 

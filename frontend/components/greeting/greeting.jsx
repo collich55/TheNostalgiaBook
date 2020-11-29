@@ -24,7 +24,9 @@ const Greeting = ({ currentUser, logout, users }) => {
     if (currentUser) {
         return personalGreeting();
     } else {
-        return null
+        return (<header id="head">
+            <h1>The Nostalgia Book</h1>
+        </header>)
     }
 
 };

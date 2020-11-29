@@ -54,6 +54,7 @@ class SignUpForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <p>Sign Up</p>
                     {this.renderErrors()}
+                    <br/>
                     <div className="login-form">
 
                         <input type="text"
@@ -94,6 +95,7 @@ class SignUpForm extends React.Component {
                             placeholder="Gender"
                         />
                         
+                        <br/>
                         
                         <input type="text"
                                 value={this.state.birth_date}

@@ -6,6 +6,7 @@ import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProfileContainer from "./profile/profile_container";
 import friendship_index_container from "./friendship/friendship_index_container";
 import Modal from './modal/modal';
+import Bar from './navbar/navbar_container'
 import {
     Route,
     Redirect,
@@ -21,27 +22,34 @@ class App extends React.Component {
 
     render() {
         return (
-        <div id="all">
-            {/* <div id="modal">
-                <Modal />
-            </div> */}
-        
-            <header id="head">
-                <h1>The Nostalgia Book</h1>
-            </header>
+        <div>
+            <div id={"navbar"}  >
+                    <ProtectedRoute path="/" component={Bar} />
+            </div>
             
-                <AuthRoute path="/" component={Modal} />
-                <AuthRoute path="/" component={LogInFormContainer} />
-                {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
-                <Route path="/" component={GreetingContainer}/>
-                {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
-                <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
+            <div id="all">
+                {/* <div id="modal">
+                    <Modal />
+                </div> */}
+
+                    <AuthRoute path="/" component={GreetingContainer} />
+
+                    
+
                 
-            
-            {/* {this.checkSignIn()} */}
-            {/* <button onClick={this.handleModalButton}  > Modal </button> */}
+                    <AuthRoute path="/" component={Modal} />
+                    <AuthRoute path="/" component={LogInFormContainer} />
+                    {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
+                    
+                    {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
+                    <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
+                    
+                
+                {/* {this.checkSignIn()} */}
+                {/* <button onClick={this.handleModalButton}  > Modal </button> */}
 
 
+            </div>
         </div>
         )
     }

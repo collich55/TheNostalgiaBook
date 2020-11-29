@@ -3,15 +3,16 @@ import { connect } from 'react-redux';
 import { fetchRequests } from '../../actions/friendship_actions';
 import { showUser } from '../../actions/user_actions';
 
-import FriendshipIndex from './friendship_index';
+import FriendshipItem from './friendship_item';
 
 const mapStateToProps = ({ session, entities: { users, friendships } }) => {
 
-  
 
+    debugger
     return {
         currentUser: users[session.id],
-        friendships: friendships
+        friendships: friendships,
+        users: users
     };
 };
 
@@ -20,4 +21,4 @@ const mapDispatchToProps = dispatch => ({
     showUser: userId => dispatch(showUser(userId))
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(FriendshipIndex);
+export default connect(mapStateToProps, mapDispatchToProps)(FriendshipItem);
