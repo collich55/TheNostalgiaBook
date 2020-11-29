@@ -40,11 +40,19 @@ class FriendshipItem extends React.Component {
     //     }
     // }
 
+    nameDisplay() {
+        if (this.props.requestee_id == this.props.userId) {
+            return this.props.users[this.props.requester_id]
+        } else {
+            return this.props.users[this.props.requestee_id]
+        }
+    }
+
 
 
     render() {
         debugger
-        let friend = this.props.users[this.props.requestee_id]
+        let friend = this.nameDisplay();
         debugger
         // if (this.props.users.friend_id.email !== undefined) {
         //     debugger
@@ -56,7 +64,7 @@ class FriendshipItem extends React.Component {
             <div id={"friend-item-box"}>
                 {
                 
-                <Link key={this.props.requestee_id} replace to={`${friend.id}`} >{friend.full_name}</Link>
+                <Link key={friend.id} replace to={`${friend.id}`} >{friend.full_name}</Link>
                     
                 }
             </div>

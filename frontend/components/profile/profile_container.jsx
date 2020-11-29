@@ -2,7 +2,7 @@ import ProfileShow from "./profile_show.jsx";
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { fetchRequests } from '../../actions/friendship_actions';
+import { fetchRequests, createRequest } from '../../actions/friendship_actions';
 
 import { showUser, fetchUsers } from "../../actions/user_actions.js";
 
@@ -19,7 +19,8 @@ const mapStateToProps = (state, ownProps) => {
             // userId: state.entities.users[ownProps.match.params.userId].id
             users: state.entities.users,
             userId: ownProps.match.params.userId,
-            friendships: state.entities.friendships
+            friendships: state.entities.friendships,
+            currentUserId: state.session.id
         })
     // } else {
     //     return {}
@@ -32,6 +33,8 @@ const mapDispatchToProps = dispatch => {
         showUser: userId => dispatch(showUser(userId)),
         fetchUsers: () => dispatch(fetchUsers()),
         fetchRequests: () => dispatch(fetchRequests()),
+        createRequest: info => dispatch(createRequest(info))
+
 
     });
 };

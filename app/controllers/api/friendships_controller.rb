@@ -11,7 +11,7 @@ class Api::FriendshipsController < ApplicationController
     end
 
     def index
-        @friendships = current_user.friend_requests
+        @friendships = Friendship.all
         render :index
     end
 

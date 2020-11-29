@@ -22,8 +22,11 @@ class FriendshipIndex extends React.Component {
     }
 
     actuallyFriended() {
-        return Object.values(this.props.friendships).filter(request => request.accepted === true)
+        debugger
+        return Object.values(this.props.friendships).filter(request => (request.accepted === true) && (this.props.userId == request.requestee_id || this.props.userId == request.requester_id))
     }
+
+
 
 
     render() {
@@ -33,7 +36,7 @@ class FriendshipIndex extends React.Component {
                 <ul>
                     {
                         friended.map(
-                            request => <FriendshipItemContainer requestee_id={request.requestee_id} />
+                            request => <FriendshipItemContainer userId={this.props.userId} requester_id={request.requester_id} requestee_id={request.requestee_id} />
                         )
                     }
                 </ul>
