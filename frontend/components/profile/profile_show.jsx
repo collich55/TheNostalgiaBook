@@ -46,8 +46,8 @@ class ProfileShow extends React.Component {
         this.props.createRequest({ requester_id: this.props.currentUserId, requestee_id: parseInt(this.props.userId), accepted: false})
     }
 
-    handleFriendAcceptance() {
-        // this.props.destroyRequest(oneOrNonerequest[oneOrNonerequest.length - 1].id)
+    handleFriendAcceptance(requestId) {
+        this.props.deleteRequest(requestId)
         this.props.createRequest({ requester_id: this.props.currentUserId, requestee_id: parseInt(this.props.userId), accepted: true })
     }
 
@@ -68,10 +68,23 @@ class ProfileShow extends React.Component {
         if ((oneOrNonerequest[oneOrNonerequest.length - 1].accepted == false) && (oneOrNonerequest[oneOrNonerequest.length - 1].requester_id == this.props.currentUserId)) {
             return <h2>request is pending</h2>
         } else {
-            return <button onClick={() => this.handleFriendAcceptance(oneOrNonerequest[oneOrNonerequest.length - 1])}  >accept request</button>
+            return <button onClick={() => this.handleFriendAcceptance(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >accept request</button>
         }
 
         
+    }
+
+    requestPending() {
+        debugger
+        return Object.values(this.props.friendships).filter(request => (request.accepted === false) && (this.props.userId == request.requestee_id || this.props.userId == request.requester_id))
+    }
+
+    nameDisplay() {
+        if (this.props.requestee_id == this.props.userId) {
+            return this.props.users[this.props.requester_id]
+        } else {
+            return this.props.users[this.props.requestee_id]
+        }
     }
 
     
@@ -79,6 +92,7 @@ class ProfileShow extends React.Component {
 
     render() {
        debugger
+       let pending = this.requestPending();
     //    const {full_name, birth_date, gender, email} = this.props.users[this.props.userId]
         
          const {full_name, gender, birth_date,  } = this.props.users[this.props.userId]
@@ -111,11 +125,23 @@ class ProfileShow extends React.Component {
 
             </div>
             <br/>
-            <div id={"friend-box"}  >
+            <div id={"friend-box-all"}  >
                 <h1>Friends:</h1>
 
                 <FriendshipIndexContainer userId={this.props.userId} />
             </div>
+            {/* <div id={"request-box"}>
+
+                <ul>
+                    {
+                        pending.map(
+                            request => <p></p>
+                        )
+                    }
+                </ul>
+
+
+            </div> */}
             
         
         </div>

@@ -22,3 +22,11 @@ export const fetchRequests = () => {
     })
 };
 
+export const destroyRequest = (requestId) => {
+    debugger
+    return $.ajax({
+        method: 'DELETE',
+        url: `/api/friendships/${requestId}`
+    })
+}
+

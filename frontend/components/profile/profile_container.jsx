@@ -2,7 +2,7 @@ import ProfileShow from "./profile_show.jsx";
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { fetchRequests, createRequest } from '../../actions/friendship_actions';
+import { fetchRequests, createRequest, deleteRequest } from '../../actions/friendship_actions';
 
 import { showUser, fetchUsers } from "../../actions/user_actions.js";
 
@@ -33,7 +33,9 @@ const mapDispatchToProps = dispatch => {
         showUser: userId => dispatch(showUser(userId)),
         fetchUsers: () => dispatch(fetchUsers()),
         fetchRequests: () => dispatch(fetchRequests()),
-        createRequest: info => dispatch(createRequest(info))
+        createRequest: info => dispatch(createRequest(info)),
+        deleteRequest: requestId => dispatch(deleteRequest(requestId))
+
 
 
     });

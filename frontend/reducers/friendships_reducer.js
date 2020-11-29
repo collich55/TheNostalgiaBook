@@ -1,4 +1,4 @@
-import { RECEIVE_REQUEST, RECEIVE_REQUESTS } from "../actions/friendship_actions";
+import { RECEIVE_REQUEST, RECEIVE_REQUESTS, REMOVE_REQUEST } from "../actions/friendship_actions";
 
 const friendshipsReducer = (state = {}, action) => {
     Object.freeze(state);
@@ -12,6 +12,10 @@ const friendshipsReducer = (state = {}, action) => {
         case RECEIVE_REQUEST:
             // if (newState[action.request.id]) {
             newState[action.request.id] = action.request;
+            return newState;
+        case REMOVE_REQUEST:
+            // if (newState[action.request.id]) {
+            delete newState[action.requestId]
             return newState;
             // } else {
             //     return state
