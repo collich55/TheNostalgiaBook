@@ -1,10 +1,10 @@
 import React from 'react';
 
-class SignUpForm extends React.Component {
+class UpdateForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: '',
+            email: "",
             password: '',
             gender: "",
             birth_date: "",
@@ -16,7 +16,7 @@ class SignUpForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
     }
-    
+
 
     update(field) {
         return e => this.setState({
@@ -57,7 +57,7 @@ class SignUpForm extends React.Component {
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <p>Sign Up</p>
                     {this.renderErrors()}
-                    <br/>
+                    <br />
                     <div className="login-form">
 
                         <input type="text"
@@ -69,27 +69,27 @@ class SignUpForm extends React.Component {
                         />
 
                         <br />
-                        
-                            <input type="text"
-                                value={this.state.email}
-                                onChange={this.update('email')}
-                                className="login-input"
-                                id="sign_email"
-                                placeholder="Email"
-                            />
-                        
+
+                        <input type="text"
+                            value={this.state.email}
+                            onChange={this.update('email')}
+                            className="login-input"
+                            id="sign_email"
+                            placeholder="Email"
+                        />
+
                         <br />
-                        
-              <input type="password"
-                                value={this.state.password}
-                                onChange={this.update('password')}
-                                className="login-input"
-                                id="sign_password"
-                                placeholder="Password"
-                            />
-                        
+
+                        <input type="password"
+                            value={this.state.password}
+                            onChange={this.update('password')}
+                            className="login-input"
+                            id="sign_password"
+                            placeholder="Password"
+                        />
+
                         <br />
-                        
+
                         <input type="text"
                             value={this.state.gender}
                             onChange={this.update('gender')}
@@ -97,21 +97,21 @@ class SignUpForm extends React.Component {
                             id="gender"
                             placeholder="Gender"
                         />
-                        
-                        <br/>
-                        
+
+                        <br />
+
                         <input type="text"
-                                value={this.state.birth_date}
-                                onChange={this.update('birth_date')}
-                                className="login-input"
-                                id="birthdate"
-                                placeholder="Birth Date"
-                            />
-                        
-                        
-                        
-                       
-                    <br />
+                            value={this.state.birth_date}
+                            onChange={this.update('birth_date')}
+                            className="login-input"
+                            id="birthdate"
+                            placeholder="Birth Date"
+                        />
+
+
+
+
+                        <br />
 
 
                         <input type="text"
@@ -144,8 +144,8 @@ class SignUpForm extends React.Component {
                             placeholder="Image Url (optional)"
                         />
 
-                        <br/>
-                        <br/>
+                        <br />
+                        <br />
 
                         <input className="session-submit" type="submit" value={this.props.formType} />
                     </div>
@@ -155,4 +155,4 @@ class SignUpForm extends React.Component {
     }
 }
 
-export default SignUpForm;
+export default UpdateForm;

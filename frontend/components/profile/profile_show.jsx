@@ -98,12 +98,22 @@ class ProfileShow extends React.Component {
         }
     }
 
+    proPicMaybe() {
+        if (this.props.users[this.props.userId].written_bio == "") {
+            return <img src={"https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"} alt="Pro Pic" />
+        } else {
+            return <img src={this.props.users[this.props.userId].written_bio} alt="Pro Pic" />
+        }
+        
+    }
+
     
 
 
     render() {
        debugger
        let pending = this.requestPending();
+       let proPic = this.proPicMaybe();
     //    const {full_name, birth_date, gender, email} = this.props.users[this.props.userId]
         
          const {full_name, gender, birth_date,  } = this.props.users[this.props.userId]
@@ -115,7 +125,7 @@ class ProfileShow extends React.Component {
         return(
         <div id={"pro-page"}>
 
-            <img src="https://jetswire.usatoday.com/wp-content/uploads/sites/66/2019/01/usatsi_11997884.jpg?w=1000&h=600&crop=1" alt="Pro Pic"/>
+                {proPic}
 
             <div id={"name"}   >
                 <h1>{full_name}</h1>
@@ -135,6 +145,10 @@ class ProfileShow extends React.Component {
                 <br/>
                 <h2>Birthday: {birth_date}</h2>
                 <h2>Gender: {gender}</h2>
+                <h2>School: {this.props.users[this.props.userId].school}</h2>
+                <h2>Location: {this.props.users[this.props.userId].location}</h2>
+                
+            
 
 
             </div>

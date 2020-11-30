@@ -17,6 +17,17 @@ export const signup = user => {
     })
 };
 
+export const update = user => {
+
+    debugger
+
+    return $.ajax({
+        method: 'UPDATE',
+        url: `/api/users/${user.id}`,
+        data: { user }
+    })
+};
+
 export const logout = () => (
     $.ajax({
         method: 'DELETE',

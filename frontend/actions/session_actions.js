@@ -38,3 +38,11 @@ export const logout = () => dispatch => (
         .then(() => (dispatch(logoutCurrentUser())
         ))
 );
+
+export const update = user => dispatch => {
+    return (APIUtil.update(user)
+        .then(user => (dispatch(receiveCurrentUser(user)))), err => (
+            dispatch(receiveErrors(err.responseJSON))
+        )
+    )
+};
