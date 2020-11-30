@@ -1,25 +1,21 @@
-# README
+The Nostalgia Book is a Facebook clone hosted on heroku.
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+The Nostalgia Book currently supports user auth login, signup, sign out features. 
 
-Things you may want to cover:
+<img width="1438" alt="Screen Shot 2020-11-30 at 9 38 10 AM" src="https://user-images.githubusercontent.com/62472030/100623415-23da9700-32f0-11eb-98c9-b587bf78c3bf.png">
+<img width="1440" alt="Screen Shot 2020-11-30 at 9 38 24 AM" src="https://user-images.githubusercontent.com/62472030/100623503-4371bf80-32f0-11eb-85fb-6c2d17a2049f.png">
 
-* Ruby version
 
-* System dependencies
+The Nostalgia Book supports user profiles which displays sign up information, including pictures provided via web link.
 
-* Configuration
+The Nostalgia Book also has a robust friending system. Sending sending, receiving, accepting, and unfriending are all supported, allowing for the creation of large networks of connections.
 
-* Database creation
+<img width="1440" alt="Screen Shot 2020-11-30 at 9 38 43 AM" src="https://user-images.githubusercontent.com/62472030/100623537-4c629100-32f0-11eb-89dd-f4db21da18d0.png">
+<img width="1440" alt="Screen Shot 2020-11-30 at 9 39 34 AM" src="https://user-images.githubusercontent.com/62472030/100623569-54bacc00-32f0-11eb-8d49-a67da74dbeed.png">
+<img width="1440" alt="Screen Shot 2020-11-30 at 9 39 46 AM" src="https://user-images.githubusercontent.com/62472030/100624607-a0ba4080-32f1-11eb-84df-a1dca9b8d0ec.png">
+<img width="1440" alt="Screen Shot 2020-11-30 at 9 39 57 AM" src="https://user-images.githubusercontent.com/62472030/100624619-a57ef480-32f1-11eb-8c43-4f5141b2f554.png">
+The Nostalgia Book plans on adding posts, timelines, and profile editing as well as other features required to make a fully immersive modern social media experience.
+ 
+ 
 
-* Database initialization
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-# TheNostalgiaBook
