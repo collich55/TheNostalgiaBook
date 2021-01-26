@@ -43,7 +43,7 @@ class ProfileShow extends React.Component {
     // }
 
     handleFriendRequest() {
-        debugger
+ 
         this.props.createRequest({ requester_id: this.props.currentUserId, requestee_id: parseInt(this.props.userId), accepted: false})
     }
 
@@ -86,7 +86,7 @@ class ProfileShow extends React.Component {
     }
 
     requestPending() {
-        debugger
+  
         return Object.values(this.props.friendships).filter(request => (request.accepted === false) && (this.props.userId == request.requestee_id || this.props.userId == request.requester_id))
     }
 
@@ -111,7 +111,7 @@ class ProfileShow extends React.Component {
 
 
     render() {
-       debugger
+
        let pending = this.requestPending();
        let proPic = this.proPicMaybe();
     //    const {full_name, birth_date, gender, email} = this.props.users[this.props.userId]

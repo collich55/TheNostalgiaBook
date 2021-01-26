@@ -18,18 +18,18 @@ class FriendshipIndex extends React.Component {
     
 
     componentDidMount() {
-        debugger
+       
         this.props.fetchRequests();
-        debugger
+      
     }
 
     actuallyFriended() {
-        debugger
+   
         return Object.values(this.props.friendships).filter(request => (request.accepted === true) && (this.props.userId == request.requestee_id || this.props.userId == request.requester_id))
     }
 
     requestPending() {
-        debugger
+   
         return Object.values(this.props.friendships).filter(request => (request.accepted === false) && (this.props.userId == request.requestee_id))
     }
 

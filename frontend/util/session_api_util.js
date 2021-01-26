@@ -8,7 +8,7 @@ export const login = user => (
 
 export const signup = user => {
 
-    debugger
+
     
     return $.ajax({
         method: 'POST',
@@ -19,7 +19,7 @@ export const signup = user => {
 
 export const update = user => {
 
-    debugger
+
 
     return $.ajax({
         method: 'UPDATE',
