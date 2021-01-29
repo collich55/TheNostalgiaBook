@@ -90,15 +90,36 @@ class SignUpForm extends React.Component {
                         
                         <br />
                         
-                        <input type="text"
-                            value={this.state.gender}
+                        <div className="login-input" id="gender-select" >
+                        <input type="radio"
+                            value={"Male"}
                             onChange={this.update('gender')}
-                            className="login-input"
-                            id="gender"
-                            placeholder="Gender"
+                            name="gender"
+                            id="male"
                         />
+
+                        <label for="male">Male</label><br></br>
+
+                        <input type="radio"
+                            value={"Female"}
+                            onChange={this.update('gender')}
+                            name="gender"
+                            id="female"
+                        />
+
+                        <label for="female">Female</label><br></br>
+
+                        <input type="radio"
+                            value={"Female"}
+                            onChange={this.update('gender')}
+                            name="gender"
+                            id="other"
+                        />
+
+                        <label for="other">Other</label><br></br>
                         
                         <br/>
+                        </div>
                         
                         <input type="text"
                                 value={this.state.birth_date}

@@ -109,6 +109,12 @@ body {
   flex: 1;
 }
 
+#gender-select {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 
 h1     {
     display: flex;
