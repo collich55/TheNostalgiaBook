@@ -9,6 +9,7 @@ class SignUpForm extends React.Component {
             gender: "",
             birth_date: "",
             full_name: "",
+            last_name: "",
             school: "",
             location: "",
             written_bio: ""
@@ -53,20 +54,37 @@ class SignUpForm extends React.Component {
     render() {
         return (
             <div className="signup-form-container">
-                <div onClick={this.props.closeModal} className="close-x">X</div>
+                <div className="close-x">
+                    <img onClick={this.props.closeModal} className="close-x-item" src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png" alt="" width="24" height="24"></img>
+                </div>
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
-                    <p>Sign Up</p>
+                    <div className="sign-up-text-area">
+                        <p className="sign-up-text" >Sign Up</p>
+                        <p className="quick-and-easy-text" >It's quick and easy.</p>
+                    </div>
                     {this.renderErrors()}
                     <br/>
                     <div className="login-form">
+
+                        <div className="names" >
 
                         <input type="text"
                             value={this.state.full_name}
                             onChange={this.update('full_name')}
                             className="login-input"
                             id="fullname"
-                            placeholder="Full Name"
+                            placeholder="First Name"
                         />
+
+                            <input type="text"
+                                value={this.state.last_name}
+                                onChange={this.update('last_name')}
+                                className="login-input"
+                                id="fullname"
+                                placeholder="Last Name"
+                            />
+
+                        </div>
 
                         <br />
                         

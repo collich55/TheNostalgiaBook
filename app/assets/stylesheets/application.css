@@ -115,6 +115,39 @@ body {
   justify-content: space-between;
 }
 
+.names {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.close-x {
+  text-align: right;
+}
+
+.close-x-item {
+  height: 24;
+  width: 24;
+}
+
+.sign-up-text {
+  color: #1c1e21;
+  font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif;
+  font-size: 32px;
+  line-height: 38px;
+}
+
+.sign-up-text-area {
+  border-bottom: 1px solid #dadde1;
+}
+
+.quick-and-easy-text {
+  color: #606770;
+  font-family: SFProText-Regular, Helvetica, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 24px;
+}
+
 
 h1     {
     display: flex;
@@ -149,7 +182,7 @@ h1     {
   border-radius: 10px;
   box-sizing: border-box;
   font-family: 'Ubuntu', sans-serif;
-  width: 300px;
+  width: 432px;
 
 }
 
@@ -408,7 +441,7 @@ ul > h1 {
   align-items: center;
 }
 
-img {
+/* img {
     height: 100%;
     width: 100%;
     border-radius: 50%;
@@ -416,7 +449,7 @@ img {
     border: 5px solid white;
     height: 200px;
     width: 200px;
-}
+} */
 
 #all {
   margin-bottom: 100px;
