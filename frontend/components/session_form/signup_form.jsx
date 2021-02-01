@@ -7,7 +7,11 @@ class SignUpForm extends React.Component {
             email: '',
             password: '',
             gender: "",
-            birth_date: "",
+            // birth_date: "Jan/1/2020",
+            birth_day: "1",
+            birth_month: "Jan",
+            birth_year: "2020",
+            done: false,
             full_name: "",
             last_name: "",
             school: "",
@@ -17,27 +21,48 @@ class SignUpForm extends React.Component {
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
         this.handleXButton = this.handleXButton.bind(this);
+        this.update = this.update.bind(this);
     }
 
 
     update(field) {
-        return e => this.setState({
-            [field]: e.currentTarget.value
-        });
+        return e => {
+            this.setState({
+                [field]: e.currentTarget.value,
+                // ["birth_date"]: [this.state["birth_month"]] + "/" + [this.state["birth_day"]] + "/" + [this.state["birth_year"]]
+            })
+        }
     }
+
+    // updateDOB() {
+    //     this.setState({
+    //         ["birth_date"]: [this.state["birth_month"]] + "/" + [this.state["birth_day"]] + "/" + [this.state["birth_year"]]
+    //     });
+    // }
+
+  
+
+   
+   
+
+    
+
+
+
 
     handleSubmit(e) {
         e.preventDefault();
-        const user = Object.assign({}, this.state);
+        const birthdate = { "birth_date": [this.state["birth_month"]] + "/" + [this.state["birth_day"]] + "/" + [this.state["birth_year"]]}
+        const user = Object.assign({}, this.state, birthdate);
         this.props.closeModal();
         this.props.processForm(user).then(this.props.closeModal());;
     }
 
     handleXButton(e) {
-        console.log("workkkk???///")
         e.preventDefault();
         this.props.closeModal();
     }
+
 
     renderErrors() {
         return (
@@ -128,7 +153,7 @@ class SignUpForm extends React.Component {
                             </div>
 
                             <div className="birthdate-dropdowns">
-                                <select name="month" id="month">
+                                <select onChange={this.update("birth_month")} name="month" id="month">
                                     <option value="Jan">Jan</option>
                                     <option value="Feb">Feb</option>
                                     <option value="Mar">Mar</option>
@@ -144,7 +169,7 @@ class SignUpForm extends React.Component {
                                 </select>
 
 
-                                <select name="day" id="day">
+                                <select onChange={this.update("birth_day")} name="day" id="day">
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
@@ -178,7 +203,7 @@ class SignUpForm extends React.Component {
                                     <option value="31">31</option>
                                 </select>
 
-                                <select name="year" id="year">
+                                <select onChange={this.update("birth_year")} name="year" id="year">
                                     <option value="2020">2020</option>
                                     <option value="2019">2019</option>
                                     <option value="2018">2018</option>
