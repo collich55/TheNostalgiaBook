@@ -25,7 +25,12 @@ const Greeting = ({ currentUser, logout, users }) => {
         return personalGreeting();
     } else {
         return (<header id="head">
-            <h1>The Nostalgia Book</h1>
+            <div className="title-text-box">
+                <h1 className="title-text">The Nostalgia Book</h1>
+            </div>
+            <div className="under-header-text-box">
+                <h2 className="under-header-text" >Connect with friends and the world around you on The Nostalgia Book.</h2>
+            </div>
         </header>)
     }
 

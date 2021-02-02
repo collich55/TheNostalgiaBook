@@ -81,7 +81,7 @@ class SessionForm extends React.Component {
                                 placeholder="Password"
                             />
                         <br />
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        <input className="session-submit" type="submit" value="Log In" />
                         
                     </div>
                 </form>
@@ -89,6 +89,9 @@ class SessionForm extends React.Component {
                     
                 <br />
                 <br />
+                <div className="just_line">
+
+                </div>
                 <br />
            
                 
@@ -99,7 +102,9 @@ class SessionForm extends React.Component {
                
                 
                 <br />
-          {this.props.otherForm}
+                <div className="signup_button_div">
+                    {this.props.otherForm}
+                </div>
             </div>
         );
     }
