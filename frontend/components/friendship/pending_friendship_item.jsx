@@ -66,7 +66,7 @@ class PendingFriendshipItem extends React.Component {
                 <div>
                     {
 
-                        <Link key={friend.id} replace to={`${friend.id}`} >{friend.full_name}</Link>
+                        <Link key={friend.id} replace to={`${friend.id}`} >{friend.full_name + " " + friend.last_name}</Link>
 
                     }
                 </div>

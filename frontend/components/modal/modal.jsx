@@ -19,6 +19,10 @@ function Modal({modal, closeModal}) {
      
       component = <SignupFormContainer />;
       break;
+    case 'profile-pic':
+
+      component = <SignupFormContainer />;
+      break;
     default:
       
       return null;

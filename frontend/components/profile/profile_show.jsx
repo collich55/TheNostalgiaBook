@@ -99,10 +99,10 @@ class ProfileShow extends React.Component {
     }
 
     proPicMaybe() {
-        if (this.props.users[this.props.userId].written_bio == "") {
-            return <img src={"https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"} alt="Pro Pic" />
+        if (!this.props.users[this.props.userId].profile_photo_link || this.props.users[this.props.userId].profile_photo_link === "") {
+            return <img className="pro-pic" src={"https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"} alt="Pro Pic" />
         } else {
-            return <img src={this.props.users[this.props.userId].written_bio} alt="Pro Pic" />
+            return <img className="pro-pic" src={this.props.users[this.props.userId].profile_photo_link} alt="Pro Pic" />
         }
         
     }
@@ -116,7 +116,7 @@ class ProfileShow extends React.Component {
        let proPic = this.proPicMaybe();
     //    const {full_name, birth_date, gender, email} = this.props.users[this.props.userId]
         
-         const {full_name, gender, birth_date,  } = this.props.users[this.props.userId]
+         const {full_name, last_name, gender, birth_date,  } = this.props.users[this.props.userId]
          let b = this.checkIfFriend();
 
     //    if (!full_name) {
@@ -128,7 +128,7 @@ class ProfileShow extends React.Component {
                 {proPic}
 
             <div id={"name"}   >
-                <h1>{full_name}</h1>
+                <h1>{full_name + " " + last_name}</h1>
                 {b}
             </div>
            
