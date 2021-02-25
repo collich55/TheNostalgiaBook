@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchRequests, createRequest, deleteRequest } from '../../actions/friendship_actions';
+import { fetchPosts } from '../../actions/post_actions';
 
 import { showUser, fetchUsers } from "../../actions/user_actions.js";
 
@@ -33,6 +34,7 @@ const mapDispatchToProps = dispatch => {
         showUser: userId => dispatch(showUser(userId)),
         fetchUsers: () => dispatch(fetchUsers()),
         fetchRequests: () => dispatch(fetchRequests()),
+        fetchPosts: () => dispatch(fetchPosts()),
         createRequest: info => dispatch(createRequest(info)),
         deleteRequest: requestId => dispatch(deleteRequest(requestId))
 

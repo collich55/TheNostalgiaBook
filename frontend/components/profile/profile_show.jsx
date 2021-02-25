@@ -114,6 +114,7 @@ class ProfileShow extends React.Component {
 
        let pending = this.requestPending();
        let proPic = this.proPicMaybe();
+       let posts = this.props.fetchPosts();
     //    const {full_name, birth_date, gender, email} = this.props.users[this.props.userId]
         
          const {full_name, last_name, gender, birth_date,  } = this.props.users[this.props.userId]
