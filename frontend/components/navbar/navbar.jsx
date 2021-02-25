@@ -13,7 +13,7 @@ const Bar = ({ currentUser, logout, users }) => {
                 <i id={"home"}class="material-icons">home</i>
                 <Link to={'/'} id={"homeB"}  >Home</Link>
             </div>
-            <h2 className="bar-name">TheNostalgiaBook</h2>
+            <h2 className="bar-name"></h2>
             <div  id={"navright"}  >
                 <a href={`#/users/${currentUser.id}`} replace  id={"proB"} >{currentUser.full_name}</a>
                 <button className="bar-logout-button" onClick={logout}>Sign Out</button>
