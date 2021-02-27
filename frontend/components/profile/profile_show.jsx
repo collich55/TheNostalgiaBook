@@ -1,6 +1,7 @@
 
 import React from 'react';
 import FriendshipIndexContainer from '../friendship/friendship_index_container'
+import PostIndexContainer from '../post/post_index_container'
 
 
 
@@ -158,6 +159,7 @@ class ProfileShow extends React.Component {
                 <h1>Friends:</h1>
 
                     <FriendshipIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
+                    <PostIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
             </div>
             {/* <div id={"request-box"}>
 
