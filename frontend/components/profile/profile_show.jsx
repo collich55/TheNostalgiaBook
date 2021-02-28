@@ -159,7 +159,6 @@ class ProfileShow extends React.Component {
                 <h1>Friends:</h1>
 
                     <FriendshipIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
-                    <PostIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
             </div>
             {/* <div id={"request-box"}>
 

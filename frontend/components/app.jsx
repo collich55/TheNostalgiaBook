@@ -4,7 +4,7 @@ import LogInFormContainer from './session_form/login_form_container';
 import GreetingContainer from "./greeting/greeting_container";
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import ProfileContainer from "./profile/profile_container";
-import friendship_index_container from "./friendship/friendship_index_container";
+import Homepage from "./homepage/homepage_container";
 import Modal from './modal/modal';
 import Bar from './navbar/navbar_container'
 import {
@@ -43,6 +43,7 @@ class App extends React.Component {
                     
                     {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
                     <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
+                    <ProtectedRoute path="/" component={Homepage} />
                     
                 
                 {/* {this.checkSignIn()} */}

@@ -1,4 +1,5 @@
 import React from 'react';
+import PostItem from './post_index_item';
 
 
 
@@ -12,17 +13,19 @@ class PostIndex extends React.Component {
     }
 
     
+
+    
     render() {
 
        
         
         return (
             <div>
-                <ul>
+                <ul  >
 
 
                     {
-                        Object.values(this.props.posts).map(post =>  <p>{post["body"]}</p> )
+                        Object.values(this.props.posts).map(post =>  <PostItem authorId={post.author_id} body={post.body} users={this.props.users} /> )
                     }
                     
                         
