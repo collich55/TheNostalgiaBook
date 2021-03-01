@@ -70,8 +70,8 @@ class PostForm extends React.Component {
                 </div>
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <div className="sign-up-text-area">
-                        <p className="sign-up-text" >Sign Up</p>
-                        <p className="quick-and-easy-text" >It's quick and easy.</p>
+                        <p className="sign-up-text" >Create Post</p>
+                        
                     </div>
                     {this.renderErrors()}
                     <div className="login-form">

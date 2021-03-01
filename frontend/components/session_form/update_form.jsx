@@ -4,14 +4,14 @@ class UpdateForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: "",
-            password: '',
-            gender: "",
-            birth_date: "",
-            full_name: "",
-            school: "",
-            location: "",
-            written_bio: ""
+            email: this.props.currentUser.email,
+            password: this.props.currentUser.password,
+            gender: this.props.currentUser.gender,
+            birth_date: this.props.currentUser.birth_date,
+            full_name: this.props.currentUser.full_name,
+            school: this.props.currentUser.school,
+            location: this.props.currentUser.location,
+            written_bio: this.props.currentUser.written_bio,
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
@@ -53,22 +53,36 @@ class UpdateForm extends React.Component {
     render() {
         return (
             <div className="signup-form-container">
-                <div onClick={this.props.closeModal} className="close-x">X</div>
+                <div className="close-x">
+                    <img onClick={this.handleXButton} className="close-x-item" src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png" alt="" width="24" height="24"></img>
+                </div>
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
-                    <p>Sign Up</p>
+                    <div className="sign-up-text-area">
+                        <p className="sign-up-text" >Sign Up</p>
+                        <p className="quick-and-easy-text" >It's quick and easy.</p>
+                    </div>
                     {this.renderErrors()}
-                    <br />
                     <div className="login-form">
 
-                        <input type="text"
-                            value={this.state.full_name}
-                            onChange={this.update('full_name')}
-                            className="login-input"
-                            id="fullname"
-                            placeholder="Full Name"
-                        />
+                        <div className="names" >
+                            <input type="text"
+                                value={this.state.full_name}
+                                onChange={this.update('full_name')}
+                                className="login-input"
+                                id="fullname"
+                                placeholder="First Name"
+                            />
 
-                        <br />
+                            <input type="text"
+                                value={this.state.last_name}
+                                onChange={this.update('last_name')}
+                                className="login-input"
+                                id="lastname"
+                                placeholder="Last Name"
+                            />
+                        </div>
+
+
 
                         <input type="text"
                             value={this.state.email}
@@ -78,7 +92,7 @@ class UpdateForm extends React.Component {
                             placeholder="Email"
                         />
 
-                        <br />
+
 
                         <input type="password"
                             value={this.state.password}
@@ -88,33 +102,226 @@ class UpdateForm extends React.Component {
                             placeholder="Password"
                         />
 
-                        <br />
 
-                        <input type="text"
-                            value={this.state.gender}
-                            onChange={this.update('gender')}
-                            className="login-input"
-                            id="gender"
-                            placeholder="Gender"
-                        />
 
-                        <br />
-
-                        <input type="text"
+                        {/* <input type="text"
                             value={this.state.birth_date}
                             onChange={this.update('birth_date')}
                             className="login-input"
                             id="birthdate"
                             placeholder="Birth Date"
-                        />
+                        /> */}
+
+                        <div className="gender-text-and-buttons">
+
+                            <div className="gender-text">
+                                <p>Birthdate</p>
+                            </div>
+
+                            <div className="birthdate-dropdowns">
+                                <select onChange={this.update("birth_month")} name="month" id="month">
+                                    <option value="Jan">Jan</option>
+                                    <option value="Feb">Feb</option>
+                                    <option value="Mar">Mar</option>
+                                    <option value="Apr">Apr</option>
+                                    <option value="May">May</option>
+                                    <option value="Jun">Jun</option>
+                                    <option value="Jul">Jul</option>
+                                    <option value="Aug">Aug</option>
+                                    <option value="Sep">Sep</option>
+                                    <option value="Oct">Oct</option>
+                                    <option value="Nov">Nov</option>
+                                    <option value="Dec">Dec</option>
+                                </select>
+
+
+                                <select onChange={this.update("birth_day")} name="day" id="day">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+                                    <option value="13">13</option>
+                                    <option value="14">14</option>
+                                    <option value="15">15</option>
+                                    <option value="16">16</option>
+                                    <option value="17">17</option>
+                                    <option value="18">18</option>
+                                    <option value="19">19</option>
+                                    <option value="20">20</option>
+                                    <option value="21">21</option>
+                                    <option value="22">22</option>
+                                    <option value="23">23</option>
+                                    <option value="24">24</option>
+                                    <option value="25">25</option>
+                                    <option value="26">26</option>
+                                    <option value="27">27</option>
+                                    <option value="28">28</option>
+                                    <option value="29">29</option>
+                                    <option value="30">30</option>
+                                    <option value="31">31</option>
+                                </select>
+
+                                <select onChange={this.update("birth_year")} name="year" id="year">
+                                    <option value="2020">2020</option>
+                                    <option value="2019">2019</option>
+                                    <option value="2018">2018</option>
+                                    <option value="2017">2017</option>
+                                    <option value="2016">2016</option>
+                                    <option value="2015">2015</option>
+                                    <option value="2014">2014</option>
+                                    <option value="2013">2013</option>
+                                    <option value="2012">2012</option>
+                                    <option value="2011">2011</option>
+                                    <option value="2010">2010</option>
+                                    <option value="2009">2009</option>
+                                    <option value="2008">2008</option>
+                                    <option value="2007">2007</option>
+                                    <option value="2006">2006</option>
+                                    <option value="2005">2005</option>
+                                    <option value="2004">2004</option>
+                                    <option value="2003">2003</option>
+                                    <option value="2002">2002</option>
+                                    <option value="2001">2001</option>
+                                    <option value="2000">2000</option>
+                                    <option value="1999">1999</option>
+                                    <option value="1998">1998</option>
+                                    <option value="1997">1997</option>
+                                    <option value="1996">1996</option>
+                                    <option value="1995">1995</option>
+                                    <option value="1994">1994</option>
+                                    <option value="1993">1993</option>
+                                    <option value="1992">1992</option>
+                                    <option value="1991">1991</option>
+                                    <option value="1990">1990</option>
+                                    <option value="1989">1989</option>
+                                    <option value="1988">1988</option>
+                                    <option value="1987">1987</option>
+                                    <option value="1986">1986</option>
+                                    <option value="1985">1985</option>
+                                    <option value="1984">1984</option>
+                                    <option value="1983">1983</option>
+                                    <option value="1982">1982</option>
+                                    <option value="1981">1981</option>
+                                    <option value="1980">1980</option>
+                                    <option value="1979">1979</option>
+                                    <option value="1978">1978</option>
+                                    <option value="1977">1977</option>
+                                    <option value="1976">1976</option>
+                                    <option value="1975">1975</option>
+                                    <option value="1974">1974</option>
+                                    <option value="1973">1973</option>
+                                    <option value="1972">1972</option>
+                                    <option value="1971">1971</option>
+                                    <option value="1970">1970</option>
+                                    <option value="1969">1969</option>
+                                    <option value="1968">1968</option>
+                                    <option value="1967">1967</option>
+                                    <option value="1966">1966</option>
+                                    <option value="1965">1965</option>
+                                    <option value="1964">1964</option>
+                                    <option value="1963">1963</option>
+                                    <option value="1962">1962</option>
+                                    <option value="1961">1961</option>
+                                    <option value="1960">1960</option>
+                                    <option value="1959">1959</option>
+                                    <option value="1958">1958</option>
+                                    <option value="1957">1957</option>
+                                    <option value="1956">1956</option>
+                                    <option value="1955">1955</option>
+                                    <option value="1954">1954</option>
+                                    <option value="1953">1953</option>
+                                    <option value="1952">1952</option>
+                                    <option value="1951">1951</option>
+                                    <option value="1950">1950</option>
+                                    <option value="1949">1949</option>
+                                    <option value="1948">1948</option>
+                                    <option value="1947">1947</option>
+                                    <option value="1946">1946</option>
+                                    <option value="1945">1945</option>
+                                    <option value="1944">1944</option>
+                                    <option value="1943">1943</option>
+                                    <option value="1942">1942</option>
+                                    <option value="1941">1941</option>
+                                    <option value="1940">1940</option>
+                                    <option value="1939">1939</option>
+                                    <option value="1938">1938</option>
+                                    <option value="1937">1937</option>
+                                    <option value="1936">1936</option>
+                                    <option value="1935">1935</option>
+                                    <option value="1934">1934</option>
+                                    <option value="1933">1933</option>
+                                    <option value="1932">1932</option>
+                                    <option value="1931">1931</option>
+                                    <option value="1930">1930</option>
+                                </select>
+
+                            </div>
+
+                        </div>
 
 
 
 
-                        <br />
+
+                        <div className="gender-text-and-buttons">
+
+                            <div className="gender-text">
+                                <p>Gender</p>
+                            </div>
 
 
-                        <input type="text"
+
+
+
+                            <div className="login-input-gender" id="gender-select" >
+
+                                <div className="female-button">
+                                    <label for="female">Female</label>
+                                    <input type="radio"
+                                        value={"Female"}
+                                        onChange={this.update('gender')}
+                                        name="gender"
+                                        id="female"
+                                    />
+                                </div>
+
+                                <div className="male-button">
+                                    <label for="male">Male</label>
+                                    <input type="radio"
+                                        value={"Male"}
+                                        onChange={this.update('gender')}
+                                        name="gender"
+                                        id="male"
+                                    />
+                                </div>
+
+
+                                <div className="other-button">
+
+                                    <label for="other">Other</label>
+
+                                    <input type="radio"
+                                        value={"Other"}
+                                        onChange={this.update('gender')}
+                                        name="gender"
+                                        id="other"
+                                    />
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        {/* <input type="text"
                             value={this.state.school}
                             onChange={this.update('school')}
                             className="login-input"
@@ -142,12 +349,10 @@ class UpdateForm extends React.Component {
                             className="login-input"
                             id="written_bio"
                             placeholder="Image Url (optional)"
-                        />
-
-                        <br />
-                        <br />
-
-                        <input className="session-submit" type="submit" value={this.props.formType} />
+                        /> */}
+                        <div className="signup-button">
+                            <input className="session-submit" type="submit" value={this.props.formType} />
+                        </div>
                     </div>
                 </form>
             </div>

@@ -51,7 +51,7 @@ class PostItem extends React.Component {
         
         // this.setState({email: friend.email})
         return (
-            <div id={"post-item-box"}>
+            <div className={"post-item-box"}>
                 <div className="name-and-pic">
                     {profile_pic}
                     <Link replace to={`users/${friend.id}`} >{friend.full_name + " " + friend.last_name}</Link>

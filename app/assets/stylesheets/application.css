@@ -657,6 +657,11 @@ homepage css
   justify-content: space-between;
   align-items: center;
 }
+
+.post-item-box {
+  border: 2px solid black;
+  margin: 20px;
+}
   
 
 

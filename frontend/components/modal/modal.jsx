@@ -3,6 +3,7 @@ import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostFormContainer from '../post/post_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
+import UpdateFormContainer from '../session_form/update_form_container';
 
 function Modal({modal, closeModal}) {
   
@@ -23,6 +24,9 @@ function Modal({modal, closeModal}) {
       break;
     case 'new-post':
       component = <PostFormContainer />;
+      break;
+    case 'update':
+      component = <UpdateFormContainer />;
       break;
     default:
       return null;

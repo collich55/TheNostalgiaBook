@@ -144,6 +144,7 @@ class ProfileShow extends React.Component {
 
             <div id={"about"}>
                 <h1>About:</h1>
+                {this.props.updateForm}
                 <br/>
                 <h2>Birthday: {birth_date}</h2>
                 <h2>Gender: {gender}</h2>
