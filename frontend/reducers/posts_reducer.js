@@ -8,12 +8,8 @@ const postsReducer = (state = {}, action) => {
         case RECEIVE_POSTS:
             return action.posts
         case RECEIVE_POST:
-            if (newState[action.post.id]) {
                 newState[action.post.id] = action.post;
                 return newState;
-            } else {
-                return state
-            }
         case DELETE_POST:
             delete newState[action.post.id];
             return newState;

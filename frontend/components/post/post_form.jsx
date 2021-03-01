@@ -4,10 +4,11 @@ class PostForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            body: ''
+            body: '',
+            author_id: this.props.currentUserId
+
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDemo = this.handleDemo.bind(this);
         this.handleXButton = this.handleXButton.bind(this);
         this.update = this.update.bind(this);
     }
@@ -34,7 +35,9 @@ class PostForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
+        debugger
         const post = Object.assign({}, this.state, this.props.currentUserId);
+        debugger
         this.props.closeModal();
         this.props.processForm(post).then(this.props.closeModal());;
     }
@@ -57,12 +60,6 @@ class PostForm extends React.Component {
         );
     }
 
-
-    handleDemo(e) {
-        e.preventDefault();
-        const demoUser = Object.assign({}, { email: 'random@gmail.com', password: 'random' })
-        this.props.processDemo(demoUser).then(this.props.closeModal);
-    }
 
     render() {
         let that = this;
@@ -95,7 +92,7 @@ class PostForm extends React.Component {
 
                         
                         <div className="signup-button">
-                            <input className="session-submit" type="submit" value={this.props.formType} />  
+                            <input className="session-submit" type="submit" value="Create Post" />  
                         </div>
                     </div>
                 </form>

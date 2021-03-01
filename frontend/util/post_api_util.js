@@ -1,10 +1,13 @@
-export const createPost = post => (
-    $.ajax({
-        method: 'POST',
-        url: '/api/posts',
-        data: { post }
-    })
-);
+export const createPost = post => {
+    debugger
+    return (
+        $.ajax({
+            method: 'POST',
+            url: '/api/posts',
+            data: { post }
+        })
+    )
+};
 
 // export const deletePost = postId => {
 //     return $.ajax({
