@@ -83,7 +83,9 @@ class HomepageShow extends React.Component {
             <br/>
             <div className="timeline">
                 <div className="new-post">
-                    <h1>Posts:</h1>
+                    {this.props.postForm}
+
+
                 </div>
                 <div className="newsfeed">
                     <PostIndexContainer users={this.props.users} />

@@ -3,9 +3,11 @@ import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchRequests, createRequest, deleteRequest } from '../../actions/friendship_actions';
+import { createPost } from '../../actions/post_actions';
 import { fetchPosts } from '../../actions/post_actions';
 
 import { showUser, fetchUsers } from "../../actions/user_actions.js";
+import { openModal} from '../../actions/modal_actions';
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -36,7 +38,13 @@ const mapDispatchToProps = dispatch => {
         fetchRequests: () => dispatch(fetchRequests()),
         fetchPosts: () => dispatch(fetchPosts()),
         createRequest: info => dispatch(createRequest(info)),
-        deleteRequest: requestId => dispatch(deleteRequest(requestId))
+        deleteRequest: requestId => dispatch(deleteRequest(requestId)),
+        createRequest: info => dispatch(createRequest(info)),
+        postForm: (
+            <button onClick={() => dispatch(openModal('new-post'))}>
+                Create Post
+            </button>
+        ),
 
 
 
