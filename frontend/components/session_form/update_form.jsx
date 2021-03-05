@@ -4,17 +4,14 @@ class UpdateForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            email: this.props.currentUser.email,
-            password: this.props.currentUser.password,
             gender: this.props.currentUser.gender,
             birth_date: this.props.currentUser.birth_date,
-            full_name: this.props.currentUser.full_name,
             school: this.props.currentUser.school,
             location: this.props.currentUser.location,
-            written_bio: this.props.currentUser.written_bio,
+            profile_photo_link: this.props.currentUser.profile_photo_link,
+            banner_photo_link: this.props.currentUser.banner_photo_link
         };
         this.handleSubmit = this.handleSubmit.bind(this);
-        this.handleDemo = this.handleDemo.bind(this);
     }
 
 
@@ -44,73 +41,32 @@ class UpdateForm extends React.Component {
     }
 
 
-    handleDemo(e) {
-        e.preventDefault();
-        const demoUser = Object.assign({}, { email: 'random@gmail.com', password: 'random' })
-        this.props.processDemo(demoUser).then(this.props.closeModal);
-    }
-
     render() {
         return (
-            <div className="signup-form-container">
+            <div className="signup-form-container" id="update-form">
                 <div className="close-x">
                     <img onClick={this.handleXButton} className="close-x-item" src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png" alt="" width="24" height="24"></img>
                 </div>
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
                     <div className="sign-up-text-area">
-                        <p className="sign-up-text" >Sign Up</p>
-                        <p className="quick-and-easy-text" >It's quick and easy.</p>
+                        <p className="sign-up-text" >Edit Profile</p>
                     </div>
                     {this.renderErrors()}
                     <div className="login-form">
 
-                        <div className="names" >
-                            <input type="text"
-                                value={this.state.full_name}
-                                onChange={this.update('full_name')}
-                                className="login-input"
-                                id="fullname"
-                                placeholder="First Name"
-                            />
-
-                            <input type="text"
-                                value={this.state.last_name}
-                                onChange={this.update('last_name')}
-                                className="login-input"
-                                id="lastname"
-                                placeholder="Last Name"
-                            />
-                        </div>
+                        
 
 
 
-                        <input type="text"
-                            value={this.state.email}
-                            onChange={this.update('email')}
-                            className="login-input"
-                            id="sign_email"
-                            placeholder="Email"
-                        />
+                        
 
 
 
-                        <input type="password"
-                            value={this.state.password}
-                            onChange={this.update('password')}
-                            className="login-input"
-                            id="sign_password"
-                            placeholder="Password"
-                        />
+                        
 
 
 
-                        {/* <input type="text"
-                            value={this.state.birth_date}
-                            onChange={this.update('birth_date')}
-                            className="login-input"
-                            id="birthdate"
-                            placeholder="Birth Date"
-                        /> */}
+                        
 
                         <div className="gender-text-and-buttons">
 
@@ -320,38 +276,70 @@ class UpdateForm extends React.Component {
                         </div>
 
 
+                        <div className="gender-text-and-buttons">
 
-                        {/* <input type="text"
-                            value={this.state.school}
-                            onChange={this.update('school')}
-                            className="login-input"
-                            id="school"
-                            placeholder="School (optional)"
-                        />
+                            <div className="gender-text">
+                                <p>School</p>
+                            </div>
 
-                        <br />
+                            <input type="text"
+                                value={this.state.school}
+                                onChange={this.update('school')}
+                                className="login-input"
+                                id="school"
+                                placeholder="School (optional)"
+                            />
+                        </div>
 
+                       
+                        <div className="gender-text-and-buttons">
 
-                        <input type="text"
-                            value={this.state.location}
-                            onChange={this.update('location')}
-                            className="login-input"
-                            id="location"
-                            placeholder="Location (optional)"
-                        />
+                            <div className="gender-text">
+                                <p>Location</p>
+                            </div>
 
-                        <br />
+                            <input type="text"
+                                value={this.state.location}
+                                onChange={this.update('location')}
+                                className="login-input"
+                                id="location"
+                                placeholder="Location (optional)"
+                            />
+                        </div>
 
+                  
+                        <div className="gender-text-and-buttons">
 
-                        <input type="text"
-                            value={this.state.written_bio}
-                            onChange={this.update('written_bio')}
-                            className="login-input"
-                            id="written_bio"
-                            placeholder="Image Url (optional)"
-                        /> */}
+                            <div className="gender-text">
+                                <p>School</p>
+                            </div>
+
+                            <input type="text"
+                                value={this.state.profile_photo_link}
+                                onChange={this.update('profile_photo_link')}
+                                className="login-input-gender"
+                                id="profile_photo_link"
+                                placeholder="Profile Image Url (optional)"
+                            />
+
+                        </div>
+
+                        <div className="gender-text-and-buttons">
+
+                            <div className="gender-text">
+                                <p>School</p>
+                            </div>
+                            <input type="text"
+                                value={this.state.banner_photo_link}
+                                onChange={this.update('banner_photo_link')}
+                                className="login-input"
+                                id="banner_photo_link"
+                                placeholder="Banner Image Url (optional)"
+                            />
+                        </div>
+
                         <div className="signup-button">
-                            <input className="session-submit" type="submit" value={this.props.formType} />
+                            <input className="session-submit" type="submit" value="Update" />
                         </div>
                     </div>
                 </form>

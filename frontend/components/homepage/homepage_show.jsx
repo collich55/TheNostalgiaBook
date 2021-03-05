@@ -19,7 +19,7 @@ class HomepageShow extends React.Component {
        
         this.props.fetchUsers();
         this.props.fetchRequests();
-        // this.props.fetchPosts();
+        this.props.fetchPosts();
         
     }
 

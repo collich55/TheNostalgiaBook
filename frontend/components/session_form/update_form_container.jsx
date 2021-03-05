@@ -17,7 +17,6 @@ const mapStateToProps = ({ errors, session, entities: { users } }) => {
 const mapDispatchToProps = dispatch => {
     return {
         processForm: (user) => dispatch(update(user)),
-        processDemo: (user) => dispatch(login(user)),
         updateForm: (
             <button onClick={() => dispatch(openModal('update'))}>
                 Update

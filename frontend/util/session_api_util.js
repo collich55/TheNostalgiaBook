@@ -19,7 +19,7 @@ export const signup = user => {
 
 export const update = user => {
 
-
+    debugger
 
     return $.ajax({
         method: 'UPDATE',
