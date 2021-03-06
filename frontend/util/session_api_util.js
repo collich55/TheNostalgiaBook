@@ -22,7 +22,7 @@ export const update = user => {
     debugger
 
     return $.ajax({
-        method: 'UPDATE',
+        method: 'PATCH',
         url: `/api/users/${user.id}`,
         data: { user }
     })

@@ -4,6 +4,7 @@ class UpdateForm extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
+            id: this.props.currentUser.id,
             gender: this.props.currentUser.gender,
             birth_date: this.props.currentUser.birth_date,
             school: this.props.currentUser.school,
@@ -25,7 +26,7 @@ class UpdateForm extends React.Component {
         e.preventDefault();
         const user = Object.assign({}, this.state);
         this.props.closeModal();
-        this.props.processForm(user).then(this.props.closeModal());;
+        this.props.processForm(user);
     }
 
     renderErrors() {

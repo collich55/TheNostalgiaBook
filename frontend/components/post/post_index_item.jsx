@@ -55,7 +55,7 @@ class PostItem extends React.Component {
             <div className={"post-item-box"}>
                 <div className="name-and-pic">
                     {profile_pic}
-                    <Link replace to={`users/${friend.id}`} >{friend.full_name + " " + friend.last_name}</Link>
+                    <a href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
                 </div>
                 <div>
                     {this.props.body}
