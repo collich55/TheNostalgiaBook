@@ -74,7 +74,6 @@ class ProfileShow extends React.Component {
                     <button onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Unfriend</button> 
                 </div>
             )
-
         } 
 
         if ((oneOrNonerequest[oneOrNonerequest.length - 1].accepted == false) && (oneOrNonerequest[oneOrNonerequest.length - 1].requester_id == this.props.currentUserId)) {
@@ -82,7 +81,6 @@ class ProfileShow extends React.Component {
         } else {
             return <button onClick={() => this.handleFriendAcceptance(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >accept request</button>
         }
-
         
     }
 
@@ -113,25 +111,19 @@ class ProfileShow extends React.Component {
 
     render() {
 
-       let pending = this.requestPending();
-       let proPic = this.proPicMaybe();
-       let posts = this.props.fetchPosts();
-    //    const {full_name, birth_date, gender, email} = this.props.users[this.props.userId]
+        let proPic = this.proPicMaybe();
         
-         const {full_name, last_name, gender, birth_date,  } = this.props.users[this.props.userId]
-         let b = this.checkIfFriend();
+        const {full_name, last_name, gender, birth_date,  } = this.props.users[this.props.userId]
+        let b = this.checkIfFriend();
 
-    //    if (!full_name) {
-    //        full_name = "temp"
-    //    }
         return(
         <div id={"pro-page"}>
-
+            <div className="profile-header">
                 {proPic}
-
-            <div id={"name"}   >
-                <h1>{full_name + " " + last_name}</h1>
-                {b}
+                <div id={"name"}   >
+                    <h1>{full_name + " " + last_name}</h1>
+                    {b}
+                </div>
             </div>
            
             {/* <h2>{birth_date}</h2>

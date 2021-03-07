@@ -10,9 +10,6 @@ class HomepageShow extends React.Component {
 
     constructor(props) {
         super(props)
-        // this.handleFriendRequest = this.handleFriendRequest.bind(this)
-        // this.handleFriendAcceptance = this.handleFriendAcceptance.bind(this)
-        // this.handleUnfriend = this.handleUnfriend.bind(this)
     }
 
     componentDidMount() {
@@ -27,72 +24,31 @@ class HomepageShow extends React.Component {
         return Object.values(this.props.friendships).filter(request => request.accepted === true)
     }
 
-
-    // render() {
-    //     const friended = this.actuallyFriended();
-    //     return (
-    //         <div id={"friend-box"}>
-    //             <ul>
-    //                 {
-    //                     friended.map(
-    //                         request => <FriendshipItemContainer requestee_id={request.requestee_id} />
-    //                     )
-    //                 }
-    //             </ul>
-    //         </div>
-    //     )
-    // }
-
-  
-
-
-
- 
-
-    
-
-
-
-   
-
-   
-
-    
-
+    proPicMaybe() {
+        if (!this.props.currentUser.profile_photo_link || this.props.currentUser.profile_photo_link === "") {
+            return <img className="post-pro-pic" src={"https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"} alt="Pro Pic" />
+        } else {
+            return <img className="post-pro-pic" src={this.props.currentUser.profile_photo_link} alt="Pro Pic" />
+        }
+    }
 
     render() {
-
-    //    const {full_name, birth_date, gender, email} = this.props.users[this.props.userId]
-        
-
-    //    if (!full_name) {
-    //        full_name = "temp"
-    //    }
         return(
-        <div id={"pro-page"}>
-
-            
-           
-        
-
-            <br/>
-            <br/>
-            <br/>
-
-           
-            <br/>
+        <div id={"homepage"}>
             <div className="timeline">
                 <div className="new-post">
-                    {this.props.postForm}
 
-
+                    {this.proPicMaybe()}
+                      
+                    <button className="new-post-button" onClick={this.props.newPost}>
+                        What's on your mind, {this.props.currentUser.full_name}?
+                    </button>
+ 
                 </div>
                 <div className="newsfeed">
                     <PostIndexContainer users={this.props.users} />
                 </div>
             </div>
-            
-        
         </div>
         )
     }

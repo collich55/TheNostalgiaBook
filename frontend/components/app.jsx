@@ -24,32 +24,20 @@ class App extends React.Component {
         return (
         <div>
             <div id={"navbar"}  >
-                    <ProtectedRoute path="/" component={Bar} />
+                <ProtectedRoute path="/" component={Bar} />
             </div>
             
             <div id="all">
-                {/* <div id="modal">
-                    <Modal />
-                </div> */}
-
+                <Route path="/" component={Modal} />
+                <div className="logged-out-greeting">
                     <AuthRoute path="/" component={GreetingContainer} />
-
-                    
-
-                
-                    <Route path="/" component={Modal} />
                     <AuthRoute path="/" component={LogInFormContainer} />
-                    {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
-                    
-                    {/* <AuthRoute path="/" component={SignUpFormContainer} /> */}
+                </div>
+
+                <Switch>
                     <ProtectedRoute path="/users/:userId" component={ProfileContainer} />
                     <ProtectedRoute path="/" component={Homepage} />
-                    
-                
-                {/* {this.checkSignIn()} */}
-                {/* <button onClick={this.handleModalButton}  > Modal </button> */}
-
-
+                </Switch>
             </div>
         </div>
         )

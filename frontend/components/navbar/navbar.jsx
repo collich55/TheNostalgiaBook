@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 
 
 
+
 const Bar = ({ currentUser, logout, users }) => {
     
     const bar = () => (
@@ -15,9 +16,10 @@ const Bar = ({ currentUser, logout, users }) => {
             </div>
             <h2 className="bar-name"></h2>
             <div  id={"navright"}  >
-                <a href={`#/users/${currentUser.id}`} replace  id={"proB"} >{currentUser.full_name}</a>
-                <button className="bar-logout-button" onClick={logout}>Sign Out</button>
+                <a href={`#/users/${currentUser.id}`} replace id={"proB"} >{<img className="post-pro-pic" src={currentUser.profile_photo_link} alt="Pro Pic" />} {" " + currentUser.full_name}</a>
+                <button className="bar-logout-button" onClick={logout}><img className="nav-pro-pic" src={"https://cdn.iconscout.com/icon/premium/png-512-thumb/arrow-small-right-2229239-1860175.png"} alt="Pro Pic" /></button>
             </div>
+            {/* currentUser.full_name */}
             
         </hgroup>
     );
