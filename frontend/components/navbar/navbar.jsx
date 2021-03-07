@@ -17,7 +17,7 @@ const Bar = ({ currentUser, logout, users }) => {
             <h2 className="bar-name"></h2>
             <div  id={"navright"}  >
                 <a href={`#/users/${currentUser.id}`} replace id={"proB"} >{<img className="post-pro-pic" src={currentUser.profile_photo_link} alt="Pro Pic" />} {" " + currentUser.full_name}</a>
-                <button className="bar-logout-button" onClick={logout}><img className="nav-pro-pic" src={"https://cdn.iconscout.com/icon/premium/png-512-thumb/arrow-small-right-2229239-1860175.png"} alt="Pro Pic" /></button>
+                <button id="proB-n" onClick={logout}><img className="post-pro-pic" src={"https://cdn.iconscout.com/icon/premium/png-512-thumb/arrow-small-right-2229239-1860175.png"} alt="Pro Pic" /></button>
             </div>
             {/* currentUser.full_name */}
             

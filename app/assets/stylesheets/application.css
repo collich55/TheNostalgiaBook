@@ -121,6 +121,7 @@ body {
 .signup-form-container .gender-text-and-buttons .login-input {
   font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
   margin-top: 0px;
+  width: 100%;
 
 }
 
@@ -469,14 +470,8 @@ input {
   justify-content: flex-end;
 }
 
-.bar-logout-button {
 
-  height: 50px;
-  width: 50px;
-  border-radius: 100%;
-  
 
-}
 
 
 #proB {
@@ -495,6 +490,21 @@ input {
   padding: 10px;
   text-align: center;
   
+
+}
+
+#proB-n {
+
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+  text-decoration: none;
+  background-color:  white;
+  color: black;
+  display: inline-block;
+  border-radius: 50px;
+  font-family: 'Ubuntu', sans-serif;
+  text-align: center;
 
 }
 
@@ -532,12 +542,7 @@ input {
   object-fit: cover;
 }
 
-.nav-pro-pic {
-  border-radius: 100%;
-  width: 40px;
-  height: 40px;
 
-}
 
 
 
@@ -548,13 +553,17 @@ input {
 }
 
 #about {
-  flex: 1;
+  display: flex;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
   background-color: white;
+  padding: 10px;
   border-radius: 10px;
-  width: 500px;
-  height: 100px;
-  font-family: 'Poppins', sans-serif;
-  padding: 10px
+  justify-content: center;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  width: 590px;
   
 }
 
@@ -588,13 +597,17 @@ input {
 
 #friend-box-all {
   
-  flex: 1;
+  display: flex;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
   background-color: white;
+  padding: 10px;
   border-radius: 10px;
-  width: 500px;
-  height: 100px;
-  font-family: 'Poppins', sans-serif;
-  padding: 10px
+  justify-content: center;
+  box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
+  align-items: center;
+  flex-direction: column;
+  margin: 20px;
+  width: 590px;
   
 }
 
@@ -740,20 +753,35 @@ profile css
   flex-direction: column;
 }
 
+.profile-main {
+  display: flex;
+}
+
+.left-profile {
+  flex: 1;
+}
+
+.right-profile {
+ flex: 2;
+}
+
+
+/* 
+---------------------
+navbar css
+---------------------
+*/
+
+
+.bar-logout-button {
+  height: 40px;
+  width: 40px;
+}
+
   
 
 
-/* const bar = () => (
-        <hgroup className="bar-group">
-            <h2 className="bar-name">Facebook</h2>
-            <div  id={"navright"}  >
-                <Link to={'/'} id={"homeB"}  >Home</Link>
-                <Link to={`users/${currentUser.id}`} id={"proB"} >{currentUser.full_name}</Link>
-                <button className="bar-logout-button" onClick={logout}>Sign Out</button>
-            </div>
-            
-        </hgroup>
-    ); */
+
 
 
     

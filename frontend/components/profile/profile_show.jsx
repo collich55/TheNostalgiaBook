@@ -117,6 +117,7 @@ class ProfileShow extends React.Component {
         let b = this.checkIfFriend();
 
         return(
+
         <div id={"pro-page"}>
             <div className="profile-header">
                 {proPic}
@@ -125,48 +126,56 @@ class ProfileShow extends React.Component {
                     {b}
                 </div>
             </div>
-           
-            {/* <h2>{birth_date}</h2>
-            <h2>{gender}</h2>
-            <h2>{email}</h2> */}
 
-            <br/>
-            <br/>
-            <br/>
+            <div className="profile-main" >
 
-            <div id={"about"}>
-                <h1>About:</h1>
-                {this.props.updateForm}
-                <br/>
-                <h2>Birthday: {birth_date}</h2>
-                <h2>Gender: {gender}</h2>
-                <h2>School: {this.props.users[this.props.userId].school}</h2>
-                <h2>Location: {this.props.users[this.props.userId].location}</h2>
-                
-            
+                <div className="left-profile" >
 
+                    <div id={"about"}>
+                        <h1>About:</h1>
+                        {this.props.updateForm}
+                        <br/>
+                        <h2>Birthday: {birth_date}</h2>
+                        <h2>Gender: {gender}</h2>
+                        <h2>School: {this.props.users[this.props.userId].school}</h2>
+                        <h2>Location: {this.props.users[this.props.userId].location}</h2>
+                    </div>
+
+                    <br/>
+
+                    <div id={"friend-box-all"}  >
+                        <h1>Friends:</h1>
+                        <FriendshipIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
+                    </div>
+
+                </div>
+
+                <div className="right-profile" >
+
+                    <div id={"about"}>
+                        <h1>About:</h1>
+                        {this.props.updateForm}
+                        <br />
+                        <h2>Birthday: {birth_date}</h2>
+                        <h2>Gender: {gender}</h2>
+                        <h2>School: {this.props.users[this.props.userId].school}</h2>
+                        <h2>Location: {this.props.users[this.props.userId].location}</h2>
+                    </div>
+
+                    <br />
+
+                    <div id={"friend-box-all"}  >
+                        <h1>Friends:</h1>
+
+                        <FriendshipIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
+                    </div>
+
+                </div>
 
             </div>
-            <br/>
-            <div id={"friend-box-all"}  >
-                <h1>Friends:</h1>
 
-                    <FriendshipIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
-            </div>
-            {/* <div id={"request-box"}>
-
-                <ul>
-                    {
-                        pending.map(
-                            request => <p></p>
-                        )
-                    }
-                </ul>
-
-
-            </div> */}
             
-        
+
         </div>
         )
     }

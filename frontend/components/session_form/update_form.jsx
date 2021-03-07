@@ -312,13 +312,13 @@ class UpdateForm extends React.Component {
                         <div className="gender-text-and-buttons">
 
                             <div className="gender-text">
-                                <p>School</p>
+                                <p>Profile Photo Link</p>
                             </div>
 
                             <input type="text"
                                 value={this.state.profile_photo_link}
                                 onChange={this.update('profile_photo_link')}
-                                className="login-input-gender"
+                                className="login-input"
                                 id="profile_photo_link"
                                 placeholder="Profile Image Url (optional)"
                             />
@@ -328,7 +328,7 @@ class UpdateForm extends React.Component {
                         <div className="gender-text-and-buttons">
 
                             <div className="gender-text">
-                                <p>School</p>
+                                <p>Banner Photo Link</p>
                             </div>
                             <input type="text"
                                 value={this.state.banner_photo_link}

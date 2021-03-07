@@ -44,13 +44,6 @@ class PostItem extends React.Component {
         
         let friend = this.props.users[this.props.authorId]
         let profile_pic = this.proPicMaybe();
-        
-        // if (this.props.users.friend_id.email !== undefined) {
-        //     debugger
-        //     email = this.props.users.friend_id.email;
-        // }
-        
-        // this.setState({email: friend.email})
         return (
             <div className={"post-item-box"}>
                 <div className="name-and-pic">
