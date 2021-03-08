@@ -460,7 +460,10 @@ input {
 } 
 
 #navright {
-  flex: 1
+  flex: 1;
+  display: flex;
+  align-items: center;
+
 }
 
 #navbar {
@@ -482,30 +485,35 @@ input {
   text-decoration: none;
   background-color:  white;
   color: black;
-  display: inline-block;
+  display: flex;
   border-radius: 10px;
   font-family: 'Ubuntu', sans-serif;
-  /* font-size: 18px; */
-  /* height: 23px; */
   padding: 10px;
-  text-align: center;
-  
+  align-items: center;
+}
 
+
+#proB:hover {
+  background-color: whitesmoke;
+  cursor: pointer;
 }
 
 #proB-n {
 
-  -webkit-appearance: button;
-  -moz-appearance: button;
-  appearance: button;
+  
   text-decoration: none;
-  background-color:  white;
   color: black;
-  display: inline-block;
-  border-radius: 50px;
+  border-radius: 100%;
   font-family: 'Ubuntu', sans-serif;
   text-align: center;
+  width: 40px;
+  height: 40px;
+  background-color: whitesmoke;
+}
 
+#proB-n:hover {
+  background-color: gainsboro;
+  cursor: pointer;
 }
 
 #home {
@@ -540,6 +548,7 @@ input {
   width: 40px;
   height: 40px;
   object-fit: cover;
+  margin-right: 5px;
 }
 
 
@@ -561,6 +570,7 @@ input {
   justify-content: space-around;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   flex-direction: column;
+  width: 360px;
 }
 
 
@@ -691,10 +701,24 @@ homepage css
 
 .name-and-pic {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  cursor: pointer;
 }
 
+.name-and-date {
+  margin-left: 5px;
+}
+
+.post-name-text {
+  text-decoration: none;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.post-name-text:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
 
 .login-input-gender {
   margin-top: 0px;
@@ -789,9 +813,7 @@ button:hover{
   background-color: white;
   padding: 10px;
   border-radius: 10px;
-  justify-content: center;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  align-items: center;
   flex-direction: column;
   margin: 20px;
   width: 590px;

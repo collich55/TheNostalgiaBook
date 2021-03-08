@@ -37,6 +37,13 @@ class PostItem extends React.Component {
 
     }
 
+    postDate() {
+        let date = this.props.post.created_at;
+        date = new Date(date);
+        date = date.toDateString();
+        return date
+    }
+
 
 
 
@@ -44,11 +51,16 @@ class PostItem extends React.Component {
         
         let friend = this.props.users[this.props.authorId]
         let profile_pic = this.proPicMaybe();
+
+        
         return (
             <div className={"post-item-box"}>
                 <div className="name-and-pic">
                     {profile_pic}
-                    <a href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
+                    <div className="name-and-date" >
+                        <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
+                        <p>{this.postDate()}</p>
+                    </div>
                 </div>
                 <div>
                     {this.props.body}

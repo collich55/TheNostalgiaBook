@@ -17,6 +17,8 @@ class PostIndex extends React.Component {
     
     render() {
 
+
+
        
         
         return (
@@ -25,7 +27,7 @@ class PostIndex extends React.Component {
 
 
                     {
-                        Object.values(this.props.posts).map(post =>  <PostItem authorId={post.author_id} body={post.body} users={this.props.users} /> )
+                        Object.values(this.props.posts).map(post =>  <PostItem post={post} authorId={post.author_id} body={post.body} users={this.props.users} /> )
                     }
                     
                         
