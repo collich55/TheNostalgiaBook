@@ -143,8 +143,8 @@ class ProfileShow extends React.Component {
                         <h1>Intro</h1>
                         <br/>
                         <h2>Studied at {this.props.users[this.props.userId].school}</h2>
-                        <h2>Gender is {gender}</h2>
                         <h2>Lives in {this.props.users[this.props.userId].location}</h2>
+                        <h2>Gender is {gender}</h2>
                         <h2>Birthday is {birth_date}</h2>
                         <div className="update-button-spacing" >
                             {this.props.updateForm}

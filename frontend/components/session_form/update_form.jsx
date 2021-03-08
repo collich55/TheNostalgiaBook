@@ -228,53 +228,12 @@ class UpdateForm extends React.Component {
 
 
 
-                        <div className="gender-text-and-buttons">
-
-                            <div className="gender-text">
-                                <p>Gender</p>
-                            </div>
 
 
 
 
 
-                            <div className="login-input-gender" id="gender-select" >
 
-                                <div className="female-button">
-                                    <label for="female">Female</label>
-                                    <input type="radio"
-                                        value={"Female"}
-                                        onChange={this.update('gender')}
-                                        name="gender"
-                                        id="female"
-                                    />
-                                </div>
-
-                                <div className="male-button">
-                                    <label for="male">Male</label>
-                                    <input type="radio"
-                                        value={"Male"}
-                                        onChange={this.update('gender')}
-                                        name="gender"
-                                        id="male"
-                                    />
-                                </div>
-
-
-                                <div className="other-button">
-
-                                    <label for="other">Other</label>
-
-                                    <input type="radio"
-                                        value={"Other"}
-                                        onChange={this.update('gender')}
-                                        name="gender"
-                                        id="other"
-                                    />
-
-                                </div>
-                            </div>
-                        </div>
 
 
                         <div className="gender-text-and-buttons">
@@ -325,6 +284,10 @@ class UpdateForm extends React.Component {
 
                         </div>
 
+                        {/*
+
+                        KEEP THIS: BANNER PHOTO FUNCTION FOR LATER
+                        
                         <div className="gender-text-and-buttons">
 
                             <div className="gender-text">
@@ -337,7 +300,57 @@ class UpdateForm extends React.Component {
                                 id="banner_photo_link"
                                 placeholder="Banner Image Url (optional)"
                             />
+                        </div> */}
+
+                        <div className="gender-text-and-buttons">
+
+                            <div className="gender-text">
+                                <p>Gender</p>
+                            </div>
+
+
+
+
+
+                            <div className="login-input-gender" id="gender-select" >
+
+                                <div className="female-button">
+                                    <label for="female">Female</label>
+                                    <input type="radio"
+                                        value={"Female"}
+                                        onChange={this.update('gender')}
+                                        name="gender"
+                                        id="female"
+                                    />
+                                </div>
+
+                                <div className="male-button">
+                                    <label for="male">Male</label>
+                                    <input type="radio"
+                                        value={"Male"}
+                                        onChange={this.update('gender')}
+                                        name="gender"
+                                        id="male"
+                                    />
+                                </div>
+
+
+                                <div className="other-button">
+
+                                    <label for="other">Other</label>
+
+                                    <input type="radio"
+                                        value={"Other"}
+                                        onChange={this.update('gender')}
+                                        name="gender"
+                                        id="other"
+                                    />
+
+                                </div>
+                            </div>
                         </div>
+
+
 
                         <div className="signup-button">
                             <input className="session-submit" type="submit" value="Update" />
