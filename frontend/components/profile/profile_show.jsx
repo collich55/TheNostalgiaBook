@@ -106,6 +106,14 @@ class ProfileShow extends React.Component {
         
     }
 
+    proPicMaybeForPost() {
+        if (!this.props.currentUser.profile_photo_link || this.props.currentUser.profile_photo_link === "") {
+            return <img className="post-pro-pic" src={"https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"} alt="Pro Pic" />
+        } else {
+            return <img className="post-pro-pic" src={this.props.currentUser.profile_photo_link} alt="Pro Pic" />
+        }
+    }
+
     
 
 
@@ -135,9 +143,9 @@ class ProfileShow extends React.Component {
                         <h1>Intro</h1>
                         <br/>
                         <h2>Studied at {this.props.users[this.props.userId].school}</h2>
-                        <h2>Birthday is {birth_date}</h2>
                         <h2>Gender is {gender}</h2>
                         <h2>Lives in {this.props.users[this.props.userId].location}</h2>
+                        <h2>Birthday is {birth_date}</h2>
                         <div className="update-button-spacing" >
                             {this.props.updateForm}
                         </div>
@@ -145,8 +153,8 @@ class ProfileShow extends React.Component {
 
                     <br/>
 
-                    <div id={"friend-box-all"}  >
-                        <h1>Friends:</h1>
+                    <div id={"about"}  >
+                        <h1>Friends</h1>
                         <FriendshipIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
                     </div>
 
@@ -154,24 +162,24 @@ class ProfileShow extends React.Component {
 
                 <div className="right-profile" >
 
-                    <div id={"about"}>
-                        <h1>About:</h1>
-                        {this.props.updateForm}
-                        <br />
-                        <h2>Birthday: {birth_date}</h2>
-                        <h2>Gender: {gender}</h2>
-                        <h2>School: {this.props.users[this.props.userId].school}</h2>
-                        <h2>Location: {this.props.users[this.props.userId].location}</h2>
+                    <div className="new-post-profile">
+
+                        {this.proPicMaybeForPost()}
+
+                        <button className="new-post-button-profile" onClick={this.props.newPost}>
+                            What's on your mind, {this.props.currentUser.full_name}?
+                        </button>
+
                     </div>
 
-                    <br />
+                    <span className="post-index-label-profile" >
+                        <h1>Posts</h1>
+                    </span>
 
-                    <div id={"friend-box-all"}  >
-                        <h1>Friends:</h1>
 
-                        <FriendshipIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
-                    </div>
+                    <PostIndexContainer users={this.props.users} />
 
+                    
                 </div>
 
             </div>

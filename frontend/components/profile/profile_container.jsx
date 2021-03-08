@@ -21,7 +21,9 @@ const mapStateToProps = (state, ownProps) => {
             users: state.entities.users,
             userId: ownProps.match.params.userId,
             friendships: state.entities.friendships,
-            currentUserId: state.session.id
+            posts: state.entities.posts,
+            currentUserId: state.session.id,
+            currentUser: state.entities.users[state.session.id]
         })
     // } else {
     //     return {}
@@ -39,9 +41,10 @@ const mapDispatchToProps = dispatch => {
         deleteRequest: requestId => dispatch(deleteRequest(requestId)),
         updateForm: (
             <button className="update-button" onClick={() => dispatch(openModal('update'))}>
-                Update
+                Edit Details
             </button>
         ),
+        newPost: () => dispatch(openModal('new-post'))
 
 
 

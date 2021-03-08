@@ -69,7 +69,7 @@ class UpdateForm extends React.Component {
 
                         
 
-                        <div className="gender-text-and-buttons">
+                        {/* <div className="gender-text-and-buttons">
 
                             <div className="gender-text">
                                 <p>Birthdate</p>
@@ -222,7 +222,7 @@ class UpdateForm extends React.Component {
 
                             </div>
 
-                        </div>
+                        </div> */}
 
 
 

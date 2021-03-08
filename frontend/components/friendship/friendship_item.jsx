@@ -62,11 +62,11 @@ class FriendshipItem extends React.Component {
         // this.setState({email: friend.email})
         return (
             <div id={"friend-item-box"}>
-                {
                 
-                <Link key={friend.id} replace to={`${friend.id}`} >{friend.full_name + " " + friend.last_name}</Link>
+                <img className="friendship-pro-pic" src={friend.profile_photo_link} alt="Pro Pic" />
+                <Link key={friend.id} replace to={`${friend.id}`} > {friend.full_name + " " + friend.last_name}</Link>
                     
-                }
+                
             </div>
         )
     }
