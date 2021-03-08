@@ -38,7 +38,7 @@ const mapDispatchToProps = dispatch => {
         createRequest: info => dispatch(createRequest(info)),
         deleteRequest: requestId => dispatch(deleteRequest(requestId)),
         updateForm: (
-            <button onClick={() => dispatch(openModal('update'))}>
+            <button className="update-button" onClick={() => dispatch(openModal('update'))}>
                 Update
             </button>
         ),

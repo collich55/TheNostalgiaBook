@@ -558,21 +558,20 @@ input {
   background-color: white;
   padding: 10px;
   border-radius: 10px;
-  justify-content: center;
+  justify-content: space-around;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
-  align-items: center;
   flex-direction: column;
   margin: 20px;
-  width: 590px;
-  
 }
+
+
 
 #friend-box {
   font-family: 'Poppins', sans-serif;
 }
 
 #about > h1 {
-  font-size: 30px;
+  font-size: 25px;
   margin-left: 5px;
   
 }
@@ -607,7 +606,6 @@ input {
   align-items: center;
   flex-direction: column;
   margin: 20px;
-  width: 590px;
   
 }
 
@@ -755,6 +753,7 @@ profile css
 
 .profile-main {
   display: flex;
+  width: 60%;
 }
 
 .left-profile {
@@ -763,6 +762,18 @@ profile css
 
 .right-profile {
  flex: 2;
+}
+
+.update-button {
+  flex: 1;
+  border: none;
+  border-radius: 4px;
+}
+
+.update-button-spacing {
+  display: flex;
+  margin-top: 5px;
+  
 }
 
 
