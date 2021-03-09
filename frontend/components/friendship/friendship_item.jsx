@@ -17,28 +17,9 @@ class FriendshipItem extends React.Component {
     
     constructor(props){
         super(props)
-        // this.state = {
-        //     email: ""
-        // }
-
     }
 
-    // componentDidMount() {
-
-       
-    //     this.props.showUser(this.props.requestee_id)
-    // }
-
-
-    // emailTest() {
-    //     debugger
-    //     if (this.props.users.friend_id.email) {
-    //         return this.props.users.friend_id.email;
-    //     } else {
-    //         debugger
-    //         return "temp"
-    //     }
-    // }
+    
 
     nameDisplay() {
         if (this.props.requestee_id == this.props.userId) {
@@ -53,20 +34,22 @@ class FriendshipItem extends React.Component {
     render() {
         debugger
         let friend = this.nameDisplay();
-        debugger
-        // if (this.props.users.friend_id.email !== undefined) {
-        //     debugger
-        //     email = this.props.users.friend_id.email;
-        // }
-        debugger
-        // this.setState({email: friend.email})
+        let photo;
+        if (!(friend.profile_photo_link) || friend.profile_photo_link === "") {
+            photo = "https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg";
+        } else {
+            photo = friend.profile_photo_link;
+        }
+
         return (
             <div id={"friend-item-box"}>
                 
-                <img className="friendship-pro-pic" src={friend.profile_photo_link} alt="Pro Pic" />
-                
+
                 <Link key={friend.id} replace to={`${friend.id}`} >
-                     {friend.full_name + " " + friend.last_name}
+                    <div className="friendship-pro-pic-and-name">
+                        <img className="friendship-pro-pic" src={friend.profile_photo_link} alt="Pro Pic" />
+                        {friend.full_name + " " + friend.last_name}
+                    </div>
                 </Link>
                     
                 

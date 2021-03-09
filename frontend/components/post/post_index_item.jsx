@@ -59,10 +59,10 @@ class PostItem extends React.Component {
                     {profile_pic}
                     <div className="name-and-date" >
                         <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
-                        <p>{this.postDate()}</p>
+                        <p className="date-text" >{this.postDate()}</p>
                     </div>
                 </div>
-                <div>
+                <div className="post-body">
                     {this.props.body}
                 </div>                
             </div>

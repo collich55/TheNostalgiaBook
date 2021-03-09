@@ -638,6 +638,11 @@ input {
   margin-top: 5px;
 }
 
+.friendship-pro-pic-and-name {
+  display: flex;
+  flex-direction: column;
+}
+
 ul > h1 {
   font-size: 25px;
 }
@@ -698,13 +703,14 @@ homepage css
 }
 
 .newsfeed {
-  margin-top: 50px;
+  margin-top: 20px;
 }
 
 .name-and-pic {
   display: flex;
   align-items: center;
   cursor: pointer;
+  width: max-content;
 }
 
 .name-and-date {
@@ -746,7 +752,13 @@ homepage css
   justify-content: start;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   align-items: center;
-  margin: 20px;
+  margin: 10px;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+button:hover {
+  cursor: pointer;
 }
 
 .post-index-label-profile {
@@ -758,7 +770,8 @@ homepage css
   justify-content: start;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   align-items: center;
-  margin: 20px;
+  margin: 10px;
+  margin-bottom: 20px;
 }
 
 .post-index-label-profile > h1 {
@@ -817,8 +830,20 @@ button:hover{
   border-radius: 10px;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   flex-direction: column;
-  margin: 20px;
+  margin: 10px;
   width: 590px;
+}
+
+.post-body {
+  align-items: center;
+  display: flex;
+  margin: 10px;
+  margin-left: 2px;
+  font-size: x-large;
+}
+
+.date-text {
+  font-size: small
 }
 
 

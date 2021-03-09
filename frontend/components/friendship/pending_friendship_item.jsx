@@ -64,8 +64,13 @@ class PendingFriendshipItem extends React.Component {
         return (
             <div id={"friend-item-box"}>
 
-                <img className="friendship-pro-pic" src={friend.profile_photo_link} alt="Pro Pic" />
-                <Link key={friend.id} replace to={`${friend.id}`} > {friend.full_name + " " + friend.last_name}</Link>
+
+                <Link key={friend.id} replace to={`${friend.id}`} >
+                    <div className="friendship-pro-pic-and-name">
+                        <img className="friendship-pro-pic" src={friend.profile_photo_link} alt="Pro Pic" />
+                        {friend.full_name + " " + friend.last_name}
+                    </div>
+                </Link>
 
 
             </div>

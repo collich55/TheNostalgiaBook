@@ -17,7 +17,7 @@ const Bar = ({ currentUser, logout, users }) => {
             <div id={"all-home"}>
                 
                 <Link to={'/'} id={"homeB"}>
-                    <a href={`#/users/${currentUser.id}`} replace id={"proB"} >{<img className="post-pro-pic" src={"https://i.imgur.com/05IEJR5.png"} alt="Pro Pic" />}</a>
+                    <a href={`#/users/${currentUser.id}`} replace id={"proB"} >{<img className="post-pro-pic" src={"https://i.imgur.com/GlUKnPm.png"} alt="Pro Pic" />}</a>
                 </Link>
             </div>
             <div  id={"navright"}  >

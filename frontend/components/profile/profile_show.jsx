@@ -114,12 +114,36 @@ class ProfileShow extends React.Component {
         }
     }
 
+    newPost() {
+
+        debugger
+
+        if (this.props.userId == this.props.currentUserId) {
+            return (
+                <div className="new-post-profile">
+
+                    {this.proPicMaybeForPost()}
+
+                    <button className="new-post-button-profile" onClick={this.props.newPost}>
+                        What's on your mind, {this.props.currentUser.full_name}?
+                    </button>
+
+                </div>
+            )
+        } else {
+            return null
+        }
+
+    }
+
     
 
 
     render() {
 
         let proPic = this.proPicMaybe();
+        let newPost = this.newPost();
+        
         
         const {full_name, last_name, gender, birth_date,  } = this.props.users[this.props.userId]
         let b = this.checkIfFriend();
@@ -162,15 +186,7 @@ class ProfileShow extends React.Component {
 
                 <div className="right-profile" >
 
-                    <div className="new-post-profile">
-
-                        {this.proPicMaybeForPost()}
-
-                        <button className="new-post-button-profile" onClick={this.props.newPost}>
-                            What's on your mind, {this.props.currentUser.full_name}?
-                        </button>
-
-                    </div>
+                    {newPost}
 
                     <span className="post-index-label-profile" >
                         <h1>Posts</h1>
