@@ -84,6 +84,10 @@ h1 {
  color: #1877f2;
 }
 
+#head {
+  margin-top: 10%;
+}
+
 .title-text-box {
   width: 600px;
 }
@@ -292,6 +296,7 @@ h1     {
   justify-content: center;
   box-shadow: 0 2px 4px rgb(0 0 0 / 10%), 0 8px 16px rgb(0 0 0 / 10%);
   align-items: center;
+  margin-top: 10%;
   
 }
 
@@ -447,7 +452,7 @@ input {
 .bar-group {
   display: flex;
   justify-content: space-between;
-  width: 1500px;
+  width: 100%;
   
 }
 
@@ -460,17 +465,14 @@ input {
 } 
 
 #navright {
-  flex: 1;
   display: flex;
   align-items: center;
-
+  padding-right: 10px;
 }
 
 #navbar {
-  padding: 15px;
-  width: 1450px;
+  width: 100vw;
   background-color: white;
-  justify-content: flex-end;
 }
 
 
@@ -523,7 +525,7 @@ input {
 #all-home {
   display: flex;
   flex-direction: column;
-  width: 70px;
+  padding-left: 10px;
 }
 
 #pro-page {
@@ -532,7 +534,8 @@ input {
   align-items: center;
   justify-content: center;
   color: black;
-
+  margin-top: 5%;
+  padding-bottom: 1%;
 }
 
 .pro-pic {
@@ -672,7 +675,6 @@ splashpage / logged out greeting css
 .logged-out-greeting {
   display: flex;
   align-items: center;
-  margin-top: 10%;
   justify-content: space-around;
 
 }

@@ -64,7 +64,10 @@ class FriendshipItem extends React.Component {
             <div id={"friend-item-box"}>
                 
                 <img className="friendship-pro-pic" src={friend.profile_photo_link} alt="Pro Pic" />
-                <Link key={friend.id} replace to={`${friend.id}`} > {friend.full_name + " " + friend.last_name}</Link>
+                
+                <Link key={friend.id} replace to={`${friend.id}`} >
+                     {friend.full_name + " " + friend.last_name}
+                </Link>
                     
                 
             </div>

@@ -15,16 +15,15 @@ const Bar = ({ currentUser, logout, users }) => {
         
         <hgroup className="bar-group">
             <div id={"all-home"}>
-                <i id={"home"}class="material-icons">home</i>
-                <Link to={'/'} id={"homeB"}  >Home</Link>
+                
+                <Link to={'/'} id={"homeB"}>
+                    <a href={`#/users/${currentUser.id}`} replace id={"proB"} >{<img className="post-pro-pic" src={"https://i.imgur.com/05IEJR5.png"} alt="Pro Pic" />}</a>
+                </Link>
             </div>
-            <h2 className="bar-name"></h2>
             <div  id={"navright"}  >
                 <a href={`#/users/${currentUser.id}`} replace id={"proB"} >{<img className="post-pro-pic" src={currentUser.profile_photo_link} alt="Pro Pic" />} {" " + currentUser.full_name}</a>
                 <button id="proB-n" onClick={logout}><i class="fas fa-sign-out-alt"></i></button>
             </div>
-            {/* currentUser.full_name */}
-            
         </hgroup>
     );
 

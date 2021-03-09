@@ -74,3 +74,7 @@ class PendingFriendshipItem extends React.Component {
 }
 
 export default PendingFriendshipItem;
+
+{/* <Link key={friend.id} replace to={`${friend.id}`} >
+    <img className="friendship-pro-pic" src={friend.profile_photo_link} alt="Pro Pic" />
+</Link> */}
