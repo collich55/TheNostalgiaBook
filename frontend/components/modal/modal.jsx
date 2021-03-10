@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostFormContainer from '../post/post_form_container';
+import CommentFormContainer from '../comment/comment_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
 import UpdateFormContainer from '../session_form/update_form_container';
 
@@ -9,8 +10,19 @@ function Modal({modal, closeModal}) {
   
   if (!modal) {
     modal = null;
+  } else if (typeof modal === "object" && modal[0] === "new-comment")  {
+    component = <CommentFormContainer postId={modal[1]} />;
+    return (
+      <div className="sign-modal-background" onClick={closeModal}>
+        <div className="sign-modal-child" onClick={e => e.stopPropagation()}>
+          {component}
+        </div>
+      </div>
+    );
   }
+  
   let component;
+  debugger
   switch (modal) {
     // case 'login':
     //   
@@ -24,6 +36,9 @@ function Modal({modal, closeModal}) {
       break;
     case 'new-post':
       component = <PostFormContainer />;
+      break;
+    case 'new-comment':
+      component = <CommentFormContainer />;
       break;
     case 'update':
       component = <UpdateFormContainer />;

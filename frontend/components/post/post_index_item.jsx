@@ -8,6 +8,7 @@ import {
     Link,
     HashRouter
 } from 'react-router-dom';
+import CommentIndexContainer from '../comment/comment_index_container'
 
 
 
@@ -51,6 +52,7 @@ class PostItem extends React.Component {
         
         let friend = this.props.users[this.props.authorId]
         let profile_pic = this.proPicMaybe();
+        debugger
 
         
         return (
@@ -64,6 +66,32 @@ class PostItem extends React.Component {
                 </div>
                 <div className="post-body">
                     {this.props.body}
+                </div>
+
+
+                <div className="new-post">
+
+                    
+
+                    <button className="new-post-button" onClick={() => this.props.newComment(this.props.post.id)}>
+                        leave comment?
+                    </button>
+
+                </div>
+
+                <div className="new-post">
+
+                    
+
+                    <button className="new-post-button" onClick={() => this.props.newLike({liker_id: this.props.currentUserId, post_id: this.props.post.id })}>
+                        leave like?
+                    </button>
+
+                </div>
+
+
+                <div>
+                    <CommentIndexContainer users={this.props.users} />
                 </div>                
             </div>
         )

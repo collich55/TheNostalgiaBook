@@ -20,6 +20,8 @@ class User < ApplicationRecord
     foreign_key: :requestee_id, 
     class_name: "Friendship"
 
+  has_many :posts,  class_name: "Posts"
+
   def friend_requests
     self.friend_requests_as_requestee + self.friend_requests_as_requester
   end
