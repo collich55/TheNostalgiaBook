@@ -26,16 +26,7 @@ class LikeItem extends React.Component {
     
 
 
-    proPicMaybe() {
-        
-        let friendo = this.props.users[this.props.authorId];
-        if (!friendo.profile_photo_link || friendo.profile_photo_link === "") {
-            return <img className="like-pro-pic" src={"https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"} alt="Pro Pic" />
-        } else {
-            return <img className="like-pro-pic" src={friendo.profile_photo_link} alt="Pro Pic" />
-        }
-
-    }
+    
 
     likeDate() {
         let date = this.props.like.created_at;
@@ -50,7 +41,6 @@ class LikeItem extends React.Component {
     render() {
         
         let friend = this.props.users[this.props.authorId]
-        let profile_pic = this.proPicMaybe();
 
         
         return (

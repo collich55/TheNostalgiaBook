@@ -9,6 +9,7 @@ const mapStateToProps = (state) => {
     return ({
         errors: state.errors.likes,
         likes: state.entities.likes,
+        users: state.entities.users
         
     });
 };
