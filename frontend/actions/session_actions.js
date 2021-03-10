@@ -40,7 +40,7 @@ export const logout = () => dispatch => (
 );
 
 export const update = user => dispatch => {
-    debugger
+    
     return (APIUtil.update(user)
         .then(user => (dispatch(receiveCurrentUser(user)))), err => (
             dispatch(receiveErrors(err.responseJSON))

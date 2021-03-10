@@ -8,7 +8,7 @@ import { fetchComments } from "../../actions/comment_actions.js";
 const mapStateToProps = (state) => {
     return ({
         errors: state.errors.comments,
-        comments: state.entities.comments,
+        comments: state.entities.comments
         
     });
 };

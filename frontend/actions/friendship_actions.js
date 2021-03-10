@@ -32,7 +32,7 @@ const removeRequest = requestId => ({
 
 export const createRequest = friendship => dispatch => {
 
-    debugger
+    
 
     return APIUtil.createRequest(friendship)
     .then(request => (dispatch(receiveRequest(request)))
@@ -52,7 +52,7 @@ export const fetchRequests = () => dispatch => {
 };
 
 export const deleteRequest = requestId => dispatch => {
-    debugger
+    
     return (APIUtil.destroyRequest(requestId))
         .then(() => (dispatch(removeRequest(requestId))))
 }

@@ -1,6 +1,6 @@
 export const createRequest = friendship => {
 
-    debugger
+    
 
     return $.ajax({
         method: 'POST',
@@ -23,7 +23,7 @@ export const fetchRequests = () => {
 };
 
 export const destroyRequest = (requestId) => {
-    debugger
+    
     return $.ajax({
         method: 'DELETE',
         url: `/api/friendships/${requestId}`

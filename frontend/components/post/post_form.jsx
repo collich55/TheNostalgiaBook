@@ -35,9 +35,9 @@ class PostForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        
         const post = Object.assign({}, this.state, this.props.currentUserId);
-        debugger
+        
         this.props.closeModal();
         this.props.processForm(post).then(this.props.closeModal());;
     }

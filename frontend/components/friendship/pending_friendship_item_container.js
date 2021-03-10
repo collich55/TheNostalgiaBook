@@ -8,7 +8,7 @@ import PendingFriendshipItem from './pending_friendship_item';
 const mapStateToProps = ({ session, entities: { users, friendships } }) => {
 
 
-    debugger
+    
     return {
         currentUser: users[session.id],
         friendships: friendships,

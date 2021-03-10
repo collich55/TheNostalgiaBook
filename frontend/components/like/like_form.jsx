@@ -35,9 +35,9 @@ class LikeForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        
         const like = Object.assign({}, this.state, this.props.currentUserId);
-        debugger
+        
         this.props.closeModal();
         this.props.processForm(like).then(this.props.closeModal());;
     }

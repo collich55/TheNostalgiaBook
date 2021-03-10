@@ -12,6 +12,16 @@ class LikeIndex extends React.Component {
         this.props.fetchLikes();
     }
 
+    handleLikes () {
+        // Object.values(this.props.likes).map(like => <LikeItem like={like} authorId={like.author_id} body={like.body} users={this.props.users} />)
+        let likesForPost = Object.values(this.props.likes).filter(like => like.post_id === this.props.postId);
+        if (likesForPost.length > 0) {
+            return <p>{likesForPost[0].liker_id}</p>
+        } else {
+            return null
+        }
+    }
+
     
 
     
@@ -27,7 +37,7 @@ class LikeIndex extends React.Component {
 
 
                     {
-                        Object.values(this.props.likes).map(like =>  <LikeItem like={like} authorId={like.author_id} body={like.body} users={this.props.users} /> )
+                        this.handleLikes()
                     }
                     
                         

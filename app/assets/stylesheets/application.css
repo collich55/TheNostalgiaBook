@@ -834,6 +834,17 @@ button:hover{
   width: 590px;
 }
 
+.comment-item-box {
+  display: flex;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+  flex-direction: column;
+  margin: 10px;
+  background-color: whitesmoke;
+}
+
 .post-body {
   align-items: center;
   display: flex;
@@ -844,6 +855,55 @@ button:hover{
 
 .date-text {
   font-size: small
+}
+
+.comment-text {
+  font-size: medium
+}
+
+.like-and-comment-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-top: 1px solid lightgrey;
+  border-bottom: 1px solid lightgrey;
+  border-right: none;
+  border-left: none;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.like-button {
+  background-color: white;
+  border: none;
+  width: 50%;
+  border-radius: 5px;
+}
+.like-button:hover {
+  background-color: whitesmoke;
+}
+
+.like-button-activated {
+  border: none;
+  width: 50%;
+  border-radius: 5px;
+  color: #1877f2;
+  background-color: white;
+}
+
+.like-button-activated:hover {
+  background-color: whitesmoke;
+}
+
+.comment-button {
+  background-color: white;
+  border: none;
+  width: 50%;
+  border-radius: 5px;
+}
+
+.comment-button:hover {
+  background-color: whitesmoke;
 }
 
 

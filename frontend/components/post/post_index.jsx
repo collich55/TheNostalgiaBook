@@ -27,7 +27,7 @@ class PostIndex extends React.Component {
 
 
                     {
-                        Object.values(this.props.posts).map(post =>  <PostItem newComment={this.props.newComment} newLike={this.props.newLike} post={post} currentUserId={this.props.currentUserId} authorId={post.author_id} body={post.body} users={this.props.users} /> )
+                        Object.values(this.props.posts).map(post =>  <PostItem newComment={this.props.newComment} likes={this.props.likes} newLike={this.props.newLike} post={post} currentUserId={this.props.currentUserId} authorId={post.author_id} body={post.body} users={this.props.users} /> )
                     }
                     
                         

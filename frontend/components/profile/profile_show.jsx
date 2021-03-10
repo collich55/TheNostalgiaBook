@@ -116,7 +116,7 @@ class ProfileShow extends React.Component {
 
     newPost() {
 
-        debugger
+        
 
         if (this.props.userId == this.props.currentUserId) {
             return (

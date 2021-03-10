@@ -32,7 +32,7 @@ class FriendshipItem extends React.Component {
 
 
     render() {
-        debugger
+        
         let friend = this.nameDisplay();
         let photo;
         if (!(friend.profile_photo_link) || friend.profile_photo_link === "") {

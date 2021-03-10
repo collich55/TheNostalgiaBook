@@ -31,11 +31,11 @@ class PendingFriendshipItem extends React.Component {
 
 
     // emailTest() {
-    //     debugger
+    //     
     //     if (this.props.users.friend_id.email) {
     //         return this.props.users.friend_id.email;
     //     } else {
-    //         debugger
+    //         
     //         return "temp"
     //     }
     // }
@@ -51,15 +51,15 @@ class PendingFriendshipItem extends React.Component {
 
 
     render() {
-        debugger
+        
         let friend = this.nameDisplay();
 
-        debugger
+        
         // if (this.props.users.friend_id.email !== undefined) {
-        //     debugger
+        //     
         //     email = this.props.users.friend_id.email;
         // }
-        debugger
+        
         // this.setState({email: friend.email})
         return (
             <div id={"friend-item-box"}>

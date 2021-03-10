@@ -9,6 +9,8 @@ import {
     HashRouter
 } from 'react-router-dom';
 import CommentIndexContainer from '../comment/comment_index_container'
+import LikeIndexContainer from '../like/like_index_container'
+import '@fortawesome/fontawesome-free/js/all.js';
 
 
 
@@ -28,7 +30,7 @@ class PostItem extends React.Component {
 
 
     proPicMaybe() {
-        debugger
+        
         let friendo = this.props.users[this.props.authorId];
         if (!friendo.profile_photo_link || friendo.profile_photo_link === "") {
             return <img className="post-pro-pic" src={"https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"} alt="Pro Pic" />
@@ -46,13 +48,32 @@ class PostItem extends React.Component {
     }
 
 
+    handleLikeButton () {
+
+        let currentUserLikedPost = Object.values(this.props.likes).some(like => ((like.post_id === this.props.post.id) && (like.liker_id === this.props.currentUserId)));
+
+        debugger
+        
+        if (currentUserLikedPost) {
+            return <button className="like-button-activated" onClick={() => this.props.newLike({ liker_id: this.props.currentUserId, post_id: this.props.post.id })}>
+                <i class="fas fa-thumbs-up"></i> Like
+            </button>
+        } else {
+            return <button className="like-button" onClick={() => this.props.newLike({ liker_id: this.props.currentUserId, post_id: this.props.post.id })}>
+                <i class="far fa-thumbs-up"></i> Like
+            </button>
+        }
+
+    }
+
+
 
 
     render() {
         
         let friend = this.props.users[this.props.authorId]
         let profile_pic = this.proPicMaybe();
-        debugger
+        
 
         
         return (
@@ -64,34 +85,34 @@ class PostItem extends React.Component {
                         <p className="date-text" >{this.postDate()}</p>
                     </div>
                 </div>
+
+
+                <div>
+                    <LikeIndexContainer postId={this.props.post.id} users={this.props.users} />
+                </div>
+
+
                 <div className="post-body">
                     {this.props.body}
                 </div>
 
 
-                <div className="new-post">
+                
 
+                <div className="like-and-comment-buttons">
                     
+                    {this.handleLikeButton()}
 
-                    <button className="new-post-button" onClick={() => this.props.newComment(this.props.post.id)}>
-                        leave comment?
+                    <button className="comment-button" onClick={() => this.props.newComment(this.props.post.id)}>
+                        <i class="far fa-comment"></i> Comment
                     </button>
 
-                </div>
-
-                <div className="new-post">
-
-                    
-
-                    <button className="new-post-button" onClick={() => this.props.newLike({liker_id: this.props.currentUserId, post_id: this.props.post.id })}>
-                        leave like?
-                    </button>
 
                 </div>
 
 
                 <div>
-                    <CommentIndexContainer users={this.props.users} />
+                    <CommentIndexContainer postId={this.props.post.id} users={this.props.users} />
                 </div>                
             </div>
         )

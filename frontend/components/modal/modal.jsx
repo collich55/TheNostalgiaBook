@@ -22,7 +22,7 @@ function Modal({modal, closeModal}) {
   }
   
   let component;
-  debugger
+  
   switch (modal) {
     // case 'login':
     //   

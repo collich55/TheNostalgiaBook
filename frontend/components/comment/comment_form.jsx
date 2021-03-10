@@ -37,9 +37,9 @@ class CommentForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        debugger
+        
         const comment = Object.assign({}, this.state, this.props.currentUserId);
-        debugger
+        
         this.props.closeModal();
         this.props.processForm(comment).then(this.props.closeModal());;
     }
