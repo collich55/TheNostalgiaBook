@@ -114,6 +114,15 @@ class ProfileShow extends React.Component {
         }
     }
 
+    // proPicMaybeForPostOnProfile() {
+    //     if (!this.props.currentUser.profile_photo_link || this.props.currentUser.profile_photo_link === "") {
+    //         return <img className="post-pro-pic" src={"https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"} alt="Pro Pic" />
+    //     } else {
+    //         return <img className="post-pro-pic" src={this.props.profileUser.profile_photo_link} alt="Pro Pic" />
+    //     }
+    // }
+
+
     newPost() {
 
         
@@ -131,7 +140,17 @@ class ProfileShow extends React.Component {
                 </div>
             )
         } else {
-            return null
+            return (
+                <div className="new-post-profile">
+
+                    {this.proPicMaybeForPost()}
+
+                    <button className="new-post-button-profile" onClick={this.props.newPost}>
+                        Write something to {this.props.profileUser.full_name}...
+                        </button>
+
+                </div>
+            )
         }
 
     }

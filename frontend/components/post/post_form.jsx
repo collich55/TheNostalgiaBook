@@ -5,7 +5,8 @@ class PostForm extends React.Component {
         super(props);
         this.state = {
             body: '',
-            author_id: this.props.currentUserId
+            author_id: this.props.currentUserId,
+            other_user_id: this.props.userId
 
         };
         this.handleSubmit = this.handleSubmit.bind(this);

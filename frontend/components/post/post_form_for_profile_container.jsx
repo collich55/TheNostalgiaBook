@@ -12,7 +12,7 @@ const mapStateToProps = ({ errors, session, ownProps }) => {
     return {
         errors: errors.session,
         currentUserId: session.id,
-        userId: null
+        userId = ownProps.match.params.userId   
     };
 };
 

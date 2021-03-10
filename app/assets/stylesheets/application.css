@@ -883,6 +883,21 @@ button:hover{
   background-color: whitesmoke;
 }
 
+.like-text {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 2px;
+}
+
+#like-text-thumbs-up {
+  color: #1877f2;
+  /* border-radius: 100%;
+  border: 1px solid black;
+  height: 30px;
+  width: 30px;
+  padding: 5px; */ 
+}
+
 .like-button-activated {
   border: none;
   width: 50%;

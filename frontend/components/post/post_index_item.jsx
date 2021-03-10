@@ -52,11 +52,11 @@ class PostItem extends React.Component {
 
         let currentUserLikedPost = Object.values(this.props.likes).some(like => ((like.post_id === this.props.post.id) && (like.liker_id === this.props.currentUserId)));
 
-        debugger
+        
         
         if (currentUserLikedPost) {
             return <button className="like-button-activated" onClick={() => this.props.newLike({ liker_id: this.props.currentUserId, post_id: this.props.post.id })}>
-                <i class="fas fa-thumbs-up"></i> Like
+                <i class="far fa-thumbs-up"></i> Like
             </button>
         } else {
             return <button className="like-button" onClick={() => this.props.newLike({ liker_id: this.props.currentUserId, post_id: this.props.post.id })}>
@@ -64,6 +64,20 @@ class PostItem extends React.Component {
             </button>
         }
 
+    }
+
+    handlePostNameText() {
+
+        let friend = this.props.users[this.props.authorId];
+
+        if (post.other_user_id && post.other_user_id != null){
+
+            let other_user = this.props.users[post.other_user_id];
+
+            <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name + " TO " + other_user.full_name + " " + other_user.last_name}</a>
+        } else {
+            <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
+        }
     }
 
 
@@ -81,21 +95,21 @@ class PostItem extends React.Component {
                 <div className="name-and-pic">
                     {profile_pic}
                     <div className="name-and-date" >
-                        <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
+                        {this.handlePostNameText()}
                         <p className="date-text" >{this.postDate()}</p>
                     </div>
                 </div>
 
 
-                <div>
-                    <LikeIndexContainer postId={this.props.post.id} users={this.props.users} />
-                </div>
 
 
                 <div className="post-body">
                     {this.props.body}
                 </div>
 
+                <div>
+                    <LikeIndexContainer postId={this.props.post.id} users={this.props.users} />
+                </div>
 
                 
 
