@@ -3,6 +3,8 @@ import { RECEIVE_LIKE, DELETE_LIKE, RECEIVE_LIKES } from "../actions/like_action
 const likesReducer = (state = {}, action) => {
     Object.freeze(state);
     let newState = Object.assign({}, state);
+
+    debugger
     
     switch (action.type) {
         case RECEIVE_LIKES:
@@ -11,7 +13,7 @@ const likesReducer = (state = {}, action) => {
                 newState[action.like.id] = action.like;
                 return newState;
         case DELETE_LIKE:
-            delete newState[action.like.id];
+            delete newState[action.likeId.likeId.id];
             return newState;
         default:
             return state;

@@ -1,11 +1,12 @@
 import React from 'react';
 
-class PostForm extends React.Component {
+class PostFormForProfile extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
             body: '',
             author_id: this.props.currentUserId,
+            other_user_id: this.props.profileUser.id
 
         };
         this.handleSubmit = this.handleSubmit.bind(this);
@@ -102,4 +103,4 @@ class PostForm extends React.Component {
     }
 }
 
-export default PostForm;
+export default PostFormForProfile;

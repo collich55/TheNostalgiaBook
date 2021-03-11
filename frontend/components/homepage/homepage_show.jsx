@@ -17,12 +17,15 @@ class HomepageShow extends React.Component {
         this.props.fetchUsers();
         this.props.fetchRequests();
         this.props.fetchPosts();
-        this.setState()
+        this.props.fetchComments();
+        this.props.fetchLikes();
+        
+        this.setState();
         
     }
 
     actuallyFriended() {
-        return Object.values(this.props.friendships).filter(request => request.accepted === true)
+        return Object.values(this.props.friendships).reverse().filter(request => request.accepted === true)
     }
 
     proPicMaybe() {

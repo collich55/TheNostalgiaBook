@@ -18,13 +18,19 @@ class ProfileShow extends React.Component {
     componentDidMount() {
        
         this.props.showUser(this.props.match.params.userId);
+
         this.props.fetchUsers();
         this.props.fetchRequests();
+        this.props.fetchPosts();
+        this.props.fetchComments();
+        this.props.fetchLikes();
+        
+        this.setState();
         
     }
 
     actuallyFriended() {
-        return Object.values(this.props.friendships).filter(request => request.accepted === true)
+        return Object.values(this.props.friendships).reverse().filter(request => request.accepted === true)
     }
 
 
@@ -86,7 +92,7 @@ class ProfileShow extends React.Component {
 
     requestPending() {
   
-        return Object.values(this.props.friendships).filter(request => (request.accepted === false) && (this.props.userId == request.requestee_id || this.props.userId == request.requester_id))
+        return Object.values(this.props.friendships).reverse().filter(request => (request.accepted === false) && (this.props.userId == request.requestee_id || this.props.userId == request.requester_id))
     }
 
     nameDisplay() {
@@ -133,7 +139,7 @@ class ProfileShow extends React.Component {
 
                     {this.proPicMaybeForPost()}
 
-                    <button className="new-post-button-profile" onClick={this.props.newPost}>
+                    <button className="new-post-button-profile" onClick={() => this.props.newPost('new-post')}>
                         What's on your mind, {this.props.currentUser.full_name}?
                     </button>
 
@@ -145,7 +151,7 @@ class ProfileShow extends React.Component {
 
                     {this.proPicMaybeForPost()}
 
-                    <button className="new-post-button-profile" onClick={this.props.newPost}>
+                    <button className="new-post-button-profile" onClick={() =>this.props.newPost(["new-post-for-profile", this.props.profileUser])}>
                         Write something to {this.props.profileUser.full_name}...
                         </button>
 
@@ -212,7 +218,7 @@ class ProfileShow extends React.Component {
                     </span>
 
 
-                    <PostIndexContainer users={this.props.users} />
+                    <PostIndexContainer situation="profile-show" profileUserId={this.props.userId} users={this.props.users} />
 
                     
                 </div>

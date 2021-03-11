@@ -4,7 +4,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { fetchPosts } from "../../actions/post_actions.js";
 import { openModal } from '../../actions/modal_actions';
-import { createLike } from "../../actions/like_actions.js";
+import { createLike, deleteLike } from "../../actions/like_actions.js";
 
 
 const mapStateToProps = (state) => {
@@ -22,7 +22,8 @@ const mapDispatchToProps = dispatch => {
     return ({
         fetchPosts: () => dispatch(fetchPosts()),
         newComment: postId => dispatch(openModal(['new-comment', postId])),
-        newLike: (data) => dispatch(createLike(data))
+        newLike: (data) => dispatch(createLike(data)),
+        deleteLike: (data) => dispatch(deleteLike(data))
         
     });
 };

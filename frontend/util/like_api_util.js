@@ -9,12 +9,15 @@ export const createLike = like => {
     )
 };
 
-// export const deleteLike = likeId => {
-//     return $.ajax({
-//         method: 'DELETE',
-//         url: `/api/likes/${likeId}`
-//     })
-// };
+export const deleteLike = data => {
+
+    debugger
+
+    return $.ajax({
+        method: 'DELETE',
+        url: `/api/likes/${data.likeId.id}`
+    })
+};
 
 export const fetchLikes = () => (
     $.ajax({

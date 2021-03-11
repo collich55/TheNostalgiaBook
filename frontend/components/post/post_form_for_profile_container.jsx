@@ -1,18 +1,17 @@
 import { connect } from 'react-redux';
 import React from 'react';
-import PostForm from "./post_form.jsx";
+import PostFormForProfile from "./post_form_for_profile.jsx";
 import { Link } from 'react-router-dom';
 import { createPost } from '../../actions/post_actions';
 import { signup, login } from '../../actions/session_actions';
-import SignUpForm from './post_form';
+import SignUpForm from './post_form_for_profile';
 import { openModal, closeModal } from '../../actions/modal_actions';
 
-const mapStateToProps = ({ errors, session, ownProps }) => {
+const mapStateToProps = ({ errors, session }) => {
 
     return {
         errors: errors.session,
         currentUserId: session.id,
-        userId = ownProps.match.params.userId   
     };
 };
 
@@ -24,4 +23,4 @@ const mapDispatchToProps = dispatch => {
     };
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(PostForm);
+export default connect(mapStateToProps, mapDispatchToProps)(PostFormForProfile);

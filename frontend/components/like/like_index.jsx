@@ -17,7 +17,7 @@ class LikeIndex extends React.Component {
     handleLikes () {
         // Object.values(this.props.likes).map(like => <LikeItem like={like} authorId={like.author_id} body={like.body} users={this.props.users} />)
         
-        let likesForPost = Object.values(this.props.likes).filter(like => like.post_id === this.props.postId);
+        let likesForPost = Object.values(this.props.likes).reverse().filter(like => like.post_id === this.props.postId);
         let likesForPostLengthMinusTwo = likesForPost.length - 2;
         if (likesForPost.length === 0) {
             return null

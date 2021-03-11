@@ -5,9 +5,10 @@ import { Link } from 'react-router-dom';
 import { fetchRequests, createRequest, deleteRequest } from '../../actions/friendship_actions';
 import { createPost } from '../../actions/post_actions';
 import { fetchPosts } from '../../actions/post_actions';
-
 import { showUser, fetchUsers } from "../../actions/user_actions.js";
 import { openModal} from '../../actions/modal_actions';
+import { fetchLikes } from "../../actions/like_actions.js";
+import { fetchComments } from "../../actions/comment_actions.js";
 
 
 const mapStateToProps = (state, ownProps) => {
@@ -23,9 +24,13 @@ const mapStateToProps = (state, ownProps) => {
 const mapDispatchToProps = dispatch => {
     return ({
         showUser: userId => dispatch(showUser(userId)),
+
         fetchUsers: () => dispatch(fetchUsers()),
         fetchRequests: () => dispatch(fetchRequests()),
         fetchPosts: () => dispatch(fetchPosts()),
+        fetchLikes: () => dispatch(fetchLikes()),
+        fetchComments: () => dispatch(fetchComments()),
+
         createRequest: info => dispatch(createRequest(info)),
         deleteRequest: requestId => dispatch(deleteRequest(requestId)),
         createRequest: info => dispatch(createRequest(info)),

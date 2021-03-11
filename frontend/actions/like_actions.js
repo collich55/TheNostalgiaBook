@@ -35,12 +35,15 @@ export const createLike = like => dispatch => (
         ))
 );
 
-export const deleteLike = likeId => dispatch => (
-    APIUtil.deleteLike(likeId)
-        .then(() => (dispatch(removeLike(likeId))), err => (
+export const deleteLike = data => dispatch => {
+
+    
+    
+    return APIUtil.deleteLike(data)
+        .then(() => (dispatch(removeLike(data))), err => (
             dispatch(receiveErrors(err.responseJSON))
         ))
-);
+};
 
 export const fetchLikes = () => dispatch => {
     

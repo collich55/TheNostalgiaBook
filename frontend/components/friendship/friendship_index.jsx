@@ -25,12 +25,12 @@ class FriendshipIndex extends React.Component {
 
     actuallyFriended() {
    
-        return Object.values(this.props.friendships).filter(request => (request.accepted === true) && (this.props.userId == request.requestee_id || this.props.userId == request.requester_id))
+        return Object.values(this.props.friendships).reverse().filter(request => (request.accepted === true) && (this.props.userId == request.requestee_id || this.props.userId == request.requester_id))
     }
 
     requestPending() {
    
-        return Object.values(this.props.friendships).filter(request => (request.accepted === false) && (this.props.userId == request.requestee_id))
+        return Object.values(this.props.friendships).reverse().filter(request => (request.accepted === false) && (this.props.userId == request.requestee_id))
     }
 
     pendingShow() {

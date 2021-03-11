@@ -51,11 +51,13 @@ class PostItem extends React.Component {
     handleLikeButton () {
 
         let currentUserLikedPost = Object.values(this.props.likes).some(like => ((like.post_id === this.props.post.id) && (like.liker_id === this.props.currentUserId)));
+        let likeObjectId
+
 
         
-        
         if (currentUserLikedPost) {
-            return <button className="like-button-activated" onClick={() => this.props.newLike({ liker_id: this.props.currentUserId, post_id: this.props.post.id })}>
+            likeObjectId = Object.values(this.props.likes).filter(like => ((like.post_id === this.props.post.id) && (like.liker_id === this.props.currentUserId)))[0];
+            return <button className="like-button-activated" onClick={() => this.props.deleteLike({ likeId: likeObjectId})}>
                 <i class="far fa-thumbs-up"></i> Like
             </button>
         } else {
@@ -69,14 +71,15 @@ class PostItem extends React.Component {
     handlePostNameText() {
 
         let friend = this.props.users[this.props.authorId];
+        
 
-        if (post.other_user_id && post.other_user_id != null){
+        if (this.props.post.other_user_id && this.props.post.other_user_id !== null){
 
-            let other_user = this.props.users[post.other_user_id];
+            let other_user = this.props.users[this.props.post.other_user_id];
 
-            <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name + " TO " + other_user.full_name + " " + other_user.last_name}</a>
+            return <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name} <i class="fas fa-arrow-circle-right"></i> {other_user.full_name + " " + other_user.last_name}</a>
         } else {
-            <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
+            return <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
         }
     }
 
