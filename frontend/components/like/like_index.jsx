@@ -1,5 +1,4 @@
 import React from 'react';
-import LikeItem from './like_index_item';
 
 
 
