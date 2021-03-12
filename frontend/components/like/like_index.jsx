@@ -18,6 +18,10 @@ class LikeIndex extends React.Component {
         
         let likesForPost = Object.values(this.props.likes).reverse().filter(like => like.post_id === this.props.postId);
         let likesForPostLengthMinusTwo = likesForPost.length - 2;
+
+        
+
+
         if (likesForPost.length === 0) {
             return null
         } else if (likesForPost.length === 1) {
@@ -37,6 +41,11 @@ class LikeIndex extends React.Component {
 
     
     render() {
+
+
+        if (Object.values(this.props.users).length < 3) {
+            return null
+        }
 
 
 

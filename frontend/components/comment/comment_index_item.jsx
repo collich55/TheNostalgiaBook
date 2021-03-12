@@ -29,6 +29,9 @@ class CommentItem extends React.Component {
     proPicMaybe() {
         
         let friendo = this.props.users[this.props.commenterId];
+
+
+
         if (!friendo.profile_photo_link || friendo.profile_photo_link === "") {
             return <img className="post-pro-pic" src={"https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"} alt="Pro Pic" />
         } else {
@@ -51,6 +54,15 @@ class CommentItem extends React.Component {
         
         let friend = this.props.users[this.props.commenterId]
         let profile_pic = this.proPicMaybe();
+
+        if (Object.values(this.props.users).length < 3) {
+            return null
+        }
+
+
+        if (!friend) {
+            return null
+        }
 
         
         return (

@@ -51,6 +51,10 @@ class PendingFriendshipItem extends React.Component {
 
 
     render() {
+
+        if (Object.values(this.props.users).length < 3) {
+            return null
+        }
         
         let friend = this.nameDisplay();
 

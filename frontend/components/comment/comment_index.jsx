@@ -18,6 +18,11 @@ class CommentIndex extends React.Component {
     render() {
 
 
+        if (Object.values(this.props.users).length < 3) {
+            return null
+        }
+
+
 
        
         

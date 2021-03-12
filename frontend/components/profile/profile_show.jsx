@@ -28,7 +28,6 @@ class ProfileShow extends React.Component {
         this.props.fetchComments();
         this.props.fetchLikes();
         
-        this.setState();
         
     }
 
@@ -168,6 +167,11 @@ class ProfileShow extends React.Component {
 
 
     render() {
+
+
+        if (Object.values(this.props.users).length < 3) {
+            return null
+        }
 
         let proPic = this.proPicMaybe();
         let newPost = this.newPost();

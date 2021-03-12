@@ -20,7 +20,6 @@ class HomepageShow extends React.Component {
         this.props.fetchComments();
         this.props.fetchLikes();
         
-        this.setState();
         
     }
 
@@ -37,6 +36,12 @@ class HomepageShow extends React.Component {
     }
 
     render() {
+
+
+        if (Object.values(this.props.users).length < 3) {
+            return null
+        }
+
         return(
         <div id={"homepage"}>
             <div className="timeline">

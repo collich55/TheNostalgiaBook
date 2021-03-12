@@ -60,6 +60,7 @@ class FriendshipIndex extends React.Component {
 
 
     render() {
+
         const friended = this.actuallyFriended();
         
         return (

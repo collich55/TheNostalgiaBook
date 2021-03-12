@@ -10,6 +10,7 @@ const mapStateToProps = ({ session, entities: { users } }) => {
     console.log(users)
     return {
         currentUser: users[session.id]
+    
     };
 };
 

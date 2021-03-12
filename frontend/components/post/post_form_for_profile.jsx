@@ -64,6 +64,10 @@ class PostFormForProfile extends React.Component {
 
 
     render() {
+
+
+        
+
         let that = this;
         return (
             <div className="signup-form-container">

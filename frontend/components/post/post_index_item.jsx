@@ -26,12 +26,28 @@ class PostItem extends React.Component {
 
     }
 
+    // componentDidMount() {
+    //     this.props.fetchUsers();
+    //     this.props.fetchRequests();
+    //     this.props.fetchPosts();
+    //     this.props.fetchComments();
+    //     this.props.fetchLikes();
+
+    //     this.setState();
+    // }
+
     
 
 
     proPicMaybe() {
+
         
         let friendo = this.props.users[this.props.authorId];
+
+        if (!friendo) {
+            return false 
+        }
+
         if (!friendo.profile_photo_link || friendo.profile_photo_link === "") {
             return <img className="post-pro-pic" src={"https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg"} alt="Pro Pic" />
         } else {
@@ -73,11 +89,27 @@ class PostItem extends React.Component {
         let friend = this.props.users[this.props.authorId];
         
 
+        if (!friend) {
+            return null
+        }
+
+
+        
+        
+
         if (this.props.post.other_user_id && this.props.post.other_user_id !== null){
 
             let other_user = this.props.users[this.props.post.other_user_id];
 
-            return <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name} <i class="fas fa-arrow-circle-right"></i> {other_user.full_name + " " + other_user.last_name}</a>
+            if (!other_user) {
+                return null
+            }
+
+            let friend_without_arrow = friend.full_name + " " + friend.last_name;
+            // let arrow_icon = <i class="fas fa-caret-right"></i>;
+            // arrow_icon = <p>{Object.values(arrow_icon)[0]}</p>;
+
+            return <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend_without_arrow + " > " + other_user.full_name + " " + other_user.last_name}</a>
         } else {
             return <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
         }
@@ -87,6 +119,10 @@ class PostItem extends React.Component {
 
 
     render() {
+
+        if (Object.values(this.props.users).length < 3) {
+            return null
+        }
         
         let friend = this.props.users[this.props.authorId]
         let profile_pic = this.proPicMaybe();
