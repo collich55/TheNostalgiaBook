@@ -26,14 +26,14 @@ const Bar = ({ currentUser, logout, users }) => {
 
 
             <div className="professional-links">
-                <div className="link-text-image">
+                <div className="git-text-image">
                     <a href="https://github.com/collich55">
-                        {git}
+                        <i id={"git-logo"} class="fab fa-github-square fa-w-14 fa-3x"></i>
                     </a>
                 </div>
                 <div className="link-text-image">
                     <a href="https://www.linkedin.com/in/anthony-collichio-451b11103/">
-                        {link}
+                        <i id={"link-logo"} class="fab fa-linkedin fa-w-14 fa-3x"></i>
                     </a>
                 </div>
             </div>

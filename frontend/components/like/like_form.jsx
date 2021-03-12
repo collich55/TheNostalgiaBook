@@ -80,7 +80,7 @@ class LikeForm extends React.Component {
 
                          
 
-                        <input type="text"
+                        <textarea type="text"
                             value={this.state.body}
                             onChange={this.update('body')}
                             className="login-input"

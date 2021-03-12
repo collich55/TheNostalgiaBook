@@ -743,6 +743,13 @@ homepage css
   width: 590px;
 }
 
+textarea {
+  border-radius: 5px;
+  padding: 10px;
+  border: 1px solid #ccd0d5;
+  min-height: 100px;
+}
+
 .new-post-profile {
   display: flex;
   font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
@@ -991,6 +998,50 @@ navbar css
   padding-right: 20px;
   margin-left: 9.5%;
 }
+
+.link-text-image {
+  color: grey;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.link-text-image:hover {
+  background-color: #287be7;
+  cursor: pointer;
+  opacity: .9;
+}
+
+.git-text-image {
+  color: grey;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+
+.git-text-image:hover {
+  background-color: #f34f29;
+  cursor: pointer;
+  opacity: .9;
+}
+
+/* #git-logo:hover {
+  opacity: 1;
+}
+
+#link-logo:hover {
+  opacity: 1;
+}
+
+i:hover {
+  opacity: 1;
+} */
+
+
 
   
 
