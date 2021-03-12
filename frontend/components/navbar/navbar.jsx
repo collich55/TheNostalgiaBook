@@ -20,7 +20,7 @@ const Bar = ({ currentUser, logout, users }) => {
         <hgroup className="bar-group">
             <div id={"all-home"}>
                 <Link to={'/'} id={"homeB"}>
-                    <a href={`#/users/${currentUser.id}`} replace id={"proB"} >{<img className="post-pro-pic" src={"https://i.imgur.com/GlUKnPm.png"} alt="Pro Pic" />}</a>
+                    <p id={"proB"} >{<img className="post-pro-pic" src={"https://i.imgur.com/GlUKnPm.png"} alt="Pro Pic" />}</p>
                 </Link>
             </div>
 
@@ -28,20 +28,20 @@ const Bar = ({ currentUser, logout, users }) => {
             <div className="professional-links">
                 <div className="git-text-image">
                     <a href="https://github.com/collich55">
-                        <i id={"git-logo"} class="fab fa-github-square fa-w-14 fa-3x"></i>
+                        <i id={"git-logo"} className="fab fa-github-square fa-w-14 fa-3x"></i>
                     </a>
                 </div>
                 <div className="link-text-image">
                     <a href="https://www.linkedin.com/in/anthony-collichio-451b11103/">
-                        <i id={"link-logo"} class="fab fa-linkedin fa-w-14 fa-3x"></i>
+                        <i id={"link-logo"} className="fab fa-linkedin fa-w-14 fa-3x"></i>
                     </a>
                 </div>
             </div>
 
 
             <div  id={"navright"}  >
-                <a href={`#/users/${currentUser.id}`} replace id={"proB"} >{<img className="post-pro-pic" src={currentUser.profile_photo_link} alt="Pro Pic" />} {" " + currentUser.full_name}</a>
-                <button id="proB-n" onClick={logout}><i class="fas fa-sign-out-alt"></i></button>
+                <a href={`#/users/${currentUser.id}`} id={"proB"} >{<img className="post-pro-pic" src={currentUser.profile_photo_link} alt="Pro Pic" />} {" " + currentUser.full_name}</a>
+                <button id="proB-n" onClick={logout}><i className="fas fa-sign-out-alt"></i></button>
             </div>
         </hgroup>
     );

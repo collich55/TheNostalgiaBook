@@ -42,7 +42,7 @@ class FriendshipIndex extends React.Component {
                     <h1>Friend Requests</h1>
                     {
                         pending.map(
-                            request => <PendingFriendshipItemContainer userId={this.props.userId} requester_id={request.requester_id} requestee_id={request.requestee_id} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
+                            request => <PendingFriendshipItemContainer key={request.id} userId={this.props.userId} requester_id={request.requester_id} requestee_id={request.requestee_id} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
                         )
                     }
                 </ul>
@@ -68,7 +68,7 @@ class FriendshipIndex extends React.Component {
                 <ul id={"current-friend"}>
                     {
                         friended.map(
-                            request => <FriendshipItemContainer userId={this.props.userId} requester_id={request.requester_id} requestee_id={request.requestee_id} />
+                            request => <FriendshipItemContainer key={request.id} userId={this.props.userId} requester_id={request.requester_id} requestee_id={request.requestee_id} />
                         )
 
 

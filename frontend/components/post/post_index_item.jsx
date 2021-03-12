@@ -74,15 +74,17 @@ class PostItem extends React.Component {
         if (currentUserLikedPost) {
             likeObjectId = Object.values(this.props.likes).filter(like => ((like.post_id === this.props.post.id) && (like.liker_id === this.props.currentUserId)))[0];
             return <button className="like-button-activated" onClick={() => this.props.deleteLike({ likeId: likeObjectId})}>
-                <i class="far fa-thumbs-up"></i> Like
+                <i className="far fa-thumbs-up"></i> Like
             </button>
         } else {
             return <button className="like-button" onClick={() => this.props.newLike({ liker_id: this.props.currentUserId, post_id: this.props.post.id })}>
-                <i class="far fa-thumbs-up"></i> Like
+                <i className="far fa-thumbs-up"></i> Like
             </button>
         }
 
     }
+
+    
 
     handlePostNameText() {
 
@@ -109,9 +111,9 @@ class PostItem extends React.Component {
             // let arrow_icon = <i class="fas fa-caret-right"></i>;
             // arrow_icon = <p>{Object.values(arrow_icon)[0]}</p>;
 
-            return <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend_without_arrow + " > " + other_user.full_name + " " + other_user.last_name}</a>
+            return <a className="post-name-text" href={`#/users/${friend.id}`}  >{friend_without_arrow + " > " + other_user.full_name + " " + other_user.last_name}</a>
         } else {
-            return <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
+            return <a className="post-name-text" href={`#/users/${friend.id}`}  >{friend.full_name + " " + friend.last_name}</a>
         }
     }
 
@@ -157,7 +159,7 @@ class PostItem extends React.Component {
                     {this.handleLikeButton()}
 
                     <button className="comment-button" onClick={() => this.props.newComment(this.props.post.id)}>
-                        <i class="far fa-comment"></i> Comment
+                        <i className="far fa-comment"></i> Comment
                     </button>
 
 
