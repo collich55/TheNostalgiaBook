@@ -8,6 +8,7 @@
     "@fortawesome/fontawesome-free": "^5.15.2",
     "@fortawesome/react-fontawesome": "^0.1.14",
     "babel-loader": "^8.2.1",
+    "css-loader": "^5.1.2",
     "fontawesome": "^5.6.3",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
@@ -16,6 +17,8 @@
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
+    "style-loader": "^2.0.0",
+    "url-loader": "^4.1.1",
     "webpack": "^4.44.2",
     "webpack-cli": "^4.2.0"
   },
@@ -45,5 +48,9 @@
   "bugs": {
     "url": "https://github.com/collich55/TheNostalgiaBook/issues"
   },
-  "homepage": "https://github.com/collich55/TheNostalgiaBook#readme"
+  "homepage": "https://github.com/collich55/TheNostalgiaBook#readme",
+  "devDependencies": {
+    "file-loader": "^6.2.0",
+    "image-webpack-loader": "^7.0.1"
+  }
 }

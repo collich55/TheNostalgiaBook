@@ -13,13 +13,16 @@ class ProfileShow extends React.Component {
         this.handleFriendRequest = this.handleFriendRequest.bind(this)
         this.handleFriendAcceptance = this.handleFriendAcceptance.bind(this)
         this.handleUnfriend = this.handleUnfriend.bind(this)
+        this.state = {
+            flag: false
+        }
     }
 
     componentDidMount() {
        
         this.props.showUser(this.props.match.params.userId);
 
-        this.props.fetchUsers();
+        this.props.fetchUsers().then(() => console.log("hello"))
         this.props.fetchRequests();
         this.props.fetchPosts();
         this.props.fetchComments();
@@ -173,62 +176,67 @@ class ProfileShow extends React.Component {
         const {full_name, last_name, gender, birth_date,  } = this.props.users[this.props.userId]
         let b = this.checkIfFriend();
 
-        return(
+        
+            return (
 
-        <div id={"pro-page"}>
-            <div className="profile-header">
-                {proPic}
-                <div id={"name"}   >
-                    <h1>{full_name + " " + last_name}</h1>
-                    {b}
-                </div>
-            </div>
-
-            <div className="profile-main" >
-
-                <div className="left-profile" >
-
-                    <div id={"about"}>
-                        <h1>Intro</h1>
-                        <br/>
-                        <h2>Studied at {this.props.users[this.props.userId].school}</h2>
-                        <h2>Lives in {this.props.users[this.props.userId].location}</h2>
-                        <h2>Gender is {gender}</h2>
-                        <h2>Birthday is {birth_date}</h2>
-                        <div className="update-button-spacing" >
-                            {this.props.updateForm}
+                <div id={"pro-page"}>
+                    <div className="profile-header">
+                        {proPic}
+                        <div id={"name"}   >
+                            <h1>{full_name + " " + last_name}</h1>
+                            {b}
                         </div>
                     </div>
 
-                    <br/>
+                    <div className="profile-main" >
 
-                    <div id={"about"}  >
-                        <h1>Friends</h1>
-                        <FriendshipIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
+                        <div className="left-profile" >
+
+                            <div id={"about"}>
+                                <h1>Intro</h1>
+                                <br />
+                                <h2>Studied at {this.props.users[this.props.userId].school}</h2>
+                                <h2>Lives in {this.props.users[this.props.userId].location}</h2>
+                                <h2>Gender is {gender}</h2>
+                                <h2>Birthday is {birth_date}</h2>
+                                <div className="update-button-spacing" >
+                                    {this.props.updateForm}
+                                </div>
+                            </div>
+
+                            <br />
+
+                            <div id={"about"}  >
+                                <h1>Friends</h1>
+                                <FriendshipIndexContainer userId={this.props.userId} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
+                            </div>
+
+                        </div>
+
+                        <div className="right-profile" >
+
+                            {newPost}
+
+                            <span className="post-index-label-profile" >
+                                <h1>Posts</h1>
+                            </span>
+
+
+                            <PostIndexContainer situation="profile-show" profileUserId={this.props.userId} users={this.props.users} />
+
+
+                        </div>
+
                     </div>
 
+
+
                 </div>
+            )
 
-                <div className="right-profile" >
+        
 
-                    {newPost}
-
-                    <span className="post-index-label-profile" >
-                        <h1>Posts</h1>
-                    </span>
-
-
-                    <PostIndexContainer situation="profile-show" profileUserId={this.props.userId} users={this.props.users} />
-
-                    
-                </div>
-
-            </div>
-
-            
-
-        </div>
-        )
+        
     }
 }
 

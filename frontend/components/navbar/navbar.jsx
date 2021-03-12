@@ -9,7 +9,11 @@ import '@fortawesome/fontawesome-free/js/all.js';
 
 
 
+
 const Bar = ({ currentUser, logout, users }) => {
+    const git = <img alt="icon" src={"https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png"} height={40} width={40}></img>;
+    const link = <img alt="icon" src={"https://cdn.icon-icons.com/icons2/2201/PNG/512/linkedin_logo_square_icon_134016.png"} width={40} height={40} ></img>
+    
     
     const bar = () => (
         
@@ -21,8 +25,17 @@ const Bar = ({ currentUser, logout, users }) => {
             </div>
 
 
-            <div>
-                
+            <div className="professional-links">
+                <div className="link-text-image">
+                    <a href="https://github.com/collich55">
+                        {git}
+                    </a>
+                </div>
+                <div className="link-text-image">
+                    <a href="https://www.linkedin.com/in/anthony-collichio-451b11103/">
+                        {link}
+                    </a>
+                </div>
             </div>
 
 
