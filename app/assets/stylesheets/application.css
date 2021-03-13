@@ -294,7 +294,7 @@ h1     {
   padding: 10px;
   border-radius: 10px;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0 0 0 .1), 0 8px 16px rgba(0 0 0 .1);
+  box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   align-items: center;
   margin-top: 10%;
   
@@ -571,7 +571,7 @@ input {
   padding: 10px;
   border-radius: 10px;
   justify-content: space-around;
-  box-shadow: 0 2px 4px rgba(0 0 0 .1), 0 8px 16px rgba(0 0 0 .1);
+  box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   flex-direction: column;
   width: 360px;
 }
@@ -614,7 +614,7 @@ input {
   padding: 10px;
   border-radius: 10px;
   justify-content: center;
-  box-shadow: 0 2px 4px rgba(0 0 0 .1), 0 8px 16px rgba(0 0 0 .1);
+  box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   align-items: center;
   flex-direction: column;
   margin: 20px;
@@ -738,7 +738,7 @@ homepage css
   padding: 10px;
   border-radius: 10px;
   justify-content: start;
-  box-shadow: 0 2px 4px rgba(0 0 0 .1), 0 8px 16px rgba(0 0 0 .1);
+  box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   align-items: center;
   width: 590px;
 }
@@ -757,7 +757,7 @@ textarea {
   padding: 10px;
   border-radius: 10px;
   justify-content: start;
-  box-shadow: 0 2px 4px rgba(0 0 0 .1), 0 8px 16px rgba(0 0 0 .1);
+  box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   align-items: center;
   margin: 10px;
   margin-bottom: 20px;
@@ -775,7 +775,7 @@ button:hover {
   padding: 10px;
   border-radius: 10px;
   justify-content: start;
-  box-shadow: 0 2px 4px rgba(0 0 0 .1), 0 8px 16px rgba(0 0 0 .1);
+  box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   align-items: center;
   margin: 10px;
   margin-bottom: 20px;
@@ -835,7 +835,7 @@ button:hover{
   background-color: white;
   padding: 10px;
   border-radius: 10px;
-  box-shadow: 0 2px 4px rgba(0 0 0 .1), 0 8px 16px rgba(0 0 0 .1);
+  box-shadow: 0 3px 8px rgba(50, 50, 50, 0.17);
   flex-direction: column;
   margin: 10px;
   width: 590px;
