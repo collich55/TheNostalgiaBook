@@ -22,8 +22,19 @@ User.create!({ email: "random7@gmail.com", password: "random", full_name: "Rick"
 User.create!({ email: "random8@gmail.com", password: "random", full_name: "Marisa", last_name: "Mali", birth_date: "12/20/1997", gender: "female", profile_photo_link: "https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg", location: "Los Angeles, CA", school: "Sierra Nevada Prepatory" });
 User.create!({ email: "random9@gmail.com", password: "random", full_name: "James", last_name: "Dean", birth_date: "10/20/1998", gender: "male", profile_photo_link: "https://images.findagrave.com/photos250/photos/2005/39/267_110799478308.jpg", school: "Princeton University", location: "Honolulu, HI" });
 
-Post.create!({ body: "This is a post!!!", author_id: User.find_by(email: "random@gmail.com").id})
-Post.create!({ body: "This is a post22222!!!", author_id: User.find_by(email: "random@gmail.com").id})
+Post.create!({ body: "I can't believe it's getting warm again! I have a good feeling about this summer.", author_id: User.find_by(email: "random@gmail.com").id})
+Post.create!({ body: "Randy! We've GOT to hit up the Rockaways again. How about this weekend we get on the A train and take it all the way down 👍", author_id: User.find_by(email: "random@gmail.com").id, other_user_id: User.find_by(email: "random2@gmail.com").id})
+
+Like.create!({ liker_id: User.find_by(email: "random2@gmail.com").id, post_id: Post.find_by(body: "I can't believe it's getting warm again! I have a good feeling about this summer.").id})
+Like.create!({ liker_id: User.find_by(email: "random3@gmail.com").id, post_id: Post.find_by(body: "I can't believe it's getting warm again! I have a good feeling about this summer.").id})
+Like.create!({ liker_id: User.find_by(email: "random4@gmail.com").id, post_id: Post.find_by(body: "I can't believe it's getting warm again! I have a good feeling about this summer.").id})
+Like.create!({ liker_id: User.find_by(email: "random6@gmail.com").id, post_id: Post.find_by(body: "I can't believe it's getting warm again! I have a good feeling about this summer.").id})
+Like.create!({ liker_id: User.find_by(email: "random9@gmail.com").id, post_id: Post.find_by(body: "I can't believe it's getting warm again! I have a good feeling about this summer.").id})
+
+Like.create!({ liker_id: User.find_by(email: "random2@gmail.com").id, post_id: Post.find_by(body: "Randy! We've GOT to hit up the Rockaways again. How about this weekend we get on the A train and take it all the way down 👍").id})
+
+Comment.create!({ body: "Yesss! How about this time we change it up and take the ferry at Pier 11. Heard it's got great views ⛴️", commenter_id: User.find_by(email: "random2@gmail.com").id, post_id: Post.find_by(body: "Randy! We've GOT to hit up the Rockaways again. How about this weekend we get on the A train and take it all the way down 👍").id})
+Comment.create!({ body: "It's a plan! 💯💯", commenter_id: User.find_by(email: "random@gmail.com").id, post_id: Post.find_by(body: "Randy! We've GOT to hit up the Rockaways again. How about this weekend we get on the A train and take it all the way down 👍").id})
 
 Friendship.create!({requester_id: User.find_by(email: "random@gmail.com").id, requestee_id: User.find_by(email: "random2@gmail.com").id, accepted: true})
 Friendship.create!({requester_id: User.find_by(email: "random@gmail.com").id, requestee_id: User.find_by(email: "random3@gmail.com").id, accepted: true})
