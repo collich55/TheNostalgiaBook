@@ -458,7 +458,7 @@ input {
 
 .bar-name {
   flex: 3;
-  color: rgba(60, 60, 243);
+  color: rgb(60, 60, 243);
   font-family: 'Ubuntu', sans-serif;
   font-size: 40px;
 
