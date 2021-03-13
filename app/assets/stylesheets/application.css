@@ -548,7 +548,7 @@ input {
 
 .post-pro-pic {
   border-radius: 100%;
-  width: 40px;
+  min-width: 40px;
   height: 40px;
   object-fit: cover;
   margin-right: 5px;
@@ -709,6 +709,7 @@ homepage css
 .name-and-pic {
   display: flex;
   align-items: center;
+  margin-top: 10px;
 }
 
 .name-and-date {
@@ -846,7 +847,7 @@ button:hover{
   padding: 10px;
   border-radius: 10px;
   flex-direction: column;
-  margin: 10px;
+  margin-left: 5px;
   background-color: whitesmoke;
 }
 
@@ -864,7 +865,7 @@ button:hover{
 
 .comment-text {
   font-size: medium;
-  padding-top: 5px;
+  margin-top: 5px;
 }
 
 .like-and-comment-buttons {
