@@ -16,13 +16,13 @@ const receiveUsers = users => ({
 
 
 
-export const updateUser = user => dispatch => {
-    return (APIUtil.update(user)
-        .then(user => (dispatch(receiveCurrentUser(user)))), err => (
-            dispatch(receiveErrors(err.responseJSON))
-        )
-    )
-};
+// export const updateUser = user => dispatch => {
+//     return (APIUtil.update(user)
+//         .then(user => (dispatch(receiveCurrentUser(user)))), err => (
+//             dispatch(receiveErrors(err.responseJSON))
+//         )
+//     )
+// };
 
 
 

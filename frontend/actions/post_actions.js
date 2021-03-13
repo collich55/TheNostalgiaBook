@@ -35,12 +35,12 @@ export const createPost = post => dispatch => (
         ))
 );
 
-export const deletePost = postId => dispatch => (
-    APIUtil.deletePost(postId)
-        .then(() => (dispatch(removePost(postId))), err => (
-            dispatch(receiveErrors(err.responseJSON))
-        ))
-);
+// export const deletePost = postId => dispatch => (
+//     APIUtil.deletePost(postId)
+//         .then(() => (dispatch(removePost(postId))), err => (
+//             dispatch(receiveErrors(err.responseJSON))
+//         ))
+// );
 
 export const fetchPosts = () => dispatch => {
     
