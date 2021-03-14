@@ -111,7 +111,11 @@ class PostItem extends React.Component {
             // let arrow_icon = <i class="fas fa-caret-right"></i>;
             // arrow_icon = <p>{Object.values(arrow_icon)[0]}</p>;
 
-            return <a className="post-name-text" href={`#/users/${friend.id}`}  >{friend_without_arrow} <i class="fas fa-caret-right"></i> {other_user.full_name + " " + other_user.last_name}</a>
+            return <div>
+                <a className="post-name-text" href={`#/users/${friend.id}`}>{friend_without_arrow}</a>
+                <i id={"arrow-icon"} class="fas fa-caret-right"></i> 
+                <a className="post-name-text" href={`#/users/${other_user.id}`}>{other_user.full_name + " " + other_user.last_name}</a>
+            </div>
         } else {
             return <a className="post-name-text" href={`#/users/${friend.id}`}  >{friend.full_name + " " + friend.last_name}</a>
         }
