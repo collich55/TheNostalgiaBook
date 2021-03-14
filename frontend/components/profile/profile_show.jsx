@@ -163,6 +163,22 @@ class ProfileShow extends React.Component {
 
     }
 
+
+    handleUpdateButton() {
+
+
+        if (this.props.userId == this.props.currentUserId) {
+            return <div className="update-button-spacing" >
+                <button className="update-button" onClick={() => this.props.openModal('update')}>
+                    Edit Details
+                </button>
+            </div>
+        } else {
+            return null
+        }
+
+    }
+
     
 
 
@@ -175,6 +191,7 @@ class ProfileShow extends React.Component {
 
         let proPic = this.proPicMaybe();
         let newPost = this.newPost();
+        let handleUpdateButton = this.handleUpdateButton();
         
         
         const {full_name, last_name, gender, birth_date,  } = this.props.users[this.props.userId]
@@ -203,9 +220,7 @@ class ProfileShow extends React.Component {
                                 <h2>Lives in {this.props.users[this.props.userId].location}</h2>
                                 <h2>Gender is {gender}</h2>
                                 <h2>Birthday is {birth_date}</h2>
-                                <div className="update-button-spacing" >
-                                    {this.props.updateForm}
-                                </div>
+                                {handleUpdateButton}
                             </div>
 
                             <br />

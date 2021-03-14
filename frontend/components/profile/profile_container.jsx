@@ -51,7 +51,8 @@ const mapDispatchToProps = dispatch => {
                 Edit Details
             </button>
         ),
-        newPost: data => dispatch(openModal(data))
+        newPost: data => dispatch(openModal(data)),
+        openModal: () => dispatch(openModal('update'))
 
 
 
