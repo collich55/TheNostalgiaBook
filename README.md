@@ -23,7 +23,7 @@ The Nostalgia Book supports user profiles which displays user specific informati
 
 The Nostalgia Book also has a robust friending system. Sending sending, receiving, accepting, and unfriending are all supported, allowing for the creation of large networks of connections.
 
-![friending-unfriending-reduced](https://user-images.githubusercontent.com/62472030/111196993-4ee1b180-8594-11eb-83f1-530d78b7d961.gif)
+![Accepting Friend Request](https://user-images.githubusercontent.com/62472030/111208779-93c01500-85a1-11eb-9847-87e30a5d036b.gif)
 
 The Nostalgia Book plans on adding other features required to make a fully immersive modern social media experience.
  
