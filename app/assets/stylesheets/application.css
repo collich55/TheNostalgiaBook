@@ -335,6 +335,11 @@ h1     {
   color: #fff;
 }
 
+.session-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 
 .signup-form-container .session-submit {
   background: none;
