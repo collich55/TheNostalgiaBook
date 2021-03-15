@@ -10,10 +10,14 @@ The Nostalgia Book supports user profiles which displays sign up information, in
 
 The Nostalgia Book also has a robust friending system. Sending sending, receiving, accepting, and unfriending are all supported, allowing for the creation of large networks of connections.
 
-<img width="1440" alt="Screen Shot 2020-11-30 at 9 38 43 AM" src="https://user-images.githubusercontent.com/62472030/100623537-4c629100-32f0-11eb-89dd-f4db21da18d0.png">
-<img width="1440" alt="Screen Shot 2020-11-30 at 9 39 34 AM" src="https://user-images.githubusercontent.com/62472030/100623569-54bacc00-32f0-11eb-8d49-a67da74dbeed.png">
-<img width="1440" alt="Screen Shot 2020-11-30 at 9 39 46 AM" src="https://user-images.githubusercontent.com/62472030/100624607-a0ba4080-32f1-11eb-84df-a1dca9b8d0ec.png">
-<img width="1440" alt="Screen Shot 2020-11-30 at 9 39 57 AM" src="https://user-images.githubusercontent.com/62472030/100624619-a57ef480-32f1-11eb-8c43-4f5141b2f554.png">
+<img width="1440" alt="Screen Shot 2021-03-15 at 12 05 10 PM" src="https://user-images.githubusercontent.com/62472030/111193827-f9f06c00-8590-11eb-96f4-01693cf101d6.png">
+
+![post-like-comment-15-secs](https://user-images.githubusercontent.com/62472030/111193923-14c2e080-8591-11eb-8c88-3ba4f1b04cef.gif)
+
+<img width="1439" alt="Screen Shot 2021-03-15 at 12 05 26 PM" src="https://user-images.githubusercontent.com/62472030/111196701-f6121900-8593-11eb-9fc6-e8a09d0f82e6.png">
+
+![friending-unfriending-reduced](https://user-images.githubusercontent.com/62472030/111196993-4ee1b180-8594-11eb-83f1-530d78b7d961.gif)
+
 The Nostalgia Book plans on adding posts, timelines, and profile editing as well as other features required to make a fully immersive modern social media experience.
  
  
