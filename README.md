@@ -7,7 +7,6 @@ The Nostalgia Book currently supports user auth login, signup, sign out features
 
 
 
-The Nostalgia Book also has a robust friending system. Sending sending, receiving, accepting, and unfriending are all supported, allowing for the creation of large networks of connections.
 
 The Nostalgia Book boasts a newsfeed feature with posts, likes, and comment functionatility.
 
