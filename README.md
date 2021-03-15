@@ -2,8 +2,8 @@ The Nostalgia Book is a Facebook clone hosted on heroku.
 
 The Nostalgia Book currently supports user auth login, signup, sign out features. 
 
-<img width="1438" alt="Screen Shot 2020-11-30 at 9 38 10 AM" src="https://user-images.githubusercontent.com/62472030/100623415-23da9700-32f0-11eb-98c9-b587bf78c3bf.png">
-<img width="1440" alt="Screen Shot 2020-11-30 at 9 38 24 AM" src="https://user-images.githubusercontent.com/62472030/100623503-4371bf80-32f0-11eb-85fb-6c2d17a2049f.png">
+<img width="1440" alt="Screen Shot 2021-03-15 at 12 04 01 PM" src="https://user-images.githubusercontent.com/62472030/111193796-f1983100-8590-11eb-8ada-41bbc5721622.png">
+<img width="1440" alt="Screen Shot 2021-03-15 at 12 04 47 PM" src="https://user-images.githubusercontent.com/62472030/111193811-f5c44e80-8590-11eb-9d79-d42c876ddfa5.png">
 
 
 The Nostalgia Book supports user profiles which displays sign up information, including pictures provided via web link.
