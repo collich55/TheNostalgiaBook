@@ -16,9 +16,11 @@ The Nostalgia Book boasts a newsfeed feature with posts, likes, and comment func
 ![post-like-comment-15-secs](https://user-images.githubusercontent.com/62472030/111193923-14c2e080-8591-11eb-8c88-3ba4f1b04cef.gif)
 
 
-The Nostalgia Book supports user profiles which displays sign up information, including pictures provided via web link.
+The Nostalgia Book supports user profiles which displays user specific information, including pictures provided via web link. This information can also be updated while signed in and on your personal profile page.
 
 <img width="1439" alt="Screen Shot 2021-03-15 at 12 05 26 PM" src="https://user-images.githubusercontent.com/62472030/111196701-f6121900-8593-11eb-9fc6-e8a09d0f82e6.png">
+
+![Update Profile](https://user-images.githubusercontent.com/62472030/111207761-64f56f00-85a0-11eb-80cc-c86d6a8749ad.gif)
 
 The Nostalgia Book also has a robust friending system. Sending sending, receiving, accepting, and unfriending are all supported, allowing for the creation of large networks of connections.
 
