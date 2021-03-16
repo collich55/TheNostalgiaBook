@@ -1,4 +1,20 @@
-The Nostalgia Book is a Facebook clone hosted on heroku.
+
+# The Nostalgia Book
+
+The Nostalgia Book is a Facebook clone hosted on Heroku.
+
+## Technologies used:
+* Front end
+   * Javascript
+   * jQuery
+   * React-Redux
+   * Styling
+      * HTML
+      * CSS
+* Back end
+   * Ruby on Rails
+   * PostgreSQL
+   * JBuilder
 
 The Nostalgia Book currently supports user auth login, signup, sign out features. 
 
