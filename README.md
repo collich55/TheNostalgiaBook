@@ -37,7 +37,7 @@ The Nostalgia Book also has a robust friending system. Sending sending, receivin
 
 ![Accepting Friend Request](https://user-images.githubusercontent.com/62472030/111208779-93c01500-85a1-11eb-9847-87e30a5d036b.gif)
 
-The Nostalgia Book plans on adding other features, such as liking comments and mobile support, to better facilitie a fully immersive and modern social media experience.
+The Nostalgia Book plans on adding other features, such as liking comments and mobile support, to better facilitate a fully immersive and modern social media experience.
  
  
 
