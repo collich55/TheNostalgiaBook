@@ -8,9 +8,7 @@ The Nostalgia Book is a Facebook clone hosted on Heroku. The Nostalgia Book curr
    * Javascript
    * jQuery
    * React-Redux
-   * Styling
-      * HTML
-      * CSS
+   * HTML/CSS
 * Back end
    * Ruby on Rails
    * PostgreSQL
