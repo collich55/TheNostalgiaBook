@@ -554,9 +554,11 @@ input {
 .post-pro-pic {
   border-radius: 100%;
   min-width: 40px;
+  max-width: 40px;
   height: 40px;
   object-fit: cover;
   margin-right: 5px;
+  flex: 1;
 }
 
 #arrow-icon {
@@ -564,12 +566,47 @@ input {
   margin-right: 5px;
 }
 
+.delete-post-button {
+  flex: 2;
+  justify-self: flex-end;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border: none;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.delete-post-button:hover {
+  background-color: whitesmoke;
+}
+
+.edit-post-button {
+  flex: 2;
+  justify-self: flex-end;
+  min-width: 40px;
+  max-width: 40px;
+  min-height: 40px;
+  max-height: 40px;
+  border: none;
+  background-color: white;
+  border-radius: 100%;
+}
+
+.edit-post-button:hover {
+  background-color: whitesmoke;
+}
 
 
 #name {
   flex: 1;
   color: black;
   font-size: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #about {
@@ -722,6 +759,7 @@ homepage css
 
 .name-and-date {
   margin-left: 5px;
+  flex: 1;
 }
 
 .post-name-text {

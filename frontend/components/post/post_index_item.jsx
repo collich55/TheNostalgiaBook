@@ -143,6 +143,8 @@ class PostItem extends React.Component {
                         {this.handlePostNameText()}
                         <p className="date-text" >{this.postDate()}</p>
                     </div>
+                    <button className="edit-post-button" onClick={() => this.props.deletePost(this.props.post.id)} ><i class="far fa-edit"></i></button>
+                    <button className="delete-post-button" onClick={() => this.props.deletePost(this.props.post.id)} ><i class="far fa-trash-alt"></i></button>
                 </div>
 
 

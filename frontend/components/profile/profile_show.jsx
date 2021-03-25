@@ -87,7 +87,11 @@ class ProfileShow extends React.Component {
         if ((oneOrNonerequest[oneOrNonerequest.length - 1].accepted == false) && (oneOrNonerequest[oneOrNonerequest.length - 1].requester_id == this.props.currentUserId)) {
             return <h2>request is pending</h2>
         } else {
-            return <button onClick={() => this.handleFriendAcceptance(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >accept request</button>
+            return <div className="accept-or-deny-request" >
+                <button onClick={() => this.handleFriendAcceptance(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >accept request</button>
+                <button onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >deny request</button>
+            </div>
+            
         }
         
     }
