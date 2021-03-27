@@ -32,7 +32,7 @@ class CommentIndex extends React.Component {
 
 
                     {
-                        Object.values(this.props.comments).filter(comment => comment.post_id === this.props.postId).map(comment =>  <CommentItem comment={comment} postId={comment.post_id} commenterId={comment.commenter_id} body={comment.body} users={this.props.users} /> )
+                        Object.values(this.props.comments).filter(comment => comment.post_id === this.props.postId).map(comment =>  <CommentItem comment={comment} deleteComment={this.props.deleteComment} postId={comment.post_id} commenterId={comment.commenter_id} body={comment.body} users={this.props.users} /> )
                     }
                     
                         

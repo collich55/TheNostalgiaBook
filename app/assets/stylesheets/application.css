@@ -582,6 +582,47 @@ input {
   background-color: whitesmoke;
 }
 
+.delete-comment-button {
+  max-width: 19px;
+  min-width: 19px;
+  max-height: 19px;
+  max-height: 19px;
+  border: none;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-left: 30px;
+}
+.edit-comment-button {
+  max-width: 19px;
+  min-width: 19px;
+  max-height: 19px;
+  max-height: 19px;
+  border: none;
+  background-color: whitesmoke;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 100%;
+  margin-left: 5px;
+}
+
+.comment-name-and-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.delete-comment-button:hover {
+  background-color: white;
+}
+
+.comment-buttons {
+  display: flex;
+}
+
 .edit-post-button {
   flex: 2;
   justify-self: flex-end;

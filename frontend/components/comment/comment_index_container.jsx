@@ -2,7 +2,8 @@ import CommentIndex from "./comment_index.jsx";
 import { connect } from 'react-redux';
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { fetchComments } from "../../actions/comment_actions.js";
+import { fetchComments, deleteComment } from "../../actions/comment_actions.js";
+
 
 
 const mapStateToProps = (state) => {
@@ -16,7 +17,8 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = dispatch => {
     return ({
-        fetchComments: () => dispatch(fetchComments())
+        fetchComments: () => dispatch(fetchComments()),
+        deleteComment: (commentId) => dispatch(deleteComment(commentId)),
         
     });
 };

@@ -9,12 +9,12 @@ export const createComment = comment => {
     )
 };
 
-// export const deleteComment = commentId => {
-//     return $.ajax({
-//         method: 'DELETE',
-//         url: `/api/comments/${commentId}`
-//     })
-// };
+export const deleteComment = commentId => {
+    return $.ajax({
+        method: 'DELETE',
+        url: `/api/comments/${commentId}`
+    })
+};
 
 export const fetchComments = () => (
     $.ajax({

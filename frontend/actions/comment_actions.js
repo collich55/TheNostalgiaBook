@@ -18,10 +18,10 @@ const receiveComments = comments => ({
     comments
 });
 
-// const removeComment = commentId => ({
-//     type: DELETE_COMMENT,
-//     commentId
-// });
+const removeComment = commentId => ({
+    type: DELETE_COMMENT,
+    commentId
+});
 
 const receiveErrors = errors => ({
     type: RECEIVE_COMMENT_ERRORS,
@@ -35,12 +35,11 @@ export const createComment = comment => dispatch => (
         ))
 );
 
-// export const deleteComment = commentId => dispatch => (
-//     APIUtil.deleteComment(commentId)
-//         .then(() => (dispatch(removeComment(commentId))), err => (
-//             dispatch(receiveErrors(err.responseJSON))
-//         ))
-// );
+export const deleteComment = commentId => dispatch => {
+
+    return (APIUtil.deleteComment(commentId))
+        .then(() => (dispatch(removeComment(commentId))))
+}
 
 export const fetchComments = () => dispatch => {
     
