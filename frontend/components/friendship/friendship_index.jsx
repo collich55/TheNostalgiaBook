@@ -37,15 +37,16 @@ class FriendshipIndex extends React.Component {
         const pending = this.requestPending();
         if (this.props.currentUser.id == this.props.userId){
             return(
-
-                <ul id={"pending-box"}>
-                    <h1>Friend Requests</h1>
-                    {
-                        pending.map(
-                            request => <PendingFriendshipItemContainer key={request.id} userId={this.props.userId} requester_id={request.requester_id} requestee_id={request.requestee_id} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
-                        )
-                    }
-                </ul>
+                <div>
+                    <h1 id="friend-requests-text">Friend Requests</h1>
+                        <ul id={"pending-box"}>
+                            {
+                                pending.map(
+                                    request => <PendingFriendshipItemContainer key={request.id} userId={this.props.userId} requester_id={request.requester_id} requestee_id={request.requestee_id} deleteRequest={requestId => dispatch(deleteRequest(requestId))} />
+                                )
+                            }
+                        </ul>
+                </div>
 
             )
         } else {

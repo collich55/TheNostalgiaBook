@@ -1140,6 +1140,16 @@ profile css
   display: flex;
 }
 
+#pending-box {
+  flex-wrap: wrap;
+  display: flex;
+}
+
+#friend-requests-text {
+  font-size: 25px;
+}
+
+
 
 /* 
 ---------------------
