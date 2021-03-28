@@ -23,6 +23,8 @@ User.create!({ email: "random8@gmail.com", password: "random", full_name: "Maris
 User.create!({ email: "random9@gmail.com", password: "random", full_name: "James", last_name: "Dean", birth_date: "10/20/1998", gender: "male", profile_photo_link: "https://images.findagrave.com/photos250/photos/2005/39/267_110799478308.jpg", school: "Princeton University", location: "Honolulu, HI" });
 
 Post.create!({ body: "I can't believe it's getting warm again! I have a good feeling about this summer.", author_id: User.find_by(email: "random@gmail.com").id})
+Post.create!({ body: "❤️❤️ edit:(nevermind)", author_id: User.find_by(email: "random5@gmail.com").id, other_user_id: User.find_by(email: "random9@gmail.com").id})
+Post.create!({ body: "Ugh, my FAVORITE coffee place is closing for the foreseeable future 🙄. Does anybody have any recs for a place near Bryant park?", author_id: User.find_by(email: "random4@gmail.com").id})
 Post.create!({ body: "Randy! We've GOT to hit up the Rockaways again. How about this weekend we get on the A train and take it all the way down 👍", author_id: User.find_by(email: "random@gmail.com").id, other_user_id: User.find_by(email: "random2@gmail.com").id})
 
 Like.create!({ liker_id: User.find_by(email: "random2@gmail.com").id, post_id: Post.find_by(body: "I can't believe it's getting warm again! I have a good feeling about this summer.").id})
@@ -35,6 +37,27 @@ Like.create!({ liker_id: User.find_by(email: "random2@gmail.com").id, post_id: P
 
 Comment.create!({ body: "Yesss! How about this time we change it up and take the ferry at Pier 11. Heard it's got great views ⛴️", commenter_id: User.find_by(email: "random2@gmail.com").id, post_id: Post.find_by(body: "Randy! We've GOT to hit up the Rockaways again. How about this weekend we get on the A train and take it all the way down 👍").id})
 Comment.create!({ body: "It's a plan! 💯💯", commenter_id: User.find_by(email: "random@gmail.com").id, post_id: Post.find_by(body: "Randy! We've GOT to hit up the Rockaways again. How about this weekend we get on the A train and take it all the way down 👍").id})
+
+
+
+
+
+Comment.create!({ body: "I heard Cafe Grumpy is nice, despite the less than friendly name 🤣", commenter_id: User.find_by(email: "random@gmail.com").id, post_id: Post.find_by(body: "Ugh, my FAVORITE coffee place is closing for the foreseeable future 🙄. Does anybody have any recs for a place near Bryant park?").id})
+Comment.create!({ body: "Just looked it up and it's closed...are you trying to be unhelpful??", commenter_id: User.find_by(email: "random4@gmail.com").id, post_id: Post.find_by(body: "Ugh, my FAVORITE coffee place is closing for the foreseeable future 🙄. Does anybody have any recs for a place near Bryant park?").id})
+Comment.create!({ body: "Ohh haha my bad...", commenter_id: User.find_by(email: "random@gmail.com").id, post_id: Post.find_by(body: "Ugh, my FAVORITE coffee place is closing for the foreseeable future 🙄. Does anybody have any recs for a place near Bryant park?").id})
+Comment.create!({ body: "Yup.", commenter_id: User.find_by(email: "random4@gmail.com").id, post_id: Post.find_by(body: "Ugh, my FAVORITE coffee place is closing for the foreseeable future 🙄. Does anybody have any recs for a place near Bryant park?").id})
+Comment.create!({ body: "Hey Clarissa, just went to the Culture Espresso last week. Totally recommend it! The iced americano was perfection 👌.", commenter_id: User.find_by(email: "random6@gmail.com").id, post_id: Post.find_by(body: "Ugh, my FAVORITE coffee place is closing for the foreseeable future 🙄. Does anybody have any recs for a place near Bryant park?").id})
+Comment.create!({ body: "Thanks Jess that's so helpful! Unlike some *cough* other people *cough* *cough*", commenter_id: User.find_by(email: "random4@gmail.com").id, post_id: Post.find_by(body: "Ugh, my FAVORITE coffee place is closing for the foreseeable future 🙄. Does anybody have any recs for a place near Bryant park?").id})
+Comment.create!({ body: "Hey!! 😂", commenter_id: User.find_by(email: "random@gmail.com").id, post_id: Post.find_by(body: "Ugh, my FAVORITE coffee place is closing for the foreseeable future 🙄. Does anybody have any recs for a place near Bryant park?").id})
+Comment.create!({ body: "hahhah jk jk ❤️❤️", commenter_id: User.find_by(email: "random4@gmail.com").id, post_id: Post.find_by(body: "Ugh, my FAVORITE coffee place is closing for the foreseeable future 🙄. Does anybody have any recs for a place near Bryant park?").id})
+
+Comment.create!({ body: "Excuse me?", commenter_id: User.find_by(email: "random9@gmail.com").id, post_id: Post.find_by(body: "❤️❤️ edit:(nevermind)").id})
+Comment.create!({ body: "Oh wrong person sorry.", commenter_id: User.find_by(email: "random5@gmail.com").id, post_id: Post.find_by(body: "❤️❤️ edit:(nevermind)").id})
+Comment.create!({ body: "You know you can edit your posts right?", commenter_id: User.find_by(email: "random9@gmail.com").id, post_id: Post.find_by(body: "❤️❤️ edit:(nevermind)").id})
+Comment.create!({ body: "Oh sure good idea 👍", commenter_id: User.find_by(email: "random5@gmail.com").id, post_id: Post.find_by(body: "❤️❤️ edit:(nevermind)").id})
+Comment.create!({ body: "LOL nice save.", commenter_id: User.find_by(email: "random9@gmail.com").id, post_id: Post.find_by(body: "❤️❤️ edit:(nevermind)").id})
+Comment.create!({ body: "Hahha thanks 😅", commenter_id: User.find_by(email: "random5@gmail.com").id, post_id: Post.find_by(body: "❤️❤️ edit:(nevermind)").id})
+
 
 Friendship.create!({requester_id: User.find_by(email: "random@gmail.com").id, requestee_id: User.find_by(email: "random2@gmail.com").id, accepted: true})
 Friendship.create!({requester_id: User.find_by(email: "random@gmail.com").id, requestee_id: User.find_by(email: "random3@gmail.com").id, accepted: true})
