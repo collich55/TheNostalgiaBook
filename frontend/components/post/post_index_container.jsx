@@ -28,6 +28,7 @@ const mapDispatchToProps = dispatch => {
     return ({
 
         newComment: postId => dispatch(openModal(['new-comment', postId])),
+        editPost: post => dispatch(openModal(['edit-post', post])),
         newLike: (data) => dispatch(createLike(data)),
         deleteLike: (data) => dispatch(deleteLike(data)),
         deletePost: (postId) => dispatch(deletePost(postId)),
@@ -37,6 +38,7 @@ const mapDispatchToProps = dispatch => {
         fetchPosts: () => dispatch(fetchPosts()),
         fetchLikes: () => dispatch(fetchLikes()),
         fetchComments: () => dispatch(fetchComments()),
+        
         
     });
 };

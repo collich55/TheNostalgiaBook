@@ -2,6 +2,7 @@ import React from 'react';
 import { closeModal } from '../../actions/modal_actions';
 import { connect } from 'react-redux';
 import PostFormContainer from '../post/post_form_container';
+import EditPostFormContainer from '../post/edit_post_form_container';
 import PostFormContainerForProfile from '../post/post_form_for_profile_container';
 import CommentFormContainer from '../comment/comment_form_container';
 import SignupFormContainer from '../session_form/signup_form_container';
@@ -31,6 +32,15 @@ function Modal({modal, closeModal}) {
         </div>
       </div>
     );
+  } else if (typeof modal === "object" && modal[0] === "edit-post") {
+    component = <EditPostFormContainer post={modal[1]} />;
+    return (
+      <div className="sign-modal-background" onClick={closeModal}>
+        <div className="sign-modal-child" onClick={e => e.stopPropagation()}>
+          {component}
+        </div>
+      </div>
+    );
   }
   
   let component;
@@ -47,6 +57,9 @@ function Modal({modal, closeModal}) {
       component = <SignupFormContainer />;
       break;
     case 'new-post':
+      component = <PostFormContainer />;
+      break;
+    case 'edit-post':
       component = <PostFormContainer />;
       break;
     case 'new-post-for-profile':

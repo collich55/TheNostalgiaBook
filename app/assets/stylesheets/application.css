@@ -594,6 +594,7 @@ input {
   align-items: center;
   border-radius: 100%;
   margin-left: 30px;
+  color: dimgray;
 }
 .edit-comment-button {
   max-width: 19px;
@@ -607,6 +608,7 @@ input {
   align-items: center;
   border-radius: 100%;
   margin-left: 5px;
+  color: dimgray;
 }
 
 .comment-name-and-buttons {
@@ -617,6 +619,12 @@ input {
 
 .delete-comment-button:hover {
   background-color: white;
+  /* border-bottom: solid black 1px; */
+}
+
+.edit-comment-button:hover {
+  background-color: white;
+  /* border-bottom: solid black 1px; */
 }
 
 .comment-buttons {
