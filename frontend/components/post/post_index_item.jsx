@@ -122,6 +122,20 @@ class PostItem extends React.Component {
     }
 
 
+    handlePostButtons() {
+
+        if (this.props.currentUserId === this.props.post.author_id) {
+            return <div>
+                <button className="edit-post-button" onClick={() => this.props.editPost(this.props.post)} ><i class="far fa-edit"></i></button>
+                <button className="delete-post-button" onClick={() => this.props.deletePost(this.props.post.id)} ><i class="far fa-trash-alt"></i></button>
+            </div>
+        } else {
+            return null
+        }
+        
+    }
+
+
 
 
     render() {
@@ -132,6 +146,7 @@ class PostItem extends React.Component {
         
         let friend = this.props.users[this.props.authorId]
         let profile_pic = this.proPicMaybe();
+        let post_buttons = this.handlePostButtons();
         
 
         
@@ -143,8 +158,7 @@ class PostItem extends React.Component {
                         {this.handlePostNameText()}
                         <p className="date-text" >{this.postDate()}</p>
                     </div>
-                    <button className="edit-post-button" onClick={() => this.props.editPost(this.props.post)} ><i class="far fa-edit"></i></button>
-                    <button className="delete-post-button" onClick={() => this.props.deletePost(this.props.post.id)} ><i class="far fa-trash-alt"></i></button>
+                    {post_buttons}
                 </div>
 
 

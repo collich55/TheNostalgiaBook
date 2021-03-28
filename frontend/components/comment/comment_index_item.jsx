@@ -47,6 +47,17 @@ class CommentItem extends React.Component {
         return date
     }
 
+    handleCommentButtons() {
+        if (this.props.currentUser.id === this.props.comment.commenter_id) {
+            return <div className={"comment-buttons"}>
+                <button className="delete-comment-button" onClick={() => this.props.editComment(this.props.comment)} ><i class="far fa-edit"></i></button>
+                <button className="edit-comment-button" onClick={() => this.props.deleteComment(this.props.comment.id)} ><i class="far fa-trash-alt"></i></button>
+            </div>
+        } else {
+            return null
+        }
+    }
+
 
 
 
@@ -54,6 +65,7 @@ class CommentItem extends React.Component {
         
         let friend = this.props.users[this.props.commenterId]
         let profile_pic = this.proPicMaybe();
+        let comment_buttons = this.handleCommentButtons();
 
         if (Object.values(this.props.users).length < 3) {
             return null
@@ -72,10 +84,7 @@ class CommentItem extends React.Component {
                     <div className="comment-item-box" >
                         <div className="comment-name-and-buttons">
                             <a className="post-name-text" href={`#/users/${friend.id}`} replace >{friend.full_name + " " + friend.last_name}</a>
-                            <div className={"comment-buttons"}>
-                                <button className="delete-comment-button" onClick={() => this.props.editComment(this.props.comment)} ><i class="far fa-edit"></i></button>
-                                <button className="edit-comment-button" onClick={() => this.props.deleteComment(this.props.comment.id)} ><i class="far fa-trash-alt"></i></button>
-                            </div>
+                            {comment_buttons}
                         </div>
                         <p className="comment-text" >{this.props.body}</p>
                     </div>
