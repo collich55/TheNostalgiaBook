@@ -22,3 +22,13 @@ export const fetchComments = () => (
     })
 );
 
+export const update = comment => {
+
+    
+
+    return $.ajax({
+        method: 'PATCH',
+        url: `/api/comments/${comment.id}`,
+        data: { comment }
+    })
+};

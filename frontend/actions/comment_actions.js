@@ -49,4 +49,15 @@ export const fetchComments = () => dispatch => {
         )))
 };
 
+export const updateComment = comment => dispatch => {
+
+    
+
+    return (APIUtil.update(comment)
+        .then(comment => (dispatch(receiveComment(comment)))), err => (
+            dispatch(receiveErrors(err.responseJSON))
+        )
+    )
+};
+
 

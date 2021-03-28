@@ -24,7 +24,6 @@ export const fetchPosts = () => (
 
 export const update = post => {
 
-    debugger
 
     return $.ajax({
         method: 'PATCH',
