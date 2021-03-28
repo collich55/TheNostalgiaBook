@@ -65,6 +65,38 @@ class ProfileShow extends React.Component {
         this.props.deleteRequest(requestId)
     }
 
+    checkIfFriend2() {
+        if (this.props.userId == this.props.currentUserId) {
+            return null
+        }
+
+        let oneOrNonerequest = Object.values(this.props.friendships).filter(request => (((this.props.userId == request.requestee_id) && (this.props.currentUserId == request.requester_id)) || ((this.props.userId == request.requester_id) && (this.props.currentUserId == request.requestee_id))));
+        if (oneOrNonerequest.length < 1) {
+            return <div>
+                    <i id="you-are-friends-icon" class="fas fa-user-times"></i>
+                </div>
+        }
+
+        if (oneOrNonerequest[oneOrNonerequest.length - 1].accepted == true) {
+            return ( 
+                <div>
+                    <i id="you-are-friends-icon" class="fas fa-user-check"></i>
+                </div>
+               
+            )
+        } 
+
+        if ((oneOrNonerequest[oneOrNonerequest.length - 1].accepted == false) && (oneOrNonerequest[oneOrNonerequest.length - 1].requester_id == this.props.currentUserId)) {
+            return <div>
+                <i id="you-are-friends-icon" class="fas fa-user-clock"></i>
+                </div>
+        } else {
+            return null
+            
+        }
+        
+    }
+
     checkIfFriend() {
         if (this.props.userId == this.props.currentUserId) {
             return null
@@ -72,17 +104,16 @@ class ProfileShow extends React.Component {
 
         let oneOrNonerequest = Object.values(this.props.friendships).filter(request => (((this.props.userId == request.requestee_id) && (this.props.currentUserId == request.requester_id)) || ((this.props.userId == request.requester_id) && (this.props.currentUserId == request.requestee_id))));
         if (oneOrNonerequest.length < 1) {
-            return <button  onClick={this.handleFriendRequest} >add friend</button>
+            return <button className="add-friend-button" onClick={this.handleFriendRequest} >Add Friend</button>
         }
 
         if (oneOrNonerequest[oneOrNonerequest.length - 1].accepted == true) {
-            return ( 
+            return (
                 <div id={"unfriend"}>
-                    <h2>you are friends</h2>
-                    <button onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Unfriend</button> 
+                    <button className="unfriend-button" onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Unfriend</button>
                 </div>
             )
-        } 
+        }
 
         if ((oneOrNonerequest[oneOrNonerequest.length - 1].accepted == false) && (oneOrNonerequest[oneOrNonerequest.length - 1].requester_id == this.props.currentUserId)) {
             return <h2>request is pending</h2>
@@ -91,9 +122,76 @@ class ProfileShow extends React.Component {
                 <button className="accept-request-button" onClick={() => this.handleFriendAcceptance(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Confirm</button>
                 <button className="deny-request-button" onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Deny</button>
             </div>
-            
+
         }
-        
+
+    }
+
+    checkIfFriend3() {
+
+
+        const { full_name, last_name } = this.props.users[this.props.userId]
+
+        if (this.props.userId == this.props.currentUserId) {
+            return null
+        }
+
+        let oneOrNonerequest = Object.values(this.props.friendships).filter(request => (((this.props.userId == request.requestee_id) && (this.props.currentUserId == request.requester_id)) || ((this.props.userId == request.requester_id) && (this.props.currentUserId == request.requestee_id))));
+        if (oneOrNonerequest.length < 1) {
+            return <div key="name" id={"name"}   >
+                <span key="times" className="name-and-friend-status">
+                    <h1>{full_name + " " + last_name}</h1>
+                    <span>
+                        <i id="you-are-friends-icon" class="fas fa-user-times"></i>
+                    </span>
+                </span>
+                <span id={"unfriend"}>
+                    <button className="add-friend-button" onClick={this.handleFriendRequest} >Add Friend</button>
+                </span>
+            </div>
+        }
+
+        if (oneOrNonerequest[oneOrNonerequest.length - 1].accepted == true) {
+            return (
+                <div key="name" id={"name"}   >
+                    <span key="check" className="name-and-friend-status">
+                        <h1>{full_name + " " + last_name}</h1>
+                        <span>
+                            <i id="you-are-friends-icon" class="fas fa-user-check"></i>
+                        </span>
+                    </span>
+                    <span id={"unfriend"}>
+                        <button className="unfriend-button" onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Unfriend</button>
+                    </span>
+                </div>
+            )
+        }
+
+        if ((oneOrNonerequest[oneOrNonerequest.length - 1].accepted == false) && (oneOrNonerequest[oneOrNonerequest.length - 1].requester_id == this.props.currentUserId)) {
+            return <div key="name" id={"name"}   >
+                <span key="clock" className="name-and-friend-status">
+                    <h1>{full_name + " " + last_name}</h1>
+                    <span>
+                        <i id="you-are-friends-icon" class="fas fa-user-clock"></i>
+                    </span>
+                </span>
+            </div>
+        } else {
+            return <div key="name" id={"name"}   >
+                <span key="clock" className="name-and-friend-status">
+                    <h1>{full_name + " " + last_name}</h1>
+                    <span>
+                        <i id="you-are-friends-icon" class="fas fa-user-clock"></i>
+                    </span>
+                </span>
+                <span className="accept-or-deny-request" >
+                    <button className="accept-request-button" onClick={() => this.handleFriendAcceptance(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Confirm</button>
+                    <button className="deny-request-button" onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Deny</button>
+                </span>
+            </div>
+
+        }
+
     }
 
     requestPending() {
@@ -198,8 +296,9 @@ class ProfileShow extends React.Component {
         let handleUpdateButton = this.handleUpdateButton();
         
         
-        const {full_name, last_name, gender, birth_date,  } = this.props.users[this.props.userId]
-        let b = this.checkIfFriend();
+        const {gender, birth_date,  } = this.props.users[this.props.userId]
+        
+        let full = this.checkIfFriend3();
 
         
             return (
@@ -207,10 +306,7 @@ class ProfileShow extends React.Component {
                 <div id={"pro-page"}>
                     <div className="profile-header">
                         {proPic}
-                        <div id={"name"}   >
-                            <h1>{full_name + " " + last_name}</h1>
-                            {b}
-                        </div>
+                        {full}
                     </div>
 
                     <div className="profile-main" >

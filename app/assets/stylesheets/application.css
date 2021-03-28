@@ -639,6 +639,36 @@ input {
   margin-left: 5px;
 }
 
+.unfriend-button {
+  background-color: gainsboro;
+  border: none;
+  border-radius: 6px;
+  font-size: 36px;
+  line-height: 48px;
+  padding: 0 16px;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  align-items: center;
+  color: black;
+  width: 206px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
+.add-friend-button {
+  background-color: #1877f2;
+  border: none;
+  border-radius: 6px;
+  font-size: 30px;
+  line-height: 48px;
+  padding: 0 16px;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  align-items: center;
+  color: white;
+  width: 206px;
+  margin-left: 5px;
+  margin-top: 5px;
+}
+
 .comment-name-and-buttons {
   display: flex;
   align-items: center;
@@ -780,6 +810,20 @@ ul > h1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.name-and-friend-status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#you-are-friends-icon {
+  margin-left: 10px;
+  font-size: 46px;
+  border: solid black 1px;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 /* img {
