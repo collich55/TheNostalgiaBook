@@ -611,6 +611,34 @@ input {
   color: dimgray;
 }
 
+.accept-request-button {
+  background-color: #1877f2;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  line-height: 48px;
+  padding: 0 16px;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  align-items: center;
+  color: #fff;
+  width: 103px;
+  margin-right: 5px;
+}
+
+.deny-request-button {
+  background-color: gainsboro;
+  border: none;
+  border-radius: 6px;
+  font-size: 20px;
+  line-height: 48px;
+  padding: 0 16px;
+  font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
+  align-items: center;
+  color: black;
+  width: 103px;
+  margin-left: 5px;
+}
+
 .comment-name-and-buttons {
   display: flex;
   align-items: center;
