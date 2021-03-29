@@ -1,7 +1,7 @@
 import {
-    RECEIVE_POST_ERRORS,
-    RECEIVE_POST,
-} from '../actions/post_actions';
+    RECEIVE_COMMENT_ERRORS,
+    RECEIVE_COMMENT,
+} from '../actions/comment_actions';
 
 export default (oldState = [], action) => {
 
@@ -9,10 +9,10 @@ export default (oldState = [], action) => {
 
     switch (action.type) {
 
-        case RECEIVE_POST_ERRORS:
+        case RECEIVE_COMMENT_ERRORS:
             return action.errors;
 
-        case RECEIVE_POST:
+        case RECEIVE_COMMENT:
             return [];
 
         default:

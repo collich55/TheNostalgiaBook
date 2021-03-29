@@ -5,7 +5,7 @@ import * as APIUtil from '../util/comment_api_util';
 export const RECEIVE_COMMENT = 'RECEIVE_COMMENT';
 export const RECEIVE_COMMENTS = 'RECEIVE_COMMENTS';
 export const DELETE_COMMENT = 'DELETE_COMMENT';
-export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_SESSION_ERRORS';
+export const RECEIVE_COMMENT_ERRORS = 'RECEIVE_COMMENT_ERRORS';
 
 
 const receiveComment = comment => ({
