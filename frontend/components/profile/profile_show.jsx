@@ -133,7 +133,11 @@ class ProfileShow extends React.Component {
         const { full_name, last_name } = this.props.users[this.props.userId]
 
         if (this.props.userId == this.props.currentUserId) {
-            return null
+            return <div key="name" id={"name"}   >
+                <span key="times" className="name-and-friend-status">
+                    <h1>{full_name + " " + last_name}</h1>
+                </span>
+            </div>
         }
 
         let oneOrNonerequest = Object.values(this.props.friendships).filter(request => (((this.props.userId == request.requestee_id) && (this.props.currentUserId == request.requester_id)) || ((this.props.userId == request.requester_id) && (this.props.currentUserId == request.requestee_id))));

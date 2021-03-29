@@ -55,6 +55,13 @@ class SessionForm extends React.Component {
     }
 
     render() {
+
+
+        let errors = this.renderErrors();
+
+        debugger
+
+
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
@@ -84,7 +91,12 @@ class SessionForm extends React.Component {
                         <input className="session-submit" type="submit" value="Log In" />
                         
                     </div>
+            
                 </form>
+
+                
+
+                
                 
                     
                 <br />

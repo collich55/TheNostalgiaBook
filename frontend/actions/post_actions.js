@@ -51,8 +51,7 @@ export const fetchPosts = () => dispatch => {
 
 export const updatePost = post => dispatch => {
 
-    debugger
-
+    
     return (APIUtil.update(post)
         .then(post => (dispatch(receivePost(post)))), err => (
             dispatch(receiveErrors(err.responseJSON))
