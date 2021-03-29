@@ -179,6 +179,9 @@ class ProfileShow extends React.Component {
                         <i id="you-are-friends-icon" class="fas fa-user-clock"></i>
                     </span>
                 </span>
+                <span id={"unfriend"}>
+                    <button className="unrequest-button" onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Cancel Request</button>
+                </span>
             </div>
         } else {
             return <div key="name" id={"name"}   >
