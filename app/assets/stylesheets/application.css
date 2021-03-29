@@ -286,7 +286,6 @@ h1     {
 
 .login-form-container {
   display: flex;
-  height: 345px;
   width: 396px;
   flex-direction: column;
   font-family: SFProDisplay-Regular, Helvetica, Arial, sans-serif;
@@ -667,6 +666,13 @@ input {
   width: 300px;
   margin-left: 5px;
   margin-top: 5px;
+}
+
+.error-session-text {
+  color: red;
+  align-items: center;
+  justify-content: center;
+  display: flex;
 }
 
 .add-friend-button {

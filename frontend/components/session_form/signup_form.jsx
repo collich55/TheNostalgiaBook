@@ -89,7 +89,7 @@ class SignUpForm extends React.Component {
                         <p className="sign-up-text" >Sign Up</p>
                         <p className="quick-and-easy-text" >It's quick and easy.</p>
                     </div>
-                    {this.renderErrors()}
+                    {/* {this.renderErrors()} */}
                     <div className="login-form">
 
                         <div className="names" >

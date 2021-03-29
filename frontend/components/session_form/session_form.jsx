@@ -9,7 +9,6 @@ class SessionForm extends React.Component {
         };
         this.handleSubmit = this.handleSubmit.bind(this);
         this.handleDemo = this.handleDemo.bind(this);
-        this.checkErrors = this.checkErrors.bind(this);
     }
 
     update(field) {
@@ -30,25 +29,19 @@ class SessionForm extends React.Component {
         this.props.processForm(demoUser).then(this.props.closeModal);
     }
 
-    checkErrors() {
-        if (this.props.errors.base) {
-            return (this.props.errors.base.map(error => {
-                return { error }
-            }))
-        }
-    }
-
     renderErrors() {
         return (
-            
-            <div>
-                {
-                    this.checkErrors()
-                }
-            </div>
-            
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
+                ))}
+            </ul>
         );
     }
+
+    
 
     componentDidMount() {
         this.props.fetchUsers();
@@ -56,17 +49,11 @@ class SessionForm extends React.Component {
 
     render() {
 
-
-        let errors = this.renderErrors();
-
-        debugger
-
-
         return (
             <div className="login-form-container">
                 <form onSubmit={this.handleSubmit} className="login-form-box">
                     
-                    {this.renderErrors()}
+                    
                     <div className="login-form">
                         <br />
                         
@@ -88,9 +75,14 @@ class SessionForm extends React.Component {
                                 placeholder="Password"
                             />
                         <br />
+                        <div className="error-session-text">
+                            {this.renderErrors()}
+                        </div>
+                        <br/>
                         <input className="session-submit" type="submit" value="Log In" />
                         
                     </div>
+                    
             
                 </form>
 
