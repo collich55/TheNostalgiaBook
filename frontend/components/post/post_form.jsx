@@ -92,8 +92,8 @@ class PostForm extends React.Component {
                     <img onClick={this.handleXButton} className="close-x-item" src="https://static.xx.fbcdn.net/rsrc.php/v3/y2/r/__geKiQnSG-.png" alt="" width="24" height="24"></img>
                 </div>
                 <form onSubmit={this.handleSubmit} className="signup-form-box">
-                    <div className="sign-up-text-area">
-                        <p className="sign-up-text" >Create Post</p>
+                    <div className="post-text-area">
+                        <p className="post-form-header-text" >Create Post</p>
                         
                     </div>
                     {this.renderErrors()}
