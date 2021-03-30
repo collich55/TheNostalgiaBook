@@ -62,6 +62,22 @@ class PostFormForProfile extends React.Component {
         );
     }
 
+    handleSubmitButton() {
+
+
+
+        if (this.state.body.length !== 0) {
+            return <div className="signup-button">
+                <input className="post-submit" type="submit" value="Post" />
+            </div>
+        } else {
+            return <div className="signup-button">
+                <input className="intangible-post-submit" type="submit" value="Post" disabled="disabled" />
+            </div>
+        }
+
+    }
+
 
     render() {
 
@@ -97,9 +113,7 @@ class PostFormForProfile extends React.Component {
                         
 
                         
-                        <div className="signup-button">
-                            <input className="session-submit" type="submit" value="Create Post" />  
-                        </div>
+                        {this.handleSubmitButton()}
                     </div>
                 </form>
             </div>
