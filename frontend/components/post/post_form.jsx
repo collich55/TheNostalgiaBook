@@ -37,10 +37,16 @@ class PostForm extends React.Component {
         e.preventDefault();
         
         
+             
         const post = Object.assign({}, this.state);
         
+        
+        this.props.processForm(post);
+
+        // if (this.state.body.length !== 0) {
         this.props.closeModal();
-        this.props.processForm(post).then(this.props.closeModal());;
+        // }
+
     }
 
     handleXButton(e) {
@@ -48,16 +54,32 @@ class PostForm extends React.Component {
         this.props.closeModal();
     }
 
+    handleSubmitButton() {
+
+
+
+        if (this.state.body.length !== 0) {
+            return <div className="signup-button">
+                <input className="post-submit" type="submit" value="Post" />
+            </div>
+        } else {
+            return <div className="signup-button">
+                <input className="intangible-post-submit" type="submit" value="Post" disabled="disabled"/>
+            </div>
+        }
+
+    }
+
 
     renderErrors() {
         return (
-
-            <div>
-                {this.props.errors.map((error) => (
-                    { error }
+            <ul>
+                {this.props.errors.map((error, i) => (
+                    <li key={`error-${i}`}>
+                        {error}
+                    </li>
                 ))}
-            </div>
-
+            </ul>
         );
     }
 
@@ -92,9 +114,7 @@ class PostForm extends React.Component {
                         
 
                         
-                        <div className="signup-button">
-                            <input className="session-submit" type="submit" value="Create Post" />  
-                        </div>
+                        {this.handleSubmitButton()}
                     </div>
                 </form>
             </div>

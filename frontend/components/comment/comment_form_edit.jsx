@@ -28,7 +28,21 @@ class EditCommentForm extends React.Component {
 
   
 
-   
+    handleSubmitButton() {
+
+
+
+        if (this.state.body.length !== 0) {
+            return <div className="signup-button">
+                <input className="post-submit" type="submit" value="Edit Comment" />
+            </div>
+        } else {
+            return <div className="signup-button">
+                <input className="intangible-post-submit" type="submit" value="Edit Comment" disabled="disabled" />
+            </div>
+        }
+
+    }
    
 
     
@@ -94,9 +108,7 @@ class EditCommentForm extends React.Component {
                         
 
                         
-                        <div className="signup-button">
-                            <input className="session-submit" type="submit" value="Edit Comment" />  
-                        </div>
+                        {this.handleSubmitButton()}
                     </div>
                 </form>
             </div>

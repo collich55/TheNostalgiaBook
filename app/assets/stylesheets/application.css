@@ -129,9 +129,6 @@ body {
 
 }
 
-.signup-form-container .session-submit {
-  margin-top: 30px;
-}
 
 #gender-select {
   display: flex;
@@ -341,6 +338,7 @@ h1     {
 }
 
 .signup-form-container .session-submit {
+  margin-top: 30px;
   background: none;
   background-color: #00a400;
   border: none;
@@ -355,6 +353,43 @@ h1     {
   padding: 0 32px;
   text-shadow: none;
   font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif !important;
+}
+
+.signup-form-container .post-submit {
+  margin-top: 30px;
+  background: none;
+  background-color: #1877f2;
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 600;
+  height: 36px;
+  width: 194px;
+  overflow: hidden;
+  padding: 0 32px;
+  text-shadow: none;
+  font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif !important;
+}
+
+.signup-form-container .intangible-post-submit {
+  margin-top: 30px;
+  background: none;
+  background-color: whitesmoke;
+  border: none;
+  border-radius: 6px;
+  box-shadow: none;
+  color: grey;
+  font-size: 18px;
+  font-weight: 600;
+  height: 36px;
+  width: 194px;
+  overflow: hidden;
+  padding: 0 32px;
+  text-shadow: none;
+  font-family: SFProDisplay-Bold, Helvetica, Arial, sans-serif !important;
+  cursor: not-allowed;
 }
 
 

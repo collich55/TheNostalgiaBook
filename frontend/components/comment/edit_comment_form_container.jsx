@@ -9,7 +9,7 @@ import { openModal, closeModal } from '../../actions/modal_actions';
 
 const mapStateToProps = ({ errors, session }) => {
     return {
-        errors: errors.session,
+        errors: errors.comments,
         currentUserId: session.id
         
     };
