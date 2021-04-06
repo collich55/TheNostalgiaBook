@@ -31,6 +31,11 @@ const Bar = ({ currentUser, logout, users }) => {
                         <i id={"git-logo"} className="fab fa-github-square fa-w-14 fa-3x"></i>
                     </a>
                 </div>
+                <div className="personal-text-image">
+                    <a target="_blank" rel="noopener noreferrer" href="https://collich55.github.io/Anthony-Collichio.github.io/">
+                        <i id={"link-logo"} className="fas fa-address-card fa-w-14 fa-3x"></i>
+                    </a>
+                </div>
                 <div className="link-text-image">
                     <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/anthony-collichio-451b11103/">
                         <i id={"link-logo"} className="fab fa-linkedin fa-w-14 fa-3x"></i>

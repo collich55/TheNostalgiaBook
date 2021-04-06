@@ -1263,6 +1263,24 @@ navbar css
   opacity: .9;
 }
 
+.personal-text-image {
+  color: grey;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+.personal-text-image:hover {
+  background-color: black;
+  /* background-color: darkcyan; */
+  cursor: pointer;
+  opacity: .9;
+}
+
 .git-text-image {
   color: grey;
   width: 100%;
