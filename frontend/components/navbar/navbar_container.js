@@ -7,7 +7,7 @@ import { showUser, fetchUsers } from "../../actions/user_actions.js";
 // import linklogo from '../../../LI-In-Bug.png'
 
 const mapStateToProps = ({ session, entities: { users } }) => {
-    console.log(users)
+    
     return {
         currentUser: users[session.id]
     

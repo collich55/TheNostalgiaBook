@@ -113,7 +113,7 @@ class PostItem extends React.Component {
 
             return <div>
                 <a className="post-name-text" href={`#/users/${friend.id}`}>{friend_without_arrow}</a>
-                <i id={"arrow-icon"} class="fas fa-caret-right"></i> 
+                <i id={"arrow-icon"} className="fas fa-caret-right"></i> 
                 <a className="post-name-text" href={`#/users/${other_user.id}`}>{other_user.full_name + " " + other_user.last_name}</a>
             </div>
         } else {
@@ -126,8 +126,8 @@ class PostItem extends React.Component {
 
         if (this.props.currentUserId === this.props.post.author_id) {
             return <div>
-                <button className="edit-post-button" onClick={() => this.props.editPost(this.props.post)} ><i class="far fa-edit"></i></button>
-                <button className="delete-post-button" onClick={() => this.props.deletePost(this.props.post.id)} ><i class="far fa-trash-alt"></i></button>
+                <button className="edit-post-button" onClick={() => this.props.editPost(this.props.post)} ><i className="far fa-edit"></i></button>
+                <button className="delete-post-button" onClick={() => this.props.deletePost(this.props.post.id)} ><i className="far fa-trash-alt"></i></button>
             </div>
         } else {
             return null

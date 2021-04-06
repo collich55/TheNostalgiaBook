@@ -5,7 +5,7 @@ import {
 
 export default (oldState = [], action) => {
 
-    console.log(action);
+   
 
 
     Object.freeze(oldState);

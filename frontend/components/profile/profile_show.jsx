@@ -22,7 +22,7 @@ class ProfileShow extends React.Component {
        
         this.props.showUser(this.props.match.params.userId);
 
-        this.props.fetchUsers().then(() => console.log("hello"))
+        this.props.fetchUsers();
         this.props.fetchRequests();
         this.props.fetchPosts();
         this.props.fetchComments();

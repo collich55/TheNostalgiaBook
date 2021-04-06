@@ -25,13 +25,13 @@ class LikeIndex extends React.Component {
         if (likesForPost.length === 0) {
             return null
         } else if (likesForPost.length === 1) {
-            return <p className="like-text"><i id={"like-text-thumbs-up"} class="fas fa-thumbs-up"></i>{" " + this.props.users[likesForPost[0].liker_id].full_name + " " + this.props.users[likesForPost[0].liker_id].last_name + " liked this post"}</p>
+            return <p className="like-text"><i id={"like-text-thumbs-up"} className="fas fa-thumbs-up"></i>{" " + this.props.users[likesForPost[0].liker_id].full_name + " " + this.props.users[likesForPost[0].liker_id].last_name + " liked this post"}</p>
         } else if (likesForPost.length === 2) {
-            return <p className="like-text"><i id={"like-text-thumbs-up"} class="fas fa-thumbs-up"></i>{" " + this.props.users[likesForPost[0].liker_id].full_name + " " + this.props.users[likesForPost[0].liker_id].last_name + " and " + this.props.users[likesForPost[1].liker_id].full_name + " " + this.props.users[likesForPost[1].liker_id].last_name + " liked this post"}</p>
+            return <p className="like-text"><i id={"like-text-thumbs-up"} className="fas fa-thumbs-up"></i>{" " + this.props.users[likesForPost[0].liker_id].full_name + " " + this.props.users[likesForPost[0].liker_id].last_name + " and " + this.props.users[likesForPost[1].liker_id].full_name + " " + this.props.users[likesForPost[1].liker_id].last_name + " liked this post"}</p>
         } else if (likesForPost.length === 3) {
-            return <p className="like-text"><i id={"like-text-thumbs-up"} class="fas fa-thumbs-up"></i>{" " + this.props.users[likesForPost[0].liker_id].full_name + " " + this.props.users[likesForPost[0].liker_id].last_name + ", " + this.props.users[likesForPost[1].liker_id].full_name + " " + this.props.users[likesForPost[1].liker_id].last_name + " and " + this.props.users[likesForPost[2].liker_id].full_name + " " + this.props.users[likesForPost[2].liker_id].last_name + " liked this post"}</p>
+            return <p className="like-text"><i id={"like-text-thumbs-up"} className="fas fa-thumbs-up"></i>{" " + this.props.users[likesForPost[0].liker_id].full_name + " " + this.props.users[likesForPost[0].liker_id].last_name + ", " + this.props.users[likesForPost[1].liker_id].full_name + " " + this.props.users[likesForPost[1].liker_id].last_name + " and " + this.props.users[likesForPost[2].liker_id].full_name + " " + this.props.users[likesForPost[2].liker_id].last_name + " liked this post"}</p>
         } else if (likesForPost.length >= 4) {
-            return <p className="like-text"><i id={"like-text-thumbs-up"} class="fas fa-thumbs-up"></i>{" " + this.props.users[likesForPost[0].liker_id].full_name + " " + this.props.users[likesForPost[0].liker_id].last_name + ", " + this.props.users[likesForPost[1].liker_id].full_name + " " + this.props.users[likesForPost[1].liker_id].last_name + " and " + likesForPostLengthMinusTwo + " others liked this post"}</p>
+            return <p className="like-text"><i id={"like-text-thumbs-up"} className="fas fa-thumbs-up"></i>{" " + this.props.users[likesForPost[0].liker_id].full_name + " " + this.props.users[likesForPost[0].liker_id].last_name + ", " + this.props.users[likesForPost[1].liker_id].full_name + " " + this.props.users[likesForPost[1].liker_id].last_name + " and " + likesForPostLengthMinusTwo + " others liked this post"}</p>
         } else {
             return null
         }
