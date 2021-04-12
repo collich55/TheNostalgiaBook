@@ -40,6 +40,8 @@ The Nostalgia Book plans on adding other features, such as liking comments and m
  
 ## Friendship Item Code
 
+The Friendship item first checks if the profile_photo_link is either null or a blank string. If this is the case, the default profile picture will be used instead of a custom picture. The link to the friend profile page references the ID of the the friend to be used in the web address to reference the other user's profile page.
+
 ```Javascript
 
 render() {
