@@ -65,69 +65,11 @@ class ProfileShow extends React.Component {
         this.props.deleteRequest(requestId)
     }
 
-    checkIfFriend2() {
-        if (this.props.userId == this.props.currentUserId) {
-            return null
-        }
+    
 
-        let oneOrNonerequest = Object.values(this.props.friendships).filter(request => (((this.props.userId == request.requestee_id) && (this.props.currentUserId == request.requester_id)) || ((this.props.userId == request.requester_id) && (this.props.currentUserId == request.requestee_id))));
-        if (oneOrNonerequest.length < 1) {
-            return <div>
-                    <i id="you-are-friends-icon" class="fas fa-user-times"></i>
-                </div>
-        }
-
-        if (oneOrNonerequest[oneOrNonerequest.length - 1].accepted == true) {
-            return ( 
-                <div>
-                    <i id="you-are-friends-icon" class="fas fa-user-check"></i>
-                </div>
-               
-            )
-        } 
-
-        if ((oneOrNonerequest[oneOrNonerequest.length - 1].accepted == false) && (oneOrNonerequest[oneOrNonerequest.length - 1].requester_id == this.props.currentUserId)) {
-            return <div>
-                <i id="you-are-friends-icon" class="fas fa-user-clock"></i>
-                </div>
-        } else {
-            return null
-            
-        }
-        
-    }
+    
 
     checkIfFriend() {
-        if (this.props.userId == this.props.currentUserId) {
-            return null
-        }
-
-        let oneOrNonerequest = Object.values(this.props.friendships).filter(request => (((this.props.userId == request.requestee_id) && (this.props.currentUserId == request.requester_id)) || ((this.props.userId == request.requester_id) && (this.props.currentUserId == request.requestee_id))));
-        if (oneOrNonerequest.length < 1) {
-            return <button className="add-friend-button" onClick={this.handleFriendRequest} >Add Friend</button>
-        }
-
-        if (oneOrNonerequest[oneOrNonerequest.length - 1].accepted == true) {
-            return (
-                <div id={"unfriend"}>
-                    <button className="unfriend-button" onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Unfriend</button>
-                </div>
-            )
-        }
-
-        if ((oneOrNonerequest[oneOrNonerequest.length - 1].accepted == false) && (oneOrNonerequest[oneOrNonerequest.length - 1].requester_id == this.props.currentUserId)) {
-            return <h2>request is pending</h2>
-        } else {
-            return <div className="accept-or-deny-request" >
-                <button className="accept-request-button" onClick={() => this.handleFriendAcceptance(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Confirm</button>
-                <button className="deny-request-button" onClick={() => this.handleUnfriend(oneOrNonerequest[oneOrNonerequest.length - 1].id)}  >Deny</button>
-            </div>
-
-        }
-
-    }
-
-    checkIfFriend3() {
 
 
         const { full_name, last_name } = this.props.users[this.props.userId]
@@ -305,7 +247,7 @@ class ProfileShow extends React.Component {
         
         const {gender, birth_date,  } = this.props.users[this.props.userId]
         
-        let full = this.checkIfFriend3();
+        let full = this.checkIfFriend();
 
         
             return (
