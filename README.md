@@ -38,5 +38,38 @@ The Nostalgia Book also has a robust friending system. Sending sending, receivin
 The Nostalgia Book plans on adding other features, such as liking comments and mobile support, to better facilitate a fully immersive and modern social media experience.
  
  
+## Friendship Item Code
+
+The Friendship item first checks if the profile_photo_link is either null or a blank string. If this is the case, the default profile picture will be used instead of a custom picture. The link to the friend profile page references the ID of the the friend to be used in the web address to reference the other user's profile page.
+
+```Javascript
+
+render() {
+        
+        let friend = this.nameDisplay();
+        let photo;
+        if (!(friend.profile_photo_link) || friend.profile_photo_link === "") {
+            photo = "https://st.depositphotos.com/1779253/5140/v/600/depositphotos_51405259-stock-illustration-male-avatar-profile-picture-use.jpg";
+        } else {
+            photo = friend.profile_photo_link;
+        }
+
+        return (
+            <div id={"friend-item-box"}>
+                
+
+                <Link key={friend.id} replace to={`${friend.id}`} >
+                    <div className="friendship-pro-pic-and-name">
+                        <img className="friendship-pro-pic" src={friend.profile_photo_link} alt="Pro Pic" />
+                        {friend.full_name + " " + friend.last_name}
+                    </div>
+                </Link>
+                    
+                
+            </div>
+        )
+    }
+    ```
+ 
 
 
